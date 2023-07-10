@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "idiom" : "tv",
+      "scale" : "1x",
+      "filename" : "‎sway-logo.‎001.png"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "‎sway-logo.‎001@2x.png",
+      "idiom" : "tv"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
