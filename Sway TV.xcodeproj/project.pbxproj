@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		814830E22A5CA5E900ED4D89 /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830E12A5CA5E900ED4D89 /* Sway_TVApp.swift */; };
+		814830E42A5CA5E900ED4D89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830E32A5CA5E900ED4D89 /* ContentView.swift */; };
+		814830E62A5CA5EB00ED4D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814830E52A5CA5EB00ED4D89 /* Assets.xcassets */; };
+		814830E92A5CA5EB00ED4D89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814830E82A5CA5EB00ED4D89 /* Preview Assets.xcassets */; };
+		814830F32A5CA5EB00ED4D89 /* Sway_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830F22A5CA5EB00ED4D89 /* Sway_TVTests.swift */; };
+		814830FD2A5CA5EB00ED4D89 /* Sway_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */; };
+		814830FF2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		814830EF2A5CA5EB00ED4D89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 814830D62A5CA5E900ED4D89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 814830DD2A5CA5E900ED4D89;
+			remoteInfo = "Sway TV";
+		};
+		814830F92A5CA5EB00ED4D89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 814830D62A5CA5E900ED4D89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 814830DD2A5CA5E900ED4D89;
+			remoteInfo = "Sway TV";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		814830DE2A5CA5E900ED4D89 /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		814830E12A5CA5E900ED4D89 /* Sway_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVApp.swift; sourceTree = "<group>"; };
+		814830E32A5CA5E900ED4D89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		814830E52A5CA5EB00ED4D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		814830E82A5CA5EB00ED4D89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		814830EE2A5CA5EB00ED4D89 /* Sway TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		814830F22A5CA5EB00ED4D89 /* Sway_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVTests.swift; sourceTree = "<group>"; };
+		814830F82A5CA5EB00ED4D89 /* Sway TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITests.swift; sourceTree = "<group>"; };
+		814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		814830DB2A5CA5E900ED4D89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814830EB2A5CA5EB00ED4D89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814830F52A5CA5EB00ED4D89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		814830D52A5CA5E900ED4D89 = {
+			isa = PBXGroup;
+			children = (
+				814830E02A5CA5E900ED4D89 /* Sway TV */,
+				814830F12A5CA5EB00ED4D89 /* Sway TVTests */,
+				814830FB2A5CA5EB00ED4D89 /* Sway TVUITests */,
+				814830DF2A5CA5E900ED4D89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		814830DF2A5CA5E900ED4D89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				814830DE2A5CA5E900ED4D89 /* Sway TV.app */,
+				814830EE2A5CA5EB00ED4D89 /* Sway TVTests.xctest */,
+				814830F82A5CA5EB00ED4D89 /* Sway TVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		814830E02A5CA5E900ED4D89 /* Sway TV */ = {
+			isa = PBXGroup;
+			children = (
+				814830E12A5CA5E900ED4D89 /* Sway_TVApp.swift */,
+				814830E32A5CA5E900ED4D89 /* ContentView.swift */,
+				814830E52A5CA5EB00ED4D89 /* Assets.xcassets */,
+				814830E72A5CA5EB00ED4D89 /* Preview Content */,
+			);
+			path = "Sway TV";
+			sourceTree = "<group>";
+		};
+		814830E72A5CA5EB00ED4D89 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				814830E82A5CA5EB00ED4D89 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		814830F12A5CA5EB00ED4D89 /* Sway TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				814830F22A5CA5EB00ED4D89 /* Sway_TVTests.swift */,
+			);
+			path = "Sway TVTests";
+			sourceTree = "<group>";
+		};
+		814830FB2A5CA5EB00ED4D89 /* Sway TVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */,
+				814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */,
+			);
+			path = "Sway TVUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		814830DD2A5CA5E900ED4D89 /* Sway TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814831022A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TV" */;
+			buildPhases = (
+				814830DA2A5CA5E900ED4D89 /* Sources */,
+				814830DB2A5CA5E900ED4D89 /* Frameworks */,
+				814830DC2A5CA5E900ED4D89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sway TV";
+			productName = "Sway TV";
+			productReference = 814830DE2A5CA5E900ED4D89 /* Sway TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		814830ED2A5CA5EB00ED4D89 /* Sway TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814831052A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVTests" */;
+			buildPhases = (
+				814830EA2A5CA5EB00ED4D89 /* Sources */,
+				814830EB2A5CA5EB00ED4D89 /* Frameworks */,
+				814830EC2A5CA5EB00ED4D89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				814830F02A5CA5EB00ED4D89 /* PBXTargetDependency */,
+			);
+			name = "Sway TVTests";
+			productName = "Sway TVTests";
+			productReference = 814830EE2A5CA5EB00ED4D89 /* Sway TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		814830F72A5CA5EB00ED4D89 /* Sway TVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814831082A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVUITests" */;
+			buildPhases = (
+				814830F42A5CA5EB00ED4D89 /* Sources */,
+				814830F52A5CA5EB00ED4D89 /* Frameworks */,
+				814830F62A5CA5EB00ED4D89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				814830FA2A5CA5EB00ED4D89 /* PBXTargetDependency */,
+			);
+			name = "Sway TVUITests";
+			productName = "Sway TVUITests";
+			productReference = 814830F82A5CA5EB00ED4D89 /* Sway TVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		814830D62A5CA5E900ED4D89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					814830DD2A5CA5E900ED4D89 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					814830ED2A5CA5EB00ED4D89 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 814830DD2A5CA5E900ED4D89;
+					};
+					814830F72A5CA5EB00ED4D89 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 814830DD2A5CA5E900ED4D89;
+					};
+				};
+			};
+			buildConfigurationList = 814830D92A5CA5E900ED4D89 /* Build configuration list for PBXProject "Sway TV" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 814830D52A5CA5E900ED4D89;
+			productRefGroup = 814830DF2A5CA5E900ED4D89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				814830DD2A5CA5E900ED4D89 /* Sway TV */,
+				814830ED2A5CA5EB00ED4D89 /* Sway TVTests */,
+				814830F72A5CA5EB00ED4D89 /* Sway TVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		814830DC2A5CA5E900ED4D89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814830E92A5CA5EB00ED4D89 /* Preview Assets.xcassets in Resources */,
+				814830E62A5CA5EB00ED4D89 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814830EC2A5CA5EB00ED4D89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814830F62A5CA5EB00ED4D89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		814830DA2A5CA5E900ED4D89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814830E42A5CA5E900ED4D89 /* ContentView.swift in Sources */,
+				814830E22A5CA5E900ED4D89 /* Sway_TVApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814830EA2A5CA5EB00ED4D89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814830F32A5CA5EB00ED4D89 /* Sway_TVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814830F42A5CA5EB00ED4D89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814830FF2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift in Sources */,
+				814830FD2A5CA5EB00ED4D89 /* Sway_TVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		814830F02A5CA5EB00ED4D89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 814830DD2A5CA5E900ED4D89 /* Sway TV */;
+			targetProxy = 814830EF2A5CA5EB00ED4D89 /* PBXContainerItemProxy */;
+		};
+		814830FA2A5CA5EB00ED4D89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 814830DD2A5CA5E900ED4D89 /* Sway TV */;
+			targetProxy = 814830F92A5CA5EB00ED4D89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		814831002A5CA5EB00ED4D89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		814831012A5CA5EB00ED4D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		814831032A5CA5EB00ED4D89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sway TV/Preview Content\"";
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		814831042A5CA5EB00ED4D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sway TV/Preview Content\"";
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		814831062A5CA5EB00ED4D89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sway TV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sway TV";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		814831072A5CA5EB00ED4D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sway TV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sway TV";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
+		814831092A5CA5EB00ED4D89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "Sway TV";
+			};
+			name = Debug;
+		};
+		8148310A2A5CA5EB00ED4D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "Sway TV";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		814830D92A5CA5E900ED4D89 /* Build configuration list for PBXProject "Sway TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814831002A5CA5EB00ED4D89 /* Debug */,
+				814831012A5CA5EB00ED4D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814831022A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814831032A5CA5EB00ED4D89 /* Debug */,
+				814831042A5CA5EB00ED4D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814831052A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814831062A5CA5EB00ED4D89 /* Debug */,
+				814831072A5CA5EB00ED4D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814831082A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814831092A5CA5EB00ED4D89 /* Debug */,
+				8148310A2A5CA5EB00ED4D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 814830D62A5CA5E900ED4D89 /* Project object */;
+}
