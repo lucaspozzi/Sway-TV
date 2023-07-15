@@ -1,23 +1,17 @@
 {
-  "layers" : [
-    {
-      "filename" : "audiodog.imagestacklayer"
-    },
-    {
-      "filename" : "Screenshot 2023-07-09 at 3.42.59 AM.imagestacklayer"
-    },
-    {
-      "filename" : "‎sway-logo.‎001.imagestacklayer"
-    }
-  ],
-  "properties" : {
-    "canvasSize" : {
-      "width" : 400,
-      "height" : 240
-    }
-  },
   "info" : {
     "author" : "xcode",
     "version" : 1
-  }
+  },
+  "layers" : [
+    {
+      "filename" : "Front.imagestacklayer"
+    },
+    {
+      "filename" : "Middle.imagestacklayer"
+    },
+    {
+      "filename" : "Back.imagestacklayer"
+    }
+  ]
 }

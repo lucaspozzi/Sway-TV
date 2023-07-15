@@ -7,65 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		814830E22A5CA5E900ED4D89 /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830E12A5CA5E900ED4D89 /* Sway_TVApp.swift */; };
-		814830E42A5CA5E900ED4D89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830E32A5CA5E900ED4D89 /* ContentView.swift */; };
-		814830E62A5CA5EB00ED4D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814830E52A5CA5EB00ED4D89 /* Assets.xcassets */; };
-		814830E92A5CA5EB00ED4D89 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814830E82A5CA5EB00ED4D89 /* Preview Assets.xcassets */; };
-		814830F32A5CA5EB00ED4D89 /* Sway_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830F22A5CA5EB00ED4D89 /* Sway_TVTests.swift */; };
-		814830FD2A5CA5EB00ED4D89 /* Sway_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */; };
-		814830FF2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */; };
-		8148310E2A5CB32400ED4D89 /* squeaky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8148310D2A5CB32400ED4D89 /* squeaky.mp3 */; };
-		814831102A5CB76A00ED4D89 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8148310F2A5CB76A00ED4D89 /* Property List.plist */; };
+		81F5163E2A6341BB0093EE76 /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5163D2A6341BB0093EE76 /* Sway_TVApp.swift */; };
+		81F516402A6341BB0093EE76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5163F2A6341BB0093EE76 /* ContentView.swift */; };
+		81F516422A6341BD0093EE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F516412A6341BD0093EE76 /* Assets.xcassets */; };
+		81F516452A6341BD0093EE76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F516442A6341BD0093EE76 /* Preview Assets.xcassets */; };
+		81F5164F2A6341BD0093EE76 /* Sway_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5164E2A6341BD0093EE76 /* Sway_TVTests.swift */; };
+		81F516592A6341BD0093EE76 /* Sway_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F516582A6341BD0093EE76 /* Sway_TVUITests.swift */; };
+		81F5165B2A6341BD0093EE76 /* Sway_TVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5165A2A6341BD0093EE76 /* Sway_TVUITestsLaunchTests.swift */; };
+		81F516682A6342C20093EE76 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F516672A6342C20093EE76 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		814830EF2A5CA5EB00ED4D89 /* PBXContainerItemProxy */ = {
+		81F5164B2A6341BD0093EE76 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 814830D62A5CA5E900ED4D89 /* Project object */;
+			containerPortal = 81F516322A6341BA0093EE76 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 814830DD2A5CA5E900ED4D89;
+			remoteGlobalIDString = 81F516392A6341BA0093EE76;
 			remoteInfo = "Sway TV";
 		};
-		814830F92A5CA5EB00ED4D89 /* PBXContainerItemProxy */ = {
+		81F516552A6341BD0093EE76 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 814830D62A5CA5E900ED4D89 /* Project object */;
+			containerPortal = 81F516322A6341BA0093EE76 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 814830DD2A5CA5E900ED4D89;
+			remoteGlobalIDString = 81F516392A6341BA0093EE76;
 			remoteInfo = "Sway TV";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		814830DE2A5CA5E900ED4D89 /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		814830E12A5CA5E900ED4D89 /* Sway_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVApp.swift; sourceTree = "<group>"; };
-		814830E32A5CA5E900ED4D89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		814830E52A5CA5EB00ED4D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		814830E82A5CA5EB00ED4D89 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		814830EE2A5CA5EB00ED4D89 /* Sway TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		814830F22A5CA5EB00ED4D89 /* Sway_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVTests.swift; sourceTree = "<group>"; };
-		814830F82A5CA5EB00ED4D89 /* Sway TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITests.swift; sourceTree = "<group>"; };
-		814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8148310D2A5CB32400ED4D89 /* squeaky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squeaky.mp3; sourceTree = "<group>"; };
-		8148310F2A5CB76A00ED4D89 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		81F5163A2A6341BA0093EE76 /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F5163D2A6341BB0093EE76 /* Sway_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVApp.swift; sourceTree = "<group>"; };
+		81F5163F2A6341BB0093EE76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81F516412A6341BD0093EE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81F516442A6341BD0093EE76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81F5164A2A6341BD0093EE76 /* Sway TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F5164E2A6341BD0093EE76 /* Sway_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVTests.swift; sourceTree = "<group>"; };
+		81F516542A6341BD0093EE76 /* Sway TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F516582A6341BD0093EE76 /* Sway_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITests.swift; sourceTree = "<group>"; };
+		81F5165A2A6341BD0093EE76 /* Sway_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		81F516672A6342C20093EE76 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		814830DB2A5CA5E900ED4D89 /* Frameworks */ = {
+		81F516372A6341BA0093EE76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		814830EB2A5CA5EB00ED4D89 /* Frameworks */ = {
+		81F516472A6341BD0093EE76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		814830F52A5CA5EB00ED4D89 /* Frameworks */ = {
+		81F516512A6341BD0093EE76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -75,82 +73,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		814830D52A5CA5E900ED4D89 = {
+		81F516312A6341BA0093EE76 = {
 			isa = PBXGroup;
 			children = (
-				814831112A5CBDD500ED4D89 /* Sounds */,
-				8148310F2A5CB76A00ED4D89 /* Property List.plist */,
-				814830E02A5CA5E900ED4D89 /* Sway TV */,
-				814830F12A5CA5EB00ED4D89 /* Sway TVTests */,
-				814830FB2A5CA5EB00ED4D89 /* Sway TVUITests */,
-				814830DF2A5CA5E900ED4D89 /* Products */,
+				81F5163C2A6341BA0093EE76 /* Sway TV */,
+				81F5164D2A6341BD0093EE76 /* Sway TVTests */,
+				81F516572A6341BD0093EE76 /* Sway TVUITests */,
+				81F5163B2A6341BA0093EE76 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		814830DF2A5CA5E900ED4D89 /* Products */ = {
+		81F5163B2A6341BA0093EE76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				814830DE2A5CA5E900ED4D89 /* Sway TV.app */,
-				814830EE2A5CA5EB00ED4D89 /* Sway TVTests.xctest */,
-				814830F82A5CA5EB00ED4D89 /* Sway TVUITests.xctest */,
+				81F5163A2A6341BA0093EE76 /* Sway TV.app */,
+				81F5164A2A6341BD0093EE76 /* Sway TVTests.xctest */,
+				81F516542A6341BD0093EE76 /* Sway TVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		814830E02A5CA5E900ED4D89 /* Sway TV */ = {
+		81F5163C2A6341BA0093EE76 /* Sway TV */ = {
 			isa = PBXGroup;
 			children = (
-				814830E12A5CA5E900ED4D89 /* Sway_TVApp.swift */,
-				814830E32A5CA5E900ED4D89 /* ContentView.swift */,
-				814830E52A5CA5EB00ED4D89 /* Assets.xcassets */,
-				814830E72A5CA5EB00ED4D89 /* Preview Content */,
+				81F5163D2A6341BB0093EE76 /* Sway_TVApp.swift */,
+				81F5163F2A6341BB0093EE76 /* ContentView.swift */,
+				81F516412A6341BD0093EE76 /* Assets.xcassets */,
+				81F516432A6341BD0093EE76 /* Preview Content */,
+				81F516672A6342C20093EE76 /* AudioPlayer.swift */,
 			);
 			path = "Sway TV";
 			sourceTree = "<group>";
 		};
-		814830E72A5CA5EB00ED4D89 /* Preview Content */ = {
+		81F516432A6341BD0093EE76 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				814830E82A5CA5EB00ED4D89 /* Preview Assets.xcassets */,
+				81F516442A6341BD0093EE76 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		814830F12A5CA5EB00ED4D89 /* Sway TVTests */ = {
+		81F5164D2A6341BD0093EE76 /* Sway TVTests */ = {
 			isa = PBXGroup;
 			children = (
-				814830F22A5CA5EB00ED4D89 /* Sway_TVTests.swift */,
+				81F5164E2A6341BD0093EE76 /* Sway_TVTests.swift */,
 			);
 			path = "Sway TVTests";
 			sourceTree = "<group>";
 		};
-		814830FB2A5CA5EB00ED4D89 /* Sway TVUITests */ = {
+		81F516572A6341BD0093EE76 /* Sway TVUITests */ = {
 			isa = PBXGroup;
 			children = (
-				814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */,
-				814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */,
+				81F516582A6341BD0093EE76 /* Sway_TVUITests.swift */,
+				81F5165A2A6341BD0093EE76 /* Sway_TVUITestsLaunchTests.swift */,
 			);
 			path = "Sway TVUITests";
-			sourceTree = "<group>";
-		};
-		814831112A5CBDD500ED4D89 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				8148310D2A5CB32400ED4D89 /* squeaky.mp3 */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		814830DD2A5CA5E900ED4D89 /* Sway TV */ = {
+		81F516392A6341BA0093EE76 /* Sway TV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 814831022A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TV" */;
+			buildConfigurationList = 81F5165E2A6341BD0093EE76 /* Build configuration list for PBXNativeTarget "Sway TV" */;
 			buildPhases = (
-				814830DA2A5CA5E900ED4D89 /* Sources */,
-				814830DB2A5CA5E900ED4D89 /* Frameworks */,
-				814830DC2A5CA5E900ED4D89 /* Resources */,
+				81F516362A6341BA0093EE76 /* Sources */,
+				81F516372A6341BA0093EE76 /* Frameworks */,
+				81F516382A6341BA0093EE76 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -158,69 +147,69 @@
 			);
 			name = "Sway TV";
 			productName = "Sway TV";
-			productReference = 814830DE2A5CA5E900ED4D89 /* Sway TV.app */;
+			productReference = 81F5163A2A6341BA0093EE76 /* Sway TV.app */;
 			productType = "com.apple.product-type.application";
 		};
-		814830ED2A5CA5EB00ED4D89 /* Sway TVTests */ = {
+		81F516492A6341BD0093EE76 /* Sway TVTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 814831052A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVTests" */;
+			buildConfigurationList = 81F516612A6341BD0093EE76 /* Build configuration list for PBXNativeTarget "Sway TVTests" */;
 			buildPhases = (
-				814830EA2A5CA5EB00ED4D89 /* Sources */,
-				814830EB2A5CA5EB00ED4D89 /* Frameworks */,
-				814830EC2A5CA5EB00ED4D89 /* Resources */,
+				81F516462A6341BD0093EE76 /* Sources */,
+				81F516472A6341BD0093EE76 /* Frameworks */,
+				81F516482A6341BD0093EE76 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				814830F02A5CA5EB00ED4D89 /* PBXTargetDependency */,
+				81F5164C2A6341BD0093EE76 /* PBXTargetDependency */,
 			);
 			name = "Sway TVTests";
 			productName = "Sway TVTests";
-			productReference = 814830EE2A5CA5EB00ED4D89 /* Sway TVTests.xctest */;
+			productReference = 81F5164A2A6341BD0093EE76 /* Sway TVTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		814830F72A5CA5EB00ED4D89 /* Sway TVUITests */ = {
+		81F516532A6341BD0093EE76 /* Sway TVUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 814831082A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVUITests" */;
+			buildConfigurationList = 81F516642A6341BD0093EE76 /* Build configuration list for PBXNativeTarget "Sway TVUITests" */;
 			buildPhases = (
-				814830F42A5CA5EB00ED4D89 /* Sources */,
-				814830F52A5CA5EB00ED4D89 /* Frameworks */,
-				814830F62A5CA5EB00ED4D89 /* Resources */,
+				81F516502A6341BD0093EE76 /* Sources */,
+				81F516512A6341BD0093EE76 /* Frameworks */,
+				81F516522A6341BD0093EE76 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				814830FA2A5CA5EB00ED4D89 /* PBXTargetDependency */,
+				81F516562A6341BD0093EE76 /* PBXTargetDependency */,
 			);
 			name = "Sway TVUITests";
 			productName = "Sway TVUITests";
-			productReference = 814830F82A5CA5EB00ED4D89 /* Sway TVUITests.xctest */;
+			productReference = 81F516542A6341BD0093EE76 /* Sway TVUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		814830D62A5CA5E900ED4D89 /* Project object */ = {
+		81F516322A6341BA0093EE76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					814830DD2A5CA5E900ED4D89 = {
+					81F516392A6341BA0093EE76 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
-					814830ED2A5CA5EB00ED4D89 = {
+					81F516492A6341BD0093EE76 = {
 						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 814830DD2A5CA5E900ED4D89;
+						TestTargetID = 81F516392A6341BA0093EE76;
 					};
-					814830F72A5CA5EB00ED4D89 = {
+					81F516532A6341BD0093EE76 = {
 						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 814830DD2A5CA5E900ED4D89;
+						TestTargetID = 81F516392A6341BA0093EE76;
 					};
 				};
 			};
-			buildConfigurationList = 814830D92A5CA5E900ED4D89 /* Build configuration list for PBXProject "Sway TV" */;
+			buildConfigurationList = 81F516352A6341BA0093EE76 /* Build configuration list for PBXProject "Sway TV" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -228,38 +217,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 814830D52A5CA5E900ED4D89;
-			productRefGroup = 814830DF2A5CA5E900ED4D89 /* Products */;
+			mainGroup = 81F516312A6341BA0093EE76;
+			productRefGroup = 81F5163B2A6341BA0093EE76 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				814830DD2A5CA5E900ED4D89 /* Sway TV */,
-				814830ED2A5CA5EB00ED4D89 /* Sway TVTests */,
-				814830F72A5CA5EB00ED4D89 /* Sway TVUITests */,
+				81F516392A6341BA0093EE76 /* Sway TV */,
+				81F516492A6341BD0093EE76 /* Sway TVTests */,
+				81F516532A6341BD0093EE76 /* Sway TVUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		814830DC2A5CA5E900ED4D89 /* Resources */ = {
+		81F516382A6341BA0093EE76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8148310E2A5CB32400ED4D89 /* squeaky.mp3 in Resources */,
-				814830E92A5CA5EB00ED4D89 /* Preview Assets.xcassets in Resources */,
-				814831102A5CB76A00ED4D89 /* Property List.plist in Resources */,
-				814830E62A5CA5EB00ED4D89 /* Assets.xcassets in Resources */,
+				81F516452A6341BD0093EE76 /* Preview Assets.xcassets in Resources */,
+				81F516422A6341BD0093EE76 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		814830EC2A5CA5EB00ED4D89 /* Resources */ = {
+		81F516482A6341BD0093EE76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		814830F62A5CA5EB00ED4D89 /* Resources */ = {
+		81F516522A6341BD0093EE76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,49 +256,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		814830DA2A5CA5E900ED4D89 /* Sources */ = {
+		81F516362A6341BA0093EE76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814830E42A5CA5E900ED4D89 /* ContentView.swift in Sources */,
-				814830E22A5CA5E900ED4D89 /* Sway_TVApp.swift in Sources */,
+				81F516402A6341BB0093EE76 /* ContentView.swift in Sources */,
+				81F5163E2A6341BB0093EE76 /* Sway_TVApp.swift in Sources */,
+				81F516682A6342C20093EE76 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		814830EA2A5CA5EB00ED4D89 /* Sources */ = {
+		81F516462A6341BD0093EE76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814830F32A5CA5EB00ED4D89 /* Sway_TVTests.swift in Sources */,
+				81F5164F2A6341BD0093EE76 /* Sway_TVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		814830F42A5CA5EB00ED4D89 /* Sources */ = {
+		81F516502A6341BD0093EE76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814830FF2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift in Sources */,
-				814830FD2A5CA5EB00ED4D89 /* Sway_TVUITests.swift in Sources */,
+				81F5165B2A6341BD0093EE76 /* Sway_TVUITestsLaunchTests.swift in Sources */,
+				81F516592A6341BD0093EE76 /* Sway_TVUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		814830F02A5CA5EB00ED4D89 /* PBXTargetDependency */ = {
+		81F5164C2A6341BD0093EE76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 814830DD2A5CA5E900ED4D89 /* Sway TV */;
-			targetProxy = 814830EF2A5CA5EB00ED4D89 /* PBXContainerItemProxy */;
+			target = 81F516392A6341BA0093EE76 /* Sway TV */;
+			targetProxy = 81F5164B2A6341BD0093EE76 /* PBXContainerItemProxy */;
 		};
-		814830FA2A5CA5EB00ED4D89 /* PBXTargetDependency */ = {
+		81F516562A6341BD0093EE76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 814830DD2A5CA5E900ED4D89 /* Sway TV */;
-			targetProxy = 814830F92A5CA5EB00ED4D89 /* PBXContainerItemProxy */;
+			target = 81F516392A6341BA0093EE76 /* Sway TV */;
+			targetProxy = 81F516552A6341BD0093EE76 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		814831002A5CA5EB00ED4D89 /* Debug */ = {
+		81F5165C2A6341BD0093EE76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,7 +359,7 @@
 			};
 			name = Debug;
 		};
-		814831012A5CA5EB00ED4D89 /* Release */ = {
+		81F5165D2A6341BD0093EE76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -425,7 +413,7 @@
 			};
 			name = Release;
 		};
-		814831032A5CA5EB00ED4D89 /* Debug */ = {
+		81F5165F2A6341BD0093EE76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
@@ -436,7 +424,6 @@
 				DEVELOPMENT_TEAM = LGH757AD8S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Sway;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,7 +439,7 @@
 			};
 			name = Debug;
 		};
-		814831042A5CA5EB00ED4D89 /* Release */ = {
+		81F516602A6341BD0093EE76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
@@ -463,7 +450,6 @@
 				DEVELOPMENT_TEAM = LGH757AD8S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Sway;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -479,7 +465,7 @@
 			};
 			name = Release;
 		};
-		814831062A5CA5EB00ED4D89 /* Debug */ = {
+		81F516622A6341BD0093EE76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -499,7 +485,7 @@
 			};
 			name = Debug;
 		};
-		814831072A5CA5EB00ED4D89 /* Release */ = {
+		81F516632A6341BD0093EE76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -519,7 +505,7 @@
 			};
 			name = Release;
 		};
-		814831092A5CA5EB00ED4D89 /* Debug */ = {
+		81F516652A6341BD0093EE76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -537,7 +523,7 @@
 			};
 			name = Debug;
 		};
-		8148310A2A5CA5EB00ED4D89 /* Release */ = {
+		81F516662A6341BD0093EE76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -558,43 +544,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		814830D92A5CA5E900ED4D89 /* Build configuration list for PBXProject "Sway TV" */ = {
+		81F516352A6341BA0093EE76 /* Build configuration list for PBXProject "Sway TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				814831002A5CA5EB00ED4D89 /* Debug */,
-				814831012A5CA5EB00ED4D89 /* Release */,
+				81F5165C2A6341BD0093EE76 /* Debug */,
+				81F5165D2A6341BD0093EE76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		814831022A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TV" */ = {
+		81F5165E2A6341BD0093EE76 /* Build configuration list for PBXNativeTarget "Sway TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				814831032A5CA5EB00ED4D89 /* Debug */,
-				814831042A5CA5EB00ED4D89 /* Release */,
+				81F5165F2A6341BD0093EE76 /* Debug */,
+				81F516602A6341BD0093EE76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		814831052A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVTests" */ = {
+		81F516612A6341BD0093EE76 /* Build configuration list for PBXNativeTarget "Sway TVTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				814831062A5CA5EB00ED4D89 /* Debug */,
-				814831072A5CA5EB00ED4D89 /* Release */,
+				81F516622A6341BD0093EE76 /* Debug */,
+				81F516632A6341BD0093EE76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		814831082A5CA5EB00ED4D89 /* Build configuration list for PBXNativeTarget "Sway TVUITests" */ = {
+		81F516642A6341BD0093EE76 /* Build configuration list for PBXNativeTarget "Sway TVUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				814831092A5CA5EB00ED4D89 /* Debug */,
-				8148310A2A5CA5EB00ED4D89 /* Release */,
+				81F516652A6341BD0093EE76 /* Debug */,
+				81F516662A6341BD0093EE76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 814830D62A5CA5E900ED4D89 /* Project object */;
+	rootObject = 81F516322A6341BA0093EE76 /* Project object */;
 }
