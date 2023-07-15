@@ -15,7 +15,7 @@
 		814830FD2A5CA5EB00ED4D89 /* Sway_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */; };
 		814830FF2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */; };
 		8148310E2A5CB32400ED4D89 /* squeaky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8148310D2A5CB32400ED4D89 /* squeaky.mp3 */; };
-		814831102A5CB76A00ED4D89 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8148310F2A5CB76A00ED4D89 /* Info.plist */; };
+		814831102A5CB76A00ED4D89 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8148310F2A5CB76A00ED4D89 /* Property List.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		814830FC2A5CA5EB00ED4D89 /* Sway_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITests.swift; sourceTree = "<group>"; };
 		814830FE2A5CA5EB00ED4D89 /* Sway_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8148310D2A5CB32400ED4D89 /* squeaky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squeaky.mp3; sourceTree = "<group>"; };
-		8148310F2A5CB76A00ED4D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8148310F2A5CB76A00ED4D89 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				814831112A5CBDD500ED4D89 /* Sounds */,
-				8148310F2A5CB76A00ED4D89 /* Info.plist */,
+				8148310F2A5CB76A00ED4D89 /* Property List.plist */,
 				814830E02A5CA5E900ED4D89 /* Sway TV */,
 				814830F12A5CA5EB00ED4D89 /* Sway TVTests */,
 				814830FB2A5CA5EB00ED4D89 /* Sway TVUITests */,
@@ -247,7 +247,7 @@
 			files = (
 				8148310E2A5CB32400ED4D89 /* squeaky.mp3 in Resources */,
 				814830E92A5CA5EB00ED4D89 /* Preview Assets.xcassets in Resources */,
-				814831102A5CB76A00ED4D89 /* Info.plist in Resources */,
+				814831102A5CB76A00ED4D89 /* Property List.plist in Resources */,
 				814830E62A5CA5EB00ED4D89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
