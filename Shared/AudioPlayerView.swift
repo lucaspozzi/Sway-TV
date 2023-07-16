@@ -13,13 +13,12 @@ struct AudioPlayerView: View {
     @State private var artworkImage: UIImage? = nil
     @State private var artworkImageDefault: String = "audiodog"
     @State private var currentTrackTitle: String = "Loading track title..."
-    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
     @State private var timer: Timer?
+    @State private var isShowingModal = false
+    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
     
     var body: some View {
         HStack {
-            
-            
             if audioPlayer.isPlaying {
                 Button(action: {
                     self.audioPlayer.stopPlayback()
@@ -27,9 +26,9 @@ struct AudioPlayerView: View {
                     VStack {
                         Image(systemName: "pause")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Text("Pause Audio")
-                    }.foregroundColor(.purple)
+                            .aspectRatio(contentMode: .fit).frame(minWidth: 400)
+                        Text("Pause Radio")
+                    }
                 }
                 .frame(width: 500, height: 500)
             } else {
@@ -43,7 +42,7 @@ struct AudioPlayerView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         Text("Start Listening to Radio")
-                    }.foregroundColor(.purple)
+                    }
                 }
                 .frame(width: 500, height: 500)
             }
@@ -53,17 +52,23 @@ struct AudioPlayerView: View {
                 Text(currentTrackTitle).font(.headline)
             }
             
-            ZStack {
-                if let artworkImage = artworkImage {
-                    Image(uiImage: artworkImage)
-                        .resizable().cornerRadius(10)
-                        .frame(width: 500, height: 500)
-                } else {
-                    Image(artworkImageDefault)
-                        .resizable()
-                        .frame(width: 500, height: 500)
+            Button(action: {
+                isShowingModal = true
+            }) {
+                VStack {
+                    if let artworkImage = artworkImage {
+                        Image(uiImage: artworkImage)
+                            .resizable().cornerRadius(10)
+                    } else {
+                        Image(artworkImageDefault)
+                            .resizable().cornerRadius(10)
+                    }
+                    Text("View album artwork")
                 }
             }
+            .frame(width: 500, height: 500)
+            
+            
         }
         .onAppear{
             fetchOnce()
@@ -71,6 +76,17 @@ struct AudioPlayerView: View {
         }
         .onDisappear{
             stopFetching()
+        }
+        .sheet(isPresented: $isShowingModal) {
+            if let artworkImage = artworkImage {
+                Image(uiImage: artworkImage)
+                    .resizable().cornerRadius(10)
+                    .aspectRatio(contentMode: .fit)
+            } else {
+                Image(artworkImageDefault)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
         }
     }
     
