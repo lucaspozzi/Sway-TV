@@ -37,10 +37,15 @@ struct AmbientVideoMenuView: View {
         }
         
         let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
+        playerViewController.modalPresentationStyle = .fullScreen
         playerViewController.showsPlaybackControls = false
+        playerViewController.player = player
         
-        guard let topViewController = UIApplication.shared.windows.first?.rootViewController else { return }
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let topViewController = windowScene.windows.first?.rootViewController else {
+            return
+        }
+        
         topViewController.present(playerViewController, animated: true) {
             playerViewController.player?.play()
         }

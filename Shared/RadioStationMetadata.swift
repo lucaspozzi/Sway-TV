@@ -99,6 +99,10 @@ class JSONNull: Codable, Hashable {
         return true
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(0)
+    }
+    
     public var hashValue: Int {
         return 0
     }
