@@ -50,7 +50,7 @@ struct AudioPlayerView: View {
             VStack {
                 Text("Live now:")
                 Text(currentTrackTitle).font(.headline)
-            }
+            }.frame(width: 500, height: 500)
             
             Button(action: {
                 isShowingModal = true

@@ -1,15 +1,41 @@
-//
-//  AmbientVideoMenuView.swift
-//  Sway TV
-//
-//  Created by Lucas Pozzi de Souza on 7/16/23.
-//
-
 import SwiftUI
+import AVKit
 
 struct AmbientVideoMenuView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Button(action: {
+                playVideoFullScreen()
+            }) {
+                VStack {
+                    Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
+                    Text("Start Ambient Video One")
+                }
+                
+            }
+            
+            Button(action: {
+                playVideoFullScreen()
+            }) {
+                VStack {
+                    Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
+                    Text("Start Ambient Video Two")
+                }
+            }
+        }
+    }
+    
+    private func playVideoFullScreen() {
+//        guard let url = URL(string: videoURL) else { return }
+        let videoUrl = Bundle.main.url(forResource: "wave", withExtension: "mp4")!
+        let player = AVPlayer(url: videoUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        guard let topViewController = UIApplication.shared.windows.first?.rootViewController else { return }
+        topViewController.present(playerViewController, animated: true) {
+            playerViewController.player?.play()
+        }
     }
 }
 

@@ -9,7 +9,14 @@ import SwiftUI
 
 struct StartSharePlayView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            print("clicked")
+        }) {
+            VStack {
+                Image(systemName: "shareplay").resizable().aspectRatio(contentMode: .fit)
+                Text("Start SharePlay")
+            }
+        }
     }
 }
 
