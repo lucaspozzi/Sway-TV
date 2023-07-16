@@ -29,8 +29,16 @@ struct AmbientVideoMenuView: View {
 //        guard let url = URL(string: videoURL) else { return }
         let videoUrl = Bundle.main.url(forResource: "wave", withExtension: "mp4")!
         let player = AVPlayer(url: videoUrl)
+        player.actionAtItemEnd = .none
+        
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: nil) { _ in
+            player.seek(to: .zero)
+            player.play()
+        }
+        
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
+        playerViewController.showsPlaybackControls = false
         
         guard let topViewController = UIApplication.shared.windows.first?.rootViewController else { return }
         topViewController.present(playerViewController, animated: true) {
