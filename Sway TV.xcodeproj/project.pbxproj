@@ -14,6 +14,15 @@
 		81546C522A64779600F2E98E /* Sway_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C512A64779600F2E98E /* Sway_TVTests.swift */; };
 		81546C5C2A64779600F2E98E /* Sway_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C5B2A64779600F2E98E /* Sway_TVUITests.swift */; };
 		81546C5E2A64779600F2E98E /* Sway_TVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C5D2A64779600F2E98E /* Sway_TVUITestsLaunchTests.swift */; };
+		81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6B2A64784900F2E98E /* VideoPlayerView.swift */; };
+		81546C722A64784B00F2E98E /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6C2A64784A00F2E98E /* EventScheduleView.swift */; };
+		81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */; };
+		81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6E2A64784A00F2E98E /* AudioPlayer.swift */; };
+		81546C752A64784B00F2E98E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
+		81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
+		81546C7A2A6479BD00F2E98E /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C772A6479BC00F2E98E /* HomeTabView.swift */; };
+		81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */; };
+		81546C7C2A6479BD00F2E98E /* StartSharePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C792A6479BC00F2E98E /* StartSharePlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		81546C572A64779600F2E98E /* Sway TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81546C5B2A64779600F2E98E /* Sway_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITests.swift; sourceTree = "<group>"; };
 		81546C5D2A64779600F2E98E /* Sway_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		81546C6B2A64784900F2E98E /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		81546C6C2A64784A00F2E98E /* EventScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
+		81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		81546C6E2A64784A00F2E98E /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		81546C6F2A64784A00F2E98E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		81546C702A64784B00F2E98E /* RadioStationMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationMetadata.swift; sourceTree = "<group>"; };
+		81546C772A6479BC00F2E98E /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbientVideoMenuView.swift; sourceTree = "<group>"; };
+		81546C792A6479BC00F2E98E /* StartSharePlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSharePlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,7 @@
 		81546C342A64779500F2E98E = {
 			isa = PBXGroup;
 			children = (
+				81546C6A2A6477F400F2E98E /* Shared */,
 				81546C3F2A64779500F2E98E /* Sway TV */,
 				81546C502A64779600F2E98E /* Sway TVTests */,
 				81546C5A2A64779600F2E98E /* Sway TVUITests */,
@@ -94,6 +113,9 @@
 		81546C3F2A64779500F2E98E /* Sway TV */ = {
 			isa = PBXGroup;
 			children = (
+				81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */,
+				81546C772A6479BC00F2E98E /* HomeTabView.swift */,
+				81546C792A6479BC00F2E98E /* StartSharePlayView.swift */,
 				81546C402A64779500F2E98E /* Sway_TVApp.swift */,
 				81546C422A64779500F2E98E /* ContentView.swift */,
 				81546C442A64779600F2E98E /* Assets.xcassets */,
@@ -125,6 +147,19 @@
 				81546C5D2A64779600F2E98E /* Sway_TVUITestsLaunchTests.swift */,
 			);
 			path = "Sway TVUITests";
+			sourceTree = "<group>";
+		};
+		81546C6A2A6477F400F2E98E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				81546C6E2A64784A00F2E98E /* AudioPlayer.swift */,
+				81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */,
+				81546C6C2A64784A00F2E98E /* EventScheduleView.swift */,
+				81546C6F2A64784A00F2E98E /* Media.xcassets */,
+				81546C702A64784B00F2E98E /* RadioStationMetadata.swift */,
+				81546C6B2A64784900F2E98E /* VideoPlayerView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81546C482A64779600F2E98E /* Preview Assets.xcassets in Resources */,
+				81546C752A64784B00F2E98E /* Media.xcassets in Resources */,
 				81546C452A64779600F2E98E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +293,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81546C722A64784B00F2E98E /* EventScheduleView.swift in Sources */,
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
+				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
+				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
+				81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */,
+				81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */,
+				81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */,
+				81546C7A2A6479BD00F2E98E /* HomeTabView.swift in Sources */,
+				81546C7C2A6479BD00F2E98E /* StartSharePlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
