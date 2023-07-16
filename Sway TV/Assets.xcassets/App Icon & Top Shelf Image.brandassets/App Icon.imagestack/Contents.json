@@ -1,17 +1,3 @@
-{
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
-  },
-  "layers" : [
-    {
-      "filename" : "Front.imagestacklayer"
-    },
-    {
-      "filename" : "Middle.imagestacklayer"
-    },
-    {
-      "filename" : "Back.imagestacklayer"
-    }
-  ]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cca971c8af0b76b4d9bd0e5eedcde6bd80e58c9093659bedfb6e9a39a1f454df
+size 250

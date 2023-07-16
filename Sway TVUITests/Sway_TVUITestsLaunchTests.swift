@@ -1,32 +1,3 @@
-//
-//  Sway_TVUITestsLaunchTests.swift
-//  Sway TVUITests
-//
-//  Created by Lucas Pozzi de Souza on 7/15/23.
-//
-
-import XCTest
-
-final class Sway_TVUITestsLaunchTests: XCTestCase {
-
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
-        true
-    }
-
-    override func setUpWithError() throws {
-        continueAfterFailure = false
-    }
-
-    func testLaunch() throws {
-        let app = XCUIApplication()
-        app.launch()
-
-        // Insert steps here to perform after app launch but before taking a screenshot,
-        // such as logging into a test account or navigating somewhere in the app
-
-        let attachment = XCTAttachment(screenshot: app.screenshot())
-        attachment.name = "Launch Screen"
-        attachment.lifetime = .keepAlways
-        add(attachment)
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:78940c57ef4d3945bd978f8bda4f9023492094837463339655ef00a5686c5b4b
+size 810
