@@ -15,11 +15,11 @@
 		810CF6CA2A65E36F00600064 /* Sway_RadioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6C92A65E36F00600064 /* Sway_RadioUITestsLaunchTests.swift */; };
 		810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6D52A65E47E00600064 /* AudioPlayerView.swift */; };
 		810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6D62A65E47F00600064 /* HomeTabView.swift */; };
-		810CF6DA2A65E47F00600064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6D72A65E47F00600064 /* ContentView.swift */; };
 		810CF6DB2A65E53100600064 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6E2A64784A00F2E98E /* AudioPlayer.swift */; };
 		810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6C2A64784A00F2E98E /* EventScheduleView.swift */; };
 		810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
 		810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
+		810CF6F72A66070100600064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6F62A66070100600064 /* ContentView.swift */; };
 		81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C402A64779500F2E98E /* Sway_TVApp.swift */; };
 		81546C432A64779500F2E98E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C422A64779500F2E98E /* ContentView.swift */; };
 		81546C452A64779600F2E98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C442A64779600F2E98E /* Assets.xcassets */; };
@@ -96,8 +96,8 @@
 		810CF6D42A65E3B100600064 /* Sway Radio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway Radio.entitlements"; sourceTree = "<group>"; };
 		810CF6D52A65E47E00600064 /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		810CF6D62A65E47F00600064 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
-		810CF6D72A65E47F00600064 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../../Users/luc/Desktop/Sway Radio/ContentView.swift"; sourceTree = "<group>"; };
 		810CF6E62A65EC5200600064 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = Library/Frameworks/DriverKit.framework; sourceTree = DEVELOPER_DIR; };
+		810CF6F62A66070100600064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81546C3D2A64779500F2E98E /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81546C402A64779500F2E98E /* Sway_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVApp.swift; sourceTree = "<group>"; };
 		81546C422A64779500F2E98E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,12 +172,12 @@
 			isa = PBXGroup;
 			children = (
 				810CF6D52A65E47E00600064 /* AudioPlayerView.swift */,
-				810CF6D72A65E47F00600064 /* ContentView.swift */,
 				810CF6D62A65E47F00600064 /* HomeTabView.swift */,
 				810CF6D42A65E3B100600064 /* Sway Radio.entitlements */,
 				810CF6AC2A65E36D00600064 /* Sway_RadioApp.swift */,
 				810CF6B02A65E36F00600064 /* Assets.xcassets */,
 				810CF6B22A65E36F00600064 /* Preview Content */,
+				810CF6F62A66070100600064 /* ContentView.swift */,
 			);
 			path = "Sway Radio";
 			sourceTree = "<group>";
@@ -531,9 +531,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				810CF6DA2A65E47F00600064 /* ContentView.swift in Sources */,
 				810CF6AD2A65E36D00600064 /* Sway_RadioApp.swift in Sources */,
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
+				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
 				810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */,
 				810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */,
 				810CF6DB2A65E53100600064 /* AudioPlayer.swift in Sources */,
