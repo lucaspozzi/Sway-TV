@@ -1,2 +1,6 @@
+On TV:
 Please test play Ambient Video while listening to the radio.
 Test Siri Remote usage.
+
+On iPhone
+Please test audio playback and event calendar
