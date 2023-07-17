@@ -41,7 +41,7 @@ struct EventScheduleView: View {
     private func fetchItems() {
         let query = CKQuery(recordType: recordType, predicate: NSPredicate(value: true))
         
-        publicDatabase.fetch(withQuery: query, inZoneWith: .default, desiredKeys: nil, resultsLimit: 5) { result in
+        publicDatabase.fetch(withQuery: query, inZoneWith: nil, desiredKeys: nil, resultsLimit: 5) { result in
             switch result {
             case .failure(let error):
                 print("Error fetching items: \(error.localizedDescription)")
