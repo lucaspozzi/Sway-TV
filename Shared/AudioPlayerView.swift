@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import Intents
 
 struct AudioPlayerView: View {
     @ObservedObject var audioPlayer = AudioPlayer()
@@ -86,6 +87,15 @@ struct AudioPlayerView: View {
                 Image(artworkImageDefault)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+            }
+        }
+        .onPlayPauseCommand {
+            if audioPlayer.isPlaying {
+                audioPlayer.stopPlayback()
+            } else {
+                if let url = URL(string: audioUrl) {
+                    audioPlayer.startPlayback(audioUrl: url)
+                }
             }
         }
     }

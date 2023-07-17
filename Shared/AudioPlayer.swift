@@ -15,6 +15,9 @@ class AudioPlayer: ObservableObject {
     
     func startPlayback(audioUrl: URL) {
         audioPlayer = AVPlayer(url: audioUrl)
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+        try? audioSession.setActive(true)
         audioPlayer?.play()
         isPlaying = true
     }
