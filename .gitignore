@@ -67,4 +67,5 @@ node_modules/
 
 *xcuserdata*
 Pods/
-Waggie.xcworkspace/
+*.xcworkspace/
+*/.DS_Store
