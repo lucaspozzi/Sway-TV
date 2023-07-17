@@ -10,7 +10,7 @@ import AVFoundation
 import Intents
 
 struct AudioPlayerView: View {
-    @ObservedObject var audioPlayer = AudioPlayer()
+    @EnvironmentObject var audioPlayer: AudioPlayer
     @State private var artworkImage: UIImage? = nil
     @State private var artworkImageDefault: String = "audiodog"
     @State private var currentTrackTitle: String = "Loading track title..."
@@ -89,15 +89,6 @@ struct AudioPlayerView: View {
                     .aspectRatio(contentMode: .fit)
             }
         }
-        .onPlayPauseCommand {
-            if audioPlayer.isPlaying {
-                audioPlayer.stopPlayback()
-            } else {
-                if let url = URL(string: audioUrl) {
-                    audioPlayer.startPlayback(audioUrl: url)
-                }
-            }
-        }
     }
     
     func fetchOnce() {
@@ -140,5 +131,6 @@ struct AudioPlayerView: View {
 struct AudioPlayerView_Previews: PreviewProvider {
     static var previews: some View {
         AudioPlayerView()
+            .environmentObject(AudioPlayer())
     }
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var audioPlayer = AudioPlayer()
+    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
+    
     var body: some View {
         TabView {
             
@@ -16,6 +19,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                .environmentObject(audioPlayer)
             
             EventScheduleView()
                 .tabItem {
@@ -23,7 +27,15 @@ struct ContentView: View {
                     Text("Event Schedule")
                 }
         }
-        
+        .onPlayPauseCommand {
+            if audioPlayer.isPlaying {
+                audioPlayer.stopPlayback()
+            } else {
+                if let url = URL(string: audioUrl) {
+                    audioPlayer.startPlayback(audioUrl: url)
+                }
+            }
+        }
         
     }
 }
