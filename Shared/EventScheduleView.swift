@@ -19,8 +19,8 @@ struct Event: Identifiable {
 struct EventScheduleView: View {
     @State private var listItems = [Event]()
     @State private var message: String = "Loading events..."
-    private let container = CKContainer.default()
-    private let publicDatabase = CKContainer.default().publicCloudDatabase
+    private let container = CKContainer(identifier: "iCloud.app.waggie.Sway-TV")
+    private let publicDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").publicCloudDatabase
     private let recordType = "Events"
     
     var body: some View {
@@ -91,7 +91,7 @@ struct EventScheduleView: View {
                     $0.start < $1.start
                 }
                 self.message = "Upcoming live radio events"
-                self.listItems = items
+                self.listItems = sortedItems
             }
         }
     }
