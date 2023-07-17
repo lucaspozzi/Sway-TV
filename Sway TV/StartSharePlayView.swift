@@ -17,6 +17,7 @@ struct StartSharePlayView: View {
                 Text("Start SharePlay")
             }
         }
+        .frame(height: 190)
     }
 }
 

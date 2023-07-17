@@ -34,6 +34,7 @@ struct AudioPlayerView: View {
                             Text("Pause Radio")
                         }
                     }
+                    .frame(height: 190)
                 } else {
                     Button(action: {
                         if let url = URL(string: self.audioUrl) {
@@ -47,11 +48,15 @@ struct AudioPlayerView: View {
                             Text("Start Listening to Radio")
                         }
                     }
+                    .frame(height: 190)
                 }
                 
                 StartSharePlayView()
-                Text("Live now:")
-                Text(currentTrackTitle).font(.headline)
+                
+                HStack {
+                    Text("Live now:")
+                    Text(currentTrackTitle).font(.headline)
+                }
                 
             }
             .aspectRatio(contentMode: .fit)

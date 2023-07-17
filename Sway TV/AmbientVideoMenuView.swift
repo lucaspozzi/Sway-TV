@@ -3,26 +3,49 @@ import AVKit
 
 struct AmbientVideoMenuView: View {
     var body: some View {
-        HStack {
-            Button(action: {
-                playVideoFullScreen()
-            }) {
-                VStack {
-                    Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
-                    Text("Start Ambient Video One")
-                }
-                
-            }
-            
-            Button(action: {
-                playVideoFullScreen()
-            }) {
-                VStack {
-                    Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
-                    Text("Start Ambient Video Two")
+        
+        VStack {
+            Text("Ambient Videos")
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack {
+                    Button(action: {
+                        playVideoFullScreen()
+                    }) {
+                        VStack {
+                            Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
+                            Text("Start Ambient Video One")
+                        }
+                    }
+                    .padding()
+                    
+                    Button(action: {
+                        playVideoFullScreen()
+                    }) {
+                        VStack {
+                            Image("videoplaceholder")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Text("Start Ambient Video Two")
+                        }
+                    }
+                    .padding()
+                    
+                    Button(action: {
+                        playVideoFullScreen()
+                    }) {
+                        VStack {
+                            Image("videoplaceholder")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Text("Start Ambient Video Three")
+                        }
+                    }
+                    .padding()
+                    
                 }
             }
         }
+        .frame(height: 500)
     }
     
     private func playVideoFullScreen() {
