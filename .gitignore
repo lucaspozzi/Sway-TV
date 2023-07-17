@@ -69,3 +69,4 @@ node_modules/
 Pods/
 *.xcworkspace/
 */.DS_Store
+.DS_Store
