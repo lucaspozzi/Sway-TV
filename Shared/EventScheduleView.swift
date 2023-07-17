@@ -17,7 +17,6 @@ struct Event: Identifiable {
 }
 
 struct EventScheduleView: View {
-    @State private var newItemTitle = ""
     @State private var listItems = [Event]()
     
     private let container = CKContainer.default()
@@ -28,11 +27,10 @@ struct EventScheduleView: View {
         List {
             ForEach(listItems) { item in
                 VStack(alignment: .leading) {
-//                    Text(item.id)
                     Text(item.name)
                     Text(item.description)
-                    Text("Starts \(item.start)") // Use a date formatter to format the date properly
-                    Text("Ends \(item.end)")   // Use a date formatter to format the date properly
+                    Text("Starts \(item.start)")
+                    Text("Ends \(item.end)")
                 }.padding()
             }
         }.padding()
@@ -43,15 +41,21 @@ struct EventScheduleView: View {
     private func fetchItems() {
         let query = CKQuery(recordType: recordType, predicate: NSPredicate(value: true))
         
-        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            if let error = error {
+        publicDatabase.fetch(withQuery: query, inZoneWith: .default, desiredKeys: nil, resultsLimit: 5) { result in
+            switch result {
+            case .failure(let error):
                 print("Error fetching items: \(error.localizedDescription)")
-            } else if let records = records {
-                let items = records.compactMap { record -> Event? in
-                    guard let id = record.recordID.recordName as? String else {
-                        print("Failed to convert id")
+            case .success((let matchResults, _)):
+                let records = matchResults.compactMap { (recordId, result) -> CKRecord? in
+                    do {
+                        return try result.get()
+                    } catch {
+                        print("Error getting record \(error)")
                         return nil
                     }
+                }
+                let items = records.compactMap { record -> Event? in
+                    let id = record.recordID.recordName
                     guard let name = record["Name"] as? String else {
                         print("Failed to convert name")
                         return nil
