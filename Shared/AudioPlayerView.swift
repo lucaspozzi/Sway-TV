@@ -19,39 +19,44 @@ struct AudioPlayerView: View {
     let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
     
     var body: some View {
+        
         HStack {
-            if audioPlayer.isPlaying {
-                Button(action: {
-                    self.audioPlayer.stopPlayback()
-                }) {
-                    VStack {
-                        Image(systemName: "pause")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit).frame(minWidth: 400)
-                        Text("Pause Radio")
-                    }
-                }
-                .frame(width: 500, height: 500)
-            } else {
-                Button(action: {
-                    if let url = URL(string: self.audioUrl) {
-                        self.audioPlayer.startPlayback(audioUrl: url)
-                    }
-                }) {
-                    VStack {
-                        Image(systemName: "play")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Text("Start Listening to Radio")
-                    }
-                }
-                .frame(width: 500, height: 500)
-            }
             
             VStack {
+                if audioPlayer.isPlaying {
+                    Button(action: {
+                        self.audioPlayer.stopPlayback()
+                    }) {
+                        HStack {
+                            Image(systemName: "pause")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Text("Pause Radio")
+                        }
+                    }
+                } else {
+                    Button(action: {
+                        if let url = URL(string: self.audioUrl) {
+                            self.audioPlayer.startPlayback(audioUrl: url)
+                        }
+                    }) {
+                        HStack {
+                            Image(systemName: "play")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Text("Start Listening to Radio")
+                        }
+                    }
+                }
+                
+                StartSharePlayView()
                 Text("Live now:")
                 Text(currentTrackTitle).font(.headline)
-            }.frame(width: 500, height: 500)
+                
+            }
+            .aspectRatio(contentMode: .fit)
+            .padding()
+            .frame(width: 880)
             
             Button(action: {
                 isShowingModal = true
@@ -67,10 +72,12 @@ struct AudioPlayerView: View {
                     Text("View album artwork")
                 }
             }
-            .frame(width: 500, height: 500)
-            
+            .aspectRatio(contentMode: .fit)
+            .padding()
+            .frame(width: 880)
             
         }
+        .frame(height: 740)
         .onAppear{
             fetchOnce()
             startFetching()

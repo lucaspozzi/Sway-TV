@@ -12,7 +12,7 @@ struct StartSharePlayView: View {
         Button(action: {
             print("clicked")
         }) {
-            VStack {
+            HStack {
                 Image(systemName: "shareplay").resizable().aspectRatio(contentMode: .fit)
                 Text("Start SharePlay")
             }

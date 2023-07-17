@@ -11,14 +11,17 @@ struct HomeTabView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
     
     var body: some View {
-        VStack {
-            AudioPlayerView()
-                .environmentObject(audioPlayer)
-            HStack {
-                AmbientVideoMenuView()
-                StartSharePlayView()
+        
+        ScrollView {
+            VStack {
+                AudioPlayerView()
+                    .environmentObject(audioPlayer)
+                HStack {
+                    AmbientVideoMenuView()
+                }
             }
         }
+        
     }
 }
 
