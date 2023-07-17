@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "‎sway-logo.‎001.png",
+      "filename" : "sway_white.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
-      "filename" : "‎sway-logo.‎001@2x.png",
+      "filename" : "sway_white@2x.png",
       "idiom" : "tv",
       "scale" : "2x"
     }

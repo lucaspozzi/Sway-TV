@@ -9,35 +9,35 @@ struct AmbientVideoMenuView: View {
             ScrollView(.horizontal, showsIndicators: true) {
                 HStack {
                     Button(action: {
-                        playVideoFullScreen()
+                        playVideoFullScreen(url: "https://drive.google.com/uc?export=download&id=1XmcoSiJX8cdxu0VXKUlusb-J-PlyR4PB")
                     }) {
                         VStack {
                             Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
-                            Text("Start Ambient Video One")
+                            Text("Ocean")
                         }
                     }.background(Color.purple)
                     .padding()
                     
                     Button(action: {
-                        playVideoFullScreen()
+                        playVideoFullScreen(url: "https://drive.google.com/uc?export=download&id=1S7iftvd2JOy9ZV2bg6uXGRK4DLPKPJgq")
                     }) {
                         VStack {
                             Image("videoplaceholder")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                            Text("Start Ambient Video Two")
+                            Text("Rings")
                         }
                     }.background(Color.indigo)
                     .padding()
                     
                     Button(action: {
-                        playVideoFullScreen()
+                        playVideoFullScreen(url: "https://drive.google.com/uc?export=download&id=1CjPjhEA79bQFIl3KfWng-4A4YrDtCmOB")
                     }) {
                         VStack {
                             Image("videoplaceholder")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                            Text("Start Ambient Video Three")
+                            Text("Triangles")
                         }
                     }
                     .padding()
@@ -48,9 +48,9 @@ struct AmbientVideoMenuView: View {
         .frame(height: 500)
     }
     
-    private func playVideoFullScreen() {
-//        guard let url = URL(string: videoURL) else { return }
-        let videoUrl = Bundle.main.url(forResource: "wave", withExtension: "mp4")!
+    private func playVideoFullScreen(url: String) {
+        guard let videoUrl = URL(string: url) else { return }
+//        let videoUrl = Bundle.main.url(forResource: "wave", withExtension: "mp4")!
         let player = AVPlayer(url: videoUrl)
         player.actionAtItemEnd = .none
         

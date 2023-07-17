@@ -1,1 +1,2 @@
-Test new layout. Everything but SharePlay and Calendar should work.
+Please test play Ambient Video while listening to the radio.
+Test Siri Remote usage.
