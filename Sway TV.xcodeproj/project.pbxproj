@@ -24,6 +24,7 @@
 		81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */; };
 		81546C7C2A6479BD00F2E98E /* StartSharePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C792A6479BC00F2E98E /* StartSharePlayView.swift */; };
 		81546C7F2A649BB300F2E98E /* wave.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 81546C7E2A649BB300F2E98E /* wave.mp4 */; };
+		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		81546C7D2A64849300F2E98E /* Sway TV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway TV.entitlements"; sourceTree = "<group>"; };
 		81546C7E2A649BB300F2E98E /* wave.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wave.mp4; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
+		81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		81546C342A64779500F2E98E = {
 			isa = PBXGroup;
 			children = (
+				81B631B12A64E8BB00EDFE03 /* TestFlight */,
 				81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */,
 				81546C7E2A649BB300F2E98E /* wave.mp4 */,
 				81546C6A2A6477F400F2E98E /* Shared */,
@@ -167,6 +170,14 @@
 				81546C6B2A64784900F2E98E /* VideoPlayerView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		81B631B12A64E8BB00EDFE03 /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */,
+			);
+			path = TestFlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81546C482A64779600F2E98E /* Preview Assets.xcassets in Resources */,
+				81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */,
 				81546C752A64784B00F2E98E /* Media.xcassets in Resources */,
 				81546C7F2A649BB300F2E98E /* wave.mp4 in Resources */,
 				81546C452A64779600F2E98E /* Assets.xcassets in Resources */,
