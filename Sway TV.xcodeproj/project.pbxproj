@@ -19,10 +19,6 @@
 		810CF6DB2A65E53100600064 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6E2A64784A00F2E98E /* AudioPlayer.swift */; };
 		810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6C2A64784A00F2E98E /* EventScheduleView.swift */; };
 		810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
-		810CF6E72A65EC5200600064 /* DriverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810CF6E62A65EC5200600064 /* DriverKit.framework */; };
-		810CF6EA2A65EC5200600064 /* Sway_Car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6E92A65EC5200600064 /* Sway_Car.cpp */; };
-		810CF6EC2A65EC5200600064 /* Sway_Car.iig in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6EB2A65EC5200600064 /* Sway_Car.iig */; };
-		810CF6F02A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
 		81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C402A64779500F2E98E /* Sway_TVApp.swift */; };
 		81546C432A64779500F2E98E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C422A64779500F2E98E /* ContentView.swift */; };
@@ -58,13 +54,6 @@
 			remoteGlobalIDString = 810CF6A92A65E36D00600064;
 			remoteInfo = "Sway Radio";
 		};
-		810CF6EE2A65EC5200600064 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81546C352A64779500F2E98E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 810CF6E32A65EC5200600064;
-			remoteInfo = "Sway Car";
-		};
 		81546C4E2A64779600F2E98E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 81546C352A64779500F2E98E /* Project object */;
@@ -88,7 +77,6 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				810CF6F02A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,11 +97,7 @@
 		810CF6D52A65E47E00600064 /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		810CF6D62A65E47F00600064 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		810CF6D72A65E47F00600064 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../../Users/luc/Desktop/Sway Radio/ContentView.swift"; sourceTree = "<group>"; };
-		810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */ = {isa = PBXFileReference; explicitFileType = "wrapper.driver-extension"; includeInIndex = 0; path = "app.waggie.Sway-TV.Sway-Car.dext"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810CF6E62A65EC5200600064 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = Library/Frameworks/DriverKit.framework; sourceTree = DEVELOPER_DIR; };
-		810CF6E92A65EC5200600064 /* Sway_Car.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sway_Car.cpp; sourceTree = "<group>"; };
-		810CF6EB2A65EC5200600064 /* Sway_Car.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = Sway_Car.iig; sourceTree = "<group>"; };
-		810CF6ED2A65EC5200600064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81546C3D2A64779500F2E98E /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81546C402A64779500F2E98E /* Sway_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVApp.swift; sourceTree = "<group>"; };
 		81546C422A64779500F2E98E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,14 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		810CF6E12A65EC5200600064 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				810CF6E72A65EC5200600064 /* DriverKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,16 +215,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		810CF6E82A65EC5200600064 /* Sway Car */ = {
-			isa = PBXGroup;
-			children = (
-				810CF6E92A65EC5200600064 /* Sway_Car.cpp */,
-				810CF6EB2A65EC5200600064 /* Sway_Car.iig */,
-				810CF6ED2A65EC5200600064 /* Info.plist */,
-			);
-			path = "Sway Car";
-			sourceTree = "<group>";
-		};
 		81546C342A64779500F2E98E = {
 			isa = PBXGroup;
 			children = (
@@ -262,7 +228,6 @@
 				810CF6AB2A65E36D00600064 /* Sway Radio */,
 				810CF6BC2A65E36F00600064 /* Sway RadioTests */,
 				810CF6C62A65E36F00600064 /* Sway RadioUITests */,
-				810CF6E82A65EC5200600064 /* Sway Car */,
 				810CF6E52A65EC5200600064 /* Frameworks */,
 				81546C3E2A64779500F2E98E /* Products */,
 			);
@@ -277,7 +242,6 @@
 				810CF6AA2A65E36D00600064 /* Sway Radio.app */,
 				810CF6B92A65E36F00600064 /* Sway RadioTests.xctest */,
 				810CF6C32A65E36F00600064 /* Sway RadioUITests.xctest */,
-				810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,16 +308,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		810CF6DF2A65EC5200600064 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		810CF6A92A65E36D00600064 /* Sway Radio */ = {
 			isa = PBXNativeTarget;
@@ -367,7 +321,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				810CF6EF2A65EC5200600064 /* PBXTargetDependency */,
 			);
 			name = "Sway Radio";
 			productName = "Sway Radio";
@@ -409,24 +362,6 @@
 			productName = "Sway RadioUITests";
 			productReference = 810CF6C32A65E36F00600064 /* Sway RadioUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		810CF6E32A65EC5200600064 /* Sway Car */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 810CF6F12A65EC5200600064 /* Build configuration list for PBXNativeTarget "Sway Car" */;
-			buildPhases = (
-				810CF6DF2A65EC5200600064 /* Headers */,
-				810CF6E02A65EC5200600064 /* Sources */,
-				810CF6E12A65EC5200600064 /* Frameworks */,
-				810CF6E22A65EC5200600064 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Sway Car";
-			productName = "Sway Car";
-			productReference = 810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */;
-			productType = "com.apple.product-type.driver-extension";
 		};
 		81546C3C2A64779500F2E98E /* Sway TV */ = {
 			isa = PBXNativeTarget;
@@ -502,9 +437,6 @@
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 810CF6A92A65E36D00600064;
 					};
-					810CF6E32A65EC5200600064 = {
-						CreatedOnToolsVersion = 14.3.1;
-					};
 					81546C3C2A64779500F2E98E = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -537,7 +469,6 @@
 				810CF6A92A65E36D00600064 /* Sway Radio */,
 				810CF6B82A65E36F00600064 /* Sway RadioTests */,
 				810CF6C22A65E36F00600064 /* Sway RadioUITests */,
-				810CF6E32A65EC5200600064 /* Sway Car */,
 			);
 		};
 /* End PBXProject section */
@@ -561,13 +492,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		810CF6C12A65E36F00600064 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		810CF6E22A65EC5200600064 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -634,15 +558,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		810CF6E02A65EC5200600064 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				810CF6EC2A65EC5200600064 /* Sway_Car.iig in Sources */,
-				810CF6EA2A65EC5200600064 /* Sway_Car.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81546C392A64779500F2E98E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,11 +603,6 @@
 			isa = PBXTargetDependency;
 			target = 810CF6A92A65E36D00600064 /* Sway Radio */;
 			targetProxy = 810CF6C42A65E36F00600064 /* PBXContainerItemProxy */;
-		};
-		810CF6EF2A65EC5200600064 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 810CF6E32A65EC5200600064 /* Sway Car */;
-			targetProxy = 810CF6EE2A65EC5200600064 /* PBXContainerItemProxy */;
 		};
 		81546C4F2A64779600F2E98E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -854,46 +764,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Sway Radio";
-			};
-			name = Release;
-		};
-		810CF6F22A65EC5200600064 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LGH757AD8S;
-				DRIVERKIT_DEPLOYMENT_TARGET = 22.4;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Sway Car/Info.plist";
-				INFOPLIST_KEY_OSBundleUsageDescription = "";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV.Sway-Car";
-				PRODUCT_NAME = "$(inherited)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = driverkit;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-			};
-			name = Debug;
-		};
-		810CF6F32A65EC5200600064 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LGH757AD8S;
-				DRIVERKIT_DEPLOYMENT_TARGET = 22.4;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Sway Car/Info.plist";
-				INFOPLIST_KEY_OSBundleUsageDescription = "";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV.Sway-Car";
-				PRODUCT_NAME = "$(inherited)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = driverkit;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -1173,15 +1043,6 @@
 			buildConfigurations = (
 				810CF6D22A65E36F00600064 /* Debug */,
 				810CF6D32A65E36F00600064 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		810CF6F12A65EC5200600064 /* Build configuration list for PBXNativeTarget "Sway Car" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				810CF6F22A65EC5200600064 /* Debug */,
-				810CF6F32A65EC5200600064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
