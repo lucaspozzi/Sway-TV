@@ -18,35 +18,24 @@ struct Event: Identifiable {
 
 struct EventScheduleView: View {
     @State private var listItems = [Event]()
-    @State private var message: String = "init"
-    private let container = CKContainer(identifier: "iCloud.app.waggie.Sway-TV")
-    private let publicDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").publicCloudDatabase
+    @State private var message: String = "Loading events..."
+    private let container = CKContainer.default()
+    private let publicDatabase = CKContainer.default().publicCloudDatabase
     private let recordType = "Events"
     
     var body: some View {
         VStack {
-            Text(message)
+            Text(message).font(.title)
             List {
                 ForEach(listItems) { item in
                     VStack(alignment: .leading) {
-                        Text(item.name)
-                        Text(item.description)
+                        Text(item.name).font(.headline)
+                        Text(item.description).font(.subheadline)
                         Text("Starts \(item.start)")
                         Text("Ends \(item.end)")
                     }.padding()
                 }
             }.padding()
-            
-            Button(action: {
-                fetchItems()
-            }) {
-                HStack {
-                    Image(systemName: "pause")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    Text("Reload")
-                }
-            }.frame(width: 400, height: 120)
         }
         
         .onAppear(perform: fetchItems)
@@ -54,7 +43,10 @@ struct EventScheduleView: View {
     
     
     private func fetchItems() {
-        let query = CKQuery(recordType: recordType, predicate: NSPredicate(value: true))
+        
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) as NSDate?
+        let predicate = NSPredicate(format: "Start > %@", yesterday ?? NSDate())
+        let query = CKQuery(recordType: recordType, predicate: predicate)
         
         publicDatabase.fetch(withQuery: query, inZoneWith: nil, desiredKeys: nil, resultsLimit: 5) { result in
             switch result {
@@ -95,7 +87,10 @@ struct EventScheduleView: View {
                     
                     return Event(id: id, name: name, description: description, start: start, end: end)
                 }
-                
+                let sortedItems = items.sorted {
+                    $0.start < $1.start
+                }
+                self.message = "Upcoming live radio events"
                 self.listItems = items
             }
         }
