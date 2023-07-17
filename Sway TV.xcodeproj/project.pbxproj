@@ -22,7 +22,8 @@
 		810CF6E72A65EC5200600064 /* DriverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810CF6E62A65EC5200600064 /* DriverKit.framework */; };
 		810CF6EA2A65EC5200600064 /* Sway_Car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6E92A65EC5200600064 /* Sway_Car.cpp */; };
 		810CF6EC2A65EC5200600064 /* Sway_Car.iig in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6EB2A65EC5200600064 /* Sway_Car.iig */; };
-		810CF6F02A65EC5200600064 /* app.waggie.Sway-Radio.Sway-Car.dext in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 810CF6E42A65EC5200600064 /* app.waggie.Sway-Radio.Sway-Car.dext */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		810CF6F02A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
 		81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C402A64779500F2E98E /* Sway_TVApp.swift */; };
 		81546C432A64779500F2E98E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C422A64779500F2E98E /* ContentView.swift */; };
 		81546C452A64779600F2E98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C442A64779600F2E98E /* Assets.xcassets */; };
@@ -87,7 +88,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				810CF6F02A65EC5200600064 /* app.waggie.Sway-Radio.Sway-Car.dext in Embed System Extensions */,
+				810CF6F02A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +109,7 @@
 		810CF6D52A65E47E00600064 /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		810CF6D62A65E47F00600064 /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		810CF6D72A65E47F00600064 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../../Users/luc/Desktop/Sway Radio/ContentView.swift"; sourceTree = "<group>"; };
-		810CF6E42A65EC5200600064 /* app.waggie.Sway-Radio.Sway-Car.dext */ = {isa = PBXFileReference; explicitFileType = "wrapper.driver-extension"; includeInIndex = 0; path = "app.waggie.Sway-Radio.Sway-Car.dext"; sourceTree = BUILT_PRODUCTS_DIR; };
+		810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */ = {isa = PBXFileReference; explicitFileType = "wrapper.driver-extension"; includeInIndex = 0; path = "app.waggie.Sway-TV.Sway-Car.dext"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810CF6E62A65EC5200600064 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = Library/Frameworks/DriverKit.framework; sourceTree = DEVELOPER_DIR; };
 		810CF6E92A65EC5200600064 /* Sway_Car.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sway_Car.cpp; sourceTree = "<group>"; };
 		810CF6EB2A65EC5200600064 /* Sway_Car.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = Sway_Car.iig; sourceTree = "<group>"; };
@@ -276,7 +277,7 @@
 				810CF6AA2A65E36D00600064 /* Sway Radio.app */,
 				810CF6B92A65E36F00600064 /* Sway RadioTests.xctest */,
 				810CF6C32A65E36F00600064 /* Sway RadioUITests.xctest */,
-				810CF6E42A65EC5200600064 /* app.waggie.Sway-Radio.Sway-Car.dext */,
+				810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,7 +425,7 @@
 			);
 			name = "Sway Car";
 			productName = "Sway Car";
-			productReference = 810CF6E42A65EC5200600064 /* app.waggie.Sway-Radio.Sway-Car.dext */;
+			productReference = 810CF6E42A65EC5200600064 /* app.waggie.Sway-TV.Sway-Car.dext */;
 			productType = "com.apple.product-type.driver-extension";
 		};
 		81546C3C2A64779500F2E98E /* Sway TV */ = {
@@ -547,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				810CF6B42A65E36F00600064 /* Preview Assets.xcassets in Resources */,
+				810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */,
 				810CF6B12A65E36F00600064 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,6 +719,8 @@
 				DEVELOPMENT_TEAM = LGH757AD8S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sway Radio";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -728,7 +732,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -749,6 +753,8 @@
 				DEVELOPMENT_TEAM = LGH757AD8S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Sway Radio";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -760,7 +766,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -860,8 +866,9 @@
 				DRIVERKIT_DEPLOYMENT_TARGET = 22.4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sway Car/Info.plist";
+				INFOPLIST_KEY_OSBundleUsageDescription = "";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio.Sway-Car";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV.Sway-Car";
 				PRODUCT_NAME = "$(inherited)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = driverkit;
@@ -879,8 +886,9 @@
 				DRIVERKIT_DEPLOYMENT_TARGET = 22.4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sway Car/Info.plist";
+				INFOPLIST_KEY_OSBundleUsageDescription = "";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio.Sway-Car";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV.Sway-Car";
 				PRODUCT_NAME = "$(inherited)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = driverkit;
@@ -1016,6 +1024,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sway-TV-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sway TV";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -1045,6 +1054,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sway-TV-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sway TV";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
