@@ -1,0 +1,21 @@
+//
+//  Sway_Car.iig
+//  Sway Car
+//
+//  Created by Lucas Pozzi de Souza on 7/17/23.
+//
+
+#ifndef Sway_Car_h
+#define Sway_Car_h
+
+#include <Availability.h>
+#include <DriverKit/IOService.iig>
+
+class Sway_Car: public IOService
+{
+public:
+    virtual kern_return_t
+    Start(IOService * provider) override;
+};
+
+#endif /* Sway_Car_h */
