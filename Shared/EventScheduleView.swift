@@ -18,13 +18,14 @@ struct Event: Identifiable {
 
 struct EventScheduleView: View {
     @State private var listItems = [Event]()
-    
+    @State private var message: String = "init"
     private let container = CKContainer(identifier: "iCloud.app.waggie.Sway-TV")
     private let publicDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").publicCloudDatabase
     private let recordType = "Events"
     
     var body: some View {
         VStack {
+            Text(message)
             List {
                 ForEach(listItems) { item in
                     VStack(alignment: .leading) {
@@ -58,12 +59,14 @@ struct EventScheduleView: View {
         publicDatabase.fetch(withQuery: query, inZoneWith: nil, desiredKeys: nil, resultsLimit: 5) { result in
             switch result {
             case .failure(let error):
+                self.message = error.localizedDescription
                 print("Error fetching items: \(error.localizedDescription)")
             case .success((let matchResults, _)):
                 let records = matchResults.compactMap { (recordId, results) -> CKRecord? in
                     do {
                         return try results.get()
                     } catch {
+                        self.message = error.localizedDescription
                         print("Error getting record \(error)")
                         return nil
                     }
@@ -71,18 +74,21 @@ struct EventScheduleView: View {
                 let items = records.compactMap { record -> Event? in
                     let id = record.recordID.recordName
                     guard let name = record["Name"] as? String else {
+                        self.message = "Failed to convert name"
                         print("Failed to convert name")
                         return nil
                     }
                     guard let description = record["Description"] as? String else {
+                        self.message = "Failed to convert description"
                         print("Failed to convert description")
                         return nil
                     }
                     guard let start = record["Start"] as? Date else {
-                        print("Failed to convert start")
+                        self.message = "Failed to convert start"
                         return nil
                     }
                     guard let end = record["End"] as? Date else {
+                        self.message = "Failed to convert end"
                         print("Failed to convert end")
                         return nil
                     }

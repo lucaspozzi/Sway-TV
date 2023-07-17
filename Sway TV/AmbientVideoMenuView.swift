@@ -15,7 +15,7 @@ struct AmbientVideoMenuView: View {
                             Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
                             Text("Start Ambient Video One")
                         }
-                    }
+                    }.background(Color.purple)
                     .padding()
                     
                     Button(action: {
@@ -27,7 +27,7 @@ struct AmbientVideoMenuView: View {
                                 .aspectRatio(contentMode: .fit)
                             Text("Start Ambient Video Two")
                         }
-                    }
+                    }.background(Color.indigo)
                     .padding()
                     
                     Button(action: {

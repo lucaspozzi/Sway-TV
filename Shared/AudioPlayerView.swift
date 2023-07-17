@@ -45,13 +45,11 @@ struct AudioPlayerView: View {
                             Image(systemName: "play")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                            Text("Start Listening to Radio")
+                            Text("Listen to Radio")
                         }
                     }
                     .frame(height: 190)
                 }
-                
-                StartSharePlayView()
                 
                 HStack {
                     Text("Live now:")
