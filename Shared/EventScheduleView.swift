@@ -18,7 +18,7 @@ struct Event: Identifiable {
 
 struct EventScheduleView: View {
     @State private var listItems = [Event]()
-    @State private var message: String = "Loading events..."
+    @State private var message: String = "No events found."
     private let container = CKContainer(identifier: "iCloud.app.waggie.Sway-TV")
     private let publicDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").publicCloudDatabase
     private let recordType = "Events"
@@ -30,17 +30,23 @@ struct EventScheduleView: View {
                 ForEach(listItems) { item in
                     VStack(alignment: .leading) {
                         Text(item.name).font(.headline)
-                        Text(item.description).font(.subheadline)
-                        Text("Starts \(item.start)")
-                        Text("Ends \(item.end)")
-                    }.padding()
+                        Text(item.description)
+                        Text("Starts \(formatDate(date: item.start))")
+                        Text("Ends \(formatDate(date: item.end))")
+                    }
                 }
-            }.padding()
+            }
         }
-        
         .onAppear(perform: fetchItems)
     }
     
+    private func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d 'at' ha zzz"
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST")
+        let formattedDate = dateFormatter.string(from: date)
+        return formattedDate
+    }
     
     private func fetchItems() {
         
@@ -90,7 +96,7 @@ struct EventScheduleView: View {
                 let sortedItems = items.sorted {
                     $0.start < $1.start
                 }
-                self.message = "Upcoming live radio events"
+                self.message = ""
                 self.listItems = sortedItems
             }
         }

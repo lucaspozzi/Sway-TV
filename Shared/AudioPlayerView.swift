@@ -51,10 +51,7 @@ struct AudioPlayerView: View {
                     .frame(height: 190)
                 }
                 
-                HStack {
-                    Text("Live now:")
-                    Text(currentTrackTitle).font(.headline)
-                }
+                Text(currentTrackTitle).font(.headline)
                 
             }
             .aspectRatio(contentMode: .fit)

@@ -47,7 +47,7 @@ struct AudioPlayerView: View {
                     Image(systemName: "pause")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }
+                }.padding()
             } else {
                 Button(action: {
                     if let url = URL(string: self.audioUrl) {
@@ -57,7 +57,7 @@ struct AudioPlayerView: View {
                     Image(systemName: "play")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }
+                }.padding()
             }
             
             

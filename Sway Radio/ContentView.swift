@@ -14,18 +14,24 @@ struct ContentView: View {
     var body: some View {
         TabView {
             
-            HomeTabView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-                .environmentObject(audioPlayer)
+            NavigationView {
+                HomeTabView()
+                    .environmentObject(audioPlayer)
+                    .navigationTitle("Sway Radio")
+            }
+            .tabItem {
+                Image(systemName: "radio")
+                Text("Radio")
+            }
             
-            EventScheduleView()
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Event Schedule")
-                }
+            NavigationView {
+                EventScheduleView()
+                    .navigationTitle("Event Schedule")
+            }
+            .tabItem {
+                Image(systemName: "calendar")
+                Text("Events")
+            }
         }
         
     }
