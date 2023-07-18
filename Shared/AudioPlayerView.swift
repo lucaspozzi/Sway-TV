@@ -13,7 +13,7 @@ struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
     @State private var artworkImage: UIImage? = nil
     @State private var artworkImageDefault: String = "audiodog"
-    @State private var currentTrackTitle: String = "DJ Lalo"
+    @State private var currentTrackTitle: String = "djclaudiof"
     @State private var timer: Timer?
     @State private var isShowingModal = false
     let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
