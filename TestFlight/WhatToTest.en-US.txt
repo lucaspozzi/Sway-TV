@@ -1,5 +1,1 @@
-iPhone:
-Play loading feedback color.
-
-TV:
-Nothing new.
+iPhone SE screen size available.

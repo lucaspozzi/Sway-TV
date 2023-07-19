@@ -15,19 +15,32 @@ struct AudioPlayerView: View {
     @State private var currentTrackTitle: String = "djclaudiof"
     @State private var timer: Timer?
     @State private var isShowingModal = false
+    @State private var smallScreen = false
     let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
     
     var body: some View {
         
         VStack {
             
-            Button(action: {
-                isShowingModal = true
-            }) {
-                Image(uiImage: artworkImage)
-                    .resizable().cornerRadius(10)
+            if(smallScreen){
+                Button(action: {
+                    isShowingModal = true
+                }) {
+                    Image(uiImage: artworkImage)
+                        .resizable().cornerRadius(10).frame(width: 200, height: 200, alignment: .center)
+                }
+                .aspectRatio(contentMode: .fit)
+            } else {
+                Button(action: {
+                    isShowingModal = true
+                }) {
+                    Image(uiImage: artworkImage)
+                        .resizable().cornerRadius(10)
+                }
+                .aspectRatio(contentMode: .fit)
             }
-            .aspectRatio(contentMode: .fit)
+            
+            
             
             Spacer()
             Text("Live now:")
@@ -62,6 +75,13 @@ struct AudioPlayerView: View {
         .onAppear{
             fetchOnce()
             startFetching()
+            
+            let screenHeight = UIScreen.main.bounds.size.height
+            let screenWidth = UIScreen.main.bounds.size.width
+            
+            if screenHeight == 568 && screenWidth == 320 {
+                smallScreen = true
+            }
         }
         .onDisappear{
             stopFetching()

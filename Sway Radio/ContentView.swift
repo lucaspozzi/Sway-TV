@@ -33,7 +33,6 @@ struct ContentView: View {
                 Text("Events")
             }
         }
-        
     }
 }
 
