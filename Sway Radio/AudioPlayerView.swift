@@ -27,11 +27,13 @@ struct AudioPlayerView: View {
                 Image(uiImage: artworkImage)
                     .resizable().cornerRadius(10)
             }
-            .aspectRatio(contentMode: .fill)
-            .padding()
+            .aspectRatio(contentMode: .fit)
             
+            Spacer()
             Text("Live now:")
-            Text(currentTrackTitle).font(.headline)
+            Text(currentTrackTitle)
+                .font(.headline).lineLimit(2).padding()
+                .multilineTextAlignment(.center)
             
             
             if audioPlayer.isPlaying {
@@ -41,7 +43,7 @@ struct AudioPlayerView: View {
                     Image(systemName: "pause")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }.padding()
+                }
             } else {
                 Button(action: {
                     if let url = URL(string: self.audioUrl) {
@@ -51,13 +53,12 @@ struct AudioPlayerView: View {
                     Image(systemName: "play")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }.padding().disabled(audioPlayer.isLoading)
+                }.disabled(audioPlayer.isLoading)
             }
             
-            
+            Spacer()
             
         }
-        .aspectRatio(contentMode: .fit)
         .onAppear{
             fetchOnce()
             startFetching()
