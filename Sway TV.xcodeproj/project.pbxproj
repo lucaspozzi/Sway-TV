@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810632482A6706FE008E62AB /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810632472A6706FE008E62AB /* AudioPlayer.swift */; };
 		810CF6AD2A65E36D00600064 /* Sway_RadioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6AC2A65E36D00600064 /* Sway_RadioApp.swift */; };
 		810CF6B12A65E36F00600064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 810CF6B02A65E36F00600064 /* Assets.xcassets */; };
 		810CF6B42A65E36F00600064 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 810CF6B32A65E36F00600064 /* Preview Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		810CF6CA2A65E36F00600064 /* Sway_RadioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6C92A65E36F00600064 /* Sway_RadioUITestsLaunchTests.swift */; };
 		810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6D52A65E47E00600064 /* AudioPlayerView.swift */; };
 		810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6D62A65E47F00600064 /* HomeTabView.swift */; };
-		810CF6DB2A65E53100600064 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6E2A64784A00F2E98E /* AudioPlayer.swift */; };
 		810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6C2A64784A00F2E98E /* EventScheduleView.swift */; };
 		810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
 		810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
@@ -83,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		810632472A6706FE008E62AB /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		810CF6AA2A65E36D00600064 /* Sway Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		810CF6AC2A65E36D00600064 /* Sway_RadioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_RadioApp.swift; sourceTree = "<group>"; };
 		810CF6B02A65E36F00600064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,13 +172,14 @@
 			isa = PBXGroup;
 			children = (
 				810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */,
+				810632472A6706FE008E62AB /* AudioPlayer.swift */,
 				810CF6D52A65E47E00600064 /* AudioPlayerView.swift */,
 				810CF6D62A65E47F00600064 /* HomeTabView.swift */,
-				810CF6D42A65E3B100600064 /* Sway Radio.entitlements */,
 				810CF6AC2A65E36D00600064 /* Sway_RadioApp.swift */,
-				810CF6B02A65E36F00600064 /* Assets.xcassets */,
-				810CF6B22A65E36F00600064 /* Preview Content */,
 				810CF6F62A66070100600064 /* ContentView.swift */,
+				810CF6B02A65E36F00600064 /* Assets.xcassets */,
+				810CF6D42A65E3B100600064 /* Sway Radio.entitlements */,
+				810CF6B22A65E36F00600064 /* Preview Content */,
 			);
 			path = "Sway Radio";
 			sourceTree = "<group>";
@@ -248,6 +250,8 @@
 		81546C3F2A64779500F2E98E /* Sway TV */ = {
 			isa = PBXGroup;
 			children = (
+				81546C6E2A64784A00F2E98E /* AudioPlayer.swift */,
+				81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */,
 				81546C7D2A64849300F2E98E /* Sway TV.entitlements */,
 				81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */,
 				81546C772A6479BC00F2E98E /* HomeTabView.swift */,
@@ -287,8 +291,6 @@
 		81546C6A2A6477F400F2E98E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				81546C6E2A64784A00F2E98E /* AudioPlayer.swift */,
-				81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */,
 				81546C6C2A64784A00F2E98E /* EventScheduleView.swift */,
 				81546C6F2A64784A00F2E98E /* Media.xcassets */,
 				81546C702A64784B00F2E98E /* RadioStationMetadata.swift */,
@@ -534,8 +536,8 @@
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
 				810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */,
 				810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */,
-				810CF6DB2A65E53100600064 /* AudioPlayer.swift in Sources */,
 				810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */,
+				810632482A6706FE008E62AB /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

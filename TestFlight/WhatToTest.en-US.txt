@@ -1,6 +1,5 @@
-On TV:
-Please test play Ambient Video while listening to the radio.
-Test Siri Remote usage.
+iPhone:
+Play loading feedback color.
 
-On iPhone
-Please test audio playback and event calendar
+TV:
+Nothing new.

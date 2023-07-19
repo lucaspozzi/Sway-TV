@@ -11,8 +11,7 @@ import Intents
 
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
-    @State private var artworkImage: UIImage? = nil
-    @State private var artworkImageDefault: String = "audiodog"
+    @State private var artworkImage: UIImage = UIImage(named: "audiodog")!
     @State private var currentTrackTitle: String = "djclaudiof"
     @State private var timer: Timer?
     @State private var isShowingModal = false
@@ -25,13 +24,8 @@ struct AudioPlayerView: View {
             Button(action: {
                 isShowingModal = true
             }) {
-                if let artworkImage = artworkImage {
-                    Image(uiImage: artworkImage)
-                        .resizable().cornerRadius(10)
-                } else {
-                    Image(artworkImageDefault)
-                        .resizable().cornerRadius(10)
-                }
+                Image(uiImage: artworkImage)
+                    .resizable().cornerRadius(10)
             }
             .aspectRatio(contentMode: .fill)
             .padding()
@@ -51,13 +45,13 @@ struct AudioPlayerView: View {
             } else {
                 Button(action: {
                     if let url = URL(string: self.audioUrl) {
-                        self.audioPlayer.startPlayback(audioUrl: url)
+                        self.audioPlayer.startPlayback(audioUrl: url, title: self.currentTrackTitle, artwork: artworkImage)
                     }
                 }) {
                     Image(systemName: "play")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                }.padding()
+                }.padding().disabled(audioPlayer.isLoading)
             }
             
             
@@ -72,19 +66,14 @@ struct AudioPlayerView: View {
             stopFetching()
         }
         .sheet(isPresented: $isShowingModal) {
-            if let artworkImage = artworkImage {
-                Image(uiImage: artworkImage)
-                    .resizable().cornerRadius(10)
-                    .aspectRatio(contentMode: .fit)
-            } else {
-                Image(artworkImageDefault)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
+            Image(uiImage: artworkImage)
+                .resizable().cornerRadius(10)
+                .aspectRatio(contentMode: .fit)
         }
     }
     
     func fetchOnce() {
+        
         fetchRadioStationMetadata { result in
             switch result {
             case .success(let metadata):

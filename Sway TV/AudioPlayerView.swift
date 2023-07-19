@@ -11,8 +11,7 @@ import Intents
 
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
-    @State private var artworkImage: UIImage? = nil
-    @State private var artworkImageDefault: String = "audiodog"
+    @State private var artworkImage: UIImage = UIImage(named: "audiodog")!
     @State private var currentTrackTitle: String = "djclaudiof"
     @State private var timer: Timer?
     @State private var isShowingModal = false
@@ -62,13 +61,8 @@ struct AudioPlayerView: View {
                 isShowingModal = true
             }) {
                 VStack {
-                    if let artworkImage = artworkImage {
-                        Image(uiImage: artworkImage)
-                            .resizable().cornerRadius(10)
-                    } else {
-                        Image(artworkImageDefault)
-                            .resizable().cornerRadius(10)
-                    }
+                    Image(uiImage: artworkImage)
+                        .resizable().cornerRadius(10)
                     Text("View album artwork")
                 }
             }
@@ -86,15 +80,9 @@ struct AudioPlayerView: View {
             stopFetching()
         }
         .sheet(isPresented: $isShowingModal) {
-            if let artworkImage = artworkImage {
-                Image(uiImage: artworkImage)
-                    .resizable().cornerRadius(10)
-                    .aspectRatio(contentMode: .fit)
-            } else {
-                Image(artworkImageDefault)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
+            Image(uiImage: artworkImage)
+                .resizable().cornerRadius(10)
+                .aspectRatio(contentMode: .fit)
         }
     }
     
