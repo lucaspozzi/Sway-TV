@@ -21,10 +21,17 @@ struct ContentView: View {
                 }
                 .environmentObject(audioPlayer)
             
+            RecentView()
+                .tabItem {
+                    Image(systemName: "music.note.list")
+                    Text("Recent")
+                }
+            
+            
             EventScheduleView()
                 .tabItem {
                     Image(systemName: "calendar")
-                    Text("Event Schedule")
+                    Text("Events")
                 }
         }
         .onPlayPauseCommand {

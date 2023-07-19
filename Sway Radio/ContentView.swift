@@ -25,6 +25,15 @@ struct ContentView: View {
             }
             
             NavigationView {
+                RecentView()
+                    .navigationTitle("Recently played")
+            }
+            .tabItem {
+                Image(systemName: "music.note.list")
+                Text("Recent")
+            }
+            
+            NavigationView {
                 EventScheduleView()
                     .navigationTitle("Event Schedule")
             }

@@ -35,6 +35,8 @@
 		81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
 		81546C7A2A6479BD00F2E98E /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C772A6479BC00F2E98E /* HomeTabView.swift */; };
 		81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */; };
+		816CB3972A68957A001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
+		816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
 		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,7 @@
 		81546C772A6479BC00F2E98E /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbientVideoMenuView.swift; sourceTree = "<group>"; };
 		81546C7D2A64849300F2E98E /* Sway TV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway TV.entitlements"; sourceTree = "<group>"; };
+		816CB3962A68957A001FB8F5 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
 		81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,6 +294,7 @@
 		81546C6A2A6477F400F2E98E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				816CB3962A68957A001FB8F5 /* RecentView.swift */,
 				81546C6C2A64784A00F2E98E /* EventScheduleView.swift */,
 				81546C6F2A64784A00F2E98E /* Media.xcassets */,
 				81546C702A64784B00F2E98E /* RadioStationMetadata.swift */,
@@ -538,6 +542,7 @@
 				810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */,
 				810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */,
 				810632482A6706FE008E62AB /* AudioPlayer.swift in Sources */,
+				816CB3972A68957A001FB8F5 /* RecentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +570,7 @@
 				81546C722A64784B00F2E98E /* EventScheduleView.swift in Sources */,
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
+				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
 				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
 				81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */,

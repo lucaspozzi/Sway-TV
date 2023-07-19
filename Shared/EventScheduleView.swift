@@ -24,18 +24,16 @@ struct EventScheduleView: View {
     private let recordType = "Events"
     
     var body: some View {
-        VStack {
-            Text(message).font(.title)
-            List {
-                ForEach(listItems) { item in
-                    VStack(alignment: .leading) {
-                        Text(item.name).font(.headline)
-                        Text(item.description)
-                        Text("Starts \(formatDate(date: item.start))")
-                        Text("Ends \(formatDate(date: item.end))")
-                    }
+        List {
+            ForEach(listItems) { item in
+                VStack(alignment: .leading) {
+                    Text(item.name).font(.headline)
+                    Text(item.description)
+                    Text("Starts \(formatDate(date: item.start))")
+                    Text("Ends \(formatDate(date: item.end))")
                 }
             }
+            Text(message).font(.title)
         }
         .onAppear(perform: fetchItems)
     }
