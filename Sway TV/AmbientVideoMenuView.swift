@@ -8,14 +8,15 @@ struct AmbientVideoMenuView: View {
             Text("Ambient Videos")
             ScrollView(.horizontal, showsIndicators: true) {
                 HStack {
+                    Spacer()
                     Button(action: {
                         playVideoFullScreen(url: "https://drive.google.com/uc?export=download&id=1XmcoSiJX8cdxu0VXKUlusb-J-PlyR4PB")
                     }) {
                         VStack {
-                            Image("videoplaceholder").resizable().aspectRatio(contentMode: .fit)
+                            Image("videoplaceholder").resizable().aspectRatio(contentMode: .fill)
                             Text("Ocean")
                         }
-                    }.background(Color.purple)
+                    }.buttonStyle(.card)
                     .padding()
                     
                     Button(action: {
@@ -24,10 +25,10 @@ struct AmbientVideoMenuView: View {
                         VStack {
                             Image("videoplaceholder")
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fill)
                             Text("Rings")
                         }
-                    }.background(Color.indigo)
+                    }.buttonStyle(.card)
                     .padding()
                     
                     Button(action: {
@@ -36,12 +37,12 @@ struct AmbientVideoMenuView: View {
                         VStack {
                             Image("videoplaceholder")
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fill)
                             Text("Triangles")
                         }
-                    }
+                    }.buttonStyle(.card)
                     .padding()
-                    
+                    Spacer()
                 }
             }
         }

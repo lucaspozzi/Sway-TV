@@ -29,10 +29,10 @@ struct AudioPlayerView: View {
                         HStack {
                             Image(systemName: "pause")
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fit).foregroundColor(.purple)
                             Text("Pause Radio")
-                        }
-                    }
+                        }.padding()
+                    }.buttonStyle(.card)
                     .frame(height: 190)
                 } else {
                     Button(action: {
@@ -43,10 +43,10 @@ struct AudioPlayerView: View {
                         HStack {
                             Image(systemName: "play")
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(contentMode: .fit).foregroundColor(.purple)
                             Text("Listen to Radio")
-                        }
-                    }
+                        }.padding()
+                    }.buttonStyle(.card)
                     .frame(height: 190)
                 }
                 
@@ -65,10 +65,19 @@ struct AudioPlayerView: View {
                         .resizable().cornerRadius(10)
                     Text("View album artwork")
                 }
-            }
+            }.buttonStyle(.card)
             .aspectRatio(contentMode: .fit)
             .padding()
             .frame(width: 880)
+            .background(
+                ZStack {
+                    Circle()
+                        .fill(Color.purple)
+                        .blur(radius: 50)
+                        .offset(x: 0, y: 0)
+                }
+            )
+            
             
         }
         .frame(height: 740)

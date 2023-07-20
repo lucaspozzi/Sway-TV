@@ -28,6 +28,14 @@ struct AudioPlayerView: View {
                 }) {
                     Image(uiImage: artworkImage)
                         .resizable().cornerRadius(10).frame(width: 200, height: 200, alignment: .center)
+                        .background(
+                            ZStack {
+                                Circle()
+                                    .fill(Color.purple)
+                                    .blur(radius: 15)
+                                    .offset(x: 0, y: 0)
+                            }
+                        )
                 }
                 .aspectRatio(contentMode: .fit)
             } else {
@@ -36,6 +44,14 @@ struct AudioPlayerView: View {
                 }) {
                     Image(uiImage: artworkImage)
                         .resizable().cornerRadius(10)
+                        .background(
+                            ZStack {
+                                Circle()
+                                    .fill(Color.purple)
+                                    .blur(radius: 15)
+                                    .offset(x: 0, y: 0)
+                            }
+                        )
                 }
                 .aspectRatio(contentMode: .fit)
             }
