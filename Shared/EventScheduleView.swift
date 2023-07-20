@@ -24,6 +24,7 @@ struct EventScheduleView: View {
     private let recordType = "Events"
     
     var body: some View {
+        
         List {
             ForEach(listItems) { item in
                 VStack(alignment: .leading) {
@@ -33,7 +34,9 @@ struct EventScheduleView: View {
                     Text("Ends \(formatDate(date: item.end))")
                 }
             }
-            Text(message).font(.title)
+            if(listItems.isEmpty){
+                Text(message).font(.title)
+            }
         }
         .onAppear(perform: fetchItems)
     }

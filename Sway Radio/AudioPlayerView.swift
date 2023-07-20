@@ -75,6 +75,10 @@ struct AudioPlayerView: View {
                 }
             } else {
                 Button(action: {
+                    DispatchQueue.main.async {
+                        self.audioPlayer.isLoading = true
+                    }
+                    
                     if let url = URL(string: self.audioUrl) {
                         self.audioPlayer.startPlayback(audioUrl: url, title: self.currentTrackTitle, artwork: artworkImage)
                     }

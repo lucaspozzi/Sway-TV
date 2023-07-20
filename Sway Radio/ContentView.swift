@@ -26,7 +26,7 @@ struct ContentView: View {
             
             NavigationView {
                 RecentView()
-                    .navigationTitle("Recently played")
+                    .navigationTitle("Recently on air")
             }
             .tabItem {
                 Image(systemName: "music.note.list")
