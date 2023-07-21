@@ -11,6 +11,10 @@ import MediaPlayer
     
     @Published var isPlaying = false
     @Published var isLoading = false
+    
+    @Published var pseudoSoundLevelLeft: CGFloat = 0.0
+    @Published var pseudoSoundLevelRight: CGFloat = 0.0
+
     private var audioPlayer: AVPlayer?
     private var statusObserver: NSKeyValueObservation?
     private var timeControlStatusObserver: NSKeyValueObservation?
@@ -61,12 +65,21 @@ import MediaPlayer
                 }
             }
         }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
+            self?.pseudoSoundLevelLeft = CGFloat.random(in: 0.0...1.0)
+            self?.pseudoSoundLevelRight = CGFloat.random(in: 0.0...1.0)
+        }
+
+        
     }
     
     deinit {
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
     }
+    
     
     func startPlayback(title: String, artwork: UIImage) {
         self.isLoading = true

@@ -66,13 +66,31 @@ struct AudioPlayerView: View {
             
             
             if audioPlayer.isPlaying {
+                
                 Button(action: {
                     self.audioPlayer.stopPlayback()
                 }) {
-                    Image(systemName: "pause")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    HStack(spacing: 61) {
+                        ForEach(0..<2) { index in
+                            GeometryReader { geometry in
+                                ZStack(alignment: .bottom) {
+                                    Rectangle()  // Grey rectangle in the background
+                                        .fill(Color.gray.opacity(0.2))
+                                    
+                                    // Colored rectangle in the foreground, its height changes with sound level
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
+                                        .frame(height: geometry.size.height * (index == 0 ? CGFloat(audioPlayer.pseudoSoundLevelLeft) : CGFloat(audioPlayer.pseudoSoundLevelRight)))
+                                        .cornerRadius(15) // Adding corner radius
+                                }
+                            }
+                            .frame(width: 30)  // Width of each bar
+                        }
+                    }
                 }
+
+                
+                
             } else {
                 Button(action: {
                     DispatchQueue.main.async {

@@ -1,3 +1,4 @@
 Please test:
 - system playback controls on lock screen.
-- play button loading feedback performance (should gray out immediatelly after tap until it plays)
+- play button loading feedback performance - made some needed changes
+- pause button
