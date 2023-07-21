@@ -76,6 +76,7 @@ struct AudioPlayerView: View {
                                 ZStack(alignment: .bottom) {
                                     Rectangle()  // Grey rectangle in the background
                                         .fill(Color.gray.opacity(0.2))
+                                        .cornerRadius(15)
                                     
                                     // Colored rectangle in the foreground, its height changes with sound level
                                     Rectangle()
@@ -87,6 +88,7 @@ struct AudioPlayerView: View {
                             .frame(width: 30)  // Width of each bar
                         }
                     }
+                    .padding(.horizontal)
                 }
 
                 
