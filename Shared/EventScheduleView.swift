@@ -32,10 +32,10 @@ struct EventScheduleView: View {
                     Text(item.description)
                     Text("Starts \(formatDate(date: item.start))")
                     Text("Ends \(formatDate(date: item.end))")
-                }
+                }.padding()
             }
-            if(listItems.isEmpty){
-                Text(message).font(.title)
+            if(listItems.count == 0){
+                Text(message).font(.title).padding()
             }
         }
         .onAppear(perform: fetchItems)
@@ -97,7 +97,7 @@ struct EventScheduleView: View {
                 let sortedItems = items.sorted {
                     $0.start < $1.start
                 }
-                self.message = ""
+                
                 self.listItems = sortedItems
             }
         }

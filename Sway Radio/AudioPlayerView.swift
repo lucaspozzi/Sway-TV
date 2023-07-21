@@ -15,50 +15,44 @@ struct AudioPlayerView: View {
     @State private var artworkImage: UIImage = UIImage(named: "audiodog")!
     @State private var currentTrackTitle: String = "djclaudiof"
     @State private var timer: Timer?
-    @State private var isShowingModal = false
-    @State private var smallScreen = false
+    
+    // Pinch to Zoom
+    private struct DragState {
+        var translation = CGSize.zero // may be needed when pan can be added
+        var zoom = CGFloat(1.0)
+    }
+    
+    @GestureState(resetTransaction: Transaction(animation: .spring())) private var dragState = DragState()
+    
+    private func pinchGesture(updating gestureState: GestureState<DragState>) -> some Gesture {
+        MagnificationGesture().updating(gestureState) { (value, state, transaction) in
+            state.zoom = value
+            transaction = Transaction(animation: .spring())
+        }
+    }
+    
     
     var body: some View {
         
         VStack {
             
-            if(smallScreen){
-                Button(action: {
-                    isShowingModal = true
-                }) {
-                    Image(uiImage: artworkImage)
-                        .resizable().cornerRadius(10).frame(width: 200, height: 200, alignment: .center)
-                        .background(
-                            ZStack {
-                                Circle()
-                                    .fill(Color.purple)
-                                    .blur(radius: 15)
-                                    .offset(x: 0, y: 0)
-                            }
-                        )
-                }
+            Image(uiImage: artworkImage)
+                .resizable().cornerRadius(10)
+                .background(
+                    ZStack {
+                        Circle()
+                            .fill(Color.purple)
+                            .blur(radius: 15)
+                            .offset(x: 0, y: 0)
+                    }
+                )
+                .scaleEffect(dragState.zoom)
+                .gesture(pinchGesture(updating: $dragState))
                 .aspectRatio(contentMode: .fit)
-            } else {
-                Button(action: {
-                    isShowingModal = true
-                }) {
-                    Image(uiImage: artworkImage)
-                        .resizable().cornerRadius(10)
-                        .background(
-                            ZStack {
-                                Circle()
-                                    .fill(Color.purple)
-                                    .blur(radius: 15)
-                                    .offset(x: 0, y: 0)
-                            }
-                        )
-                }
-                .aspectRatio(contentMode: .fit)
-            }
-            
             
             
             Spacer()
+            
             Text("Live now:")
             Text(currentTrackTitle)
                 .font(.headline).lineLimit(2).padding()
@@ -82,7 +76,8 @@ struct AudioPlayerView: View {
                                     Rectangle()
                                         .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
                                         .frame(height: geometry.size.height * (index == 0 ? CGFloat(audioPlayer.pseudoSoundLevelLeft) : CGFloat(audioPlayer.pseudoSoundLevelRight)))
-                                        .cornerRadius(15) // Adding corner radius
+                                        .cornerRadius(15)
+                                        .animation(.default)
                                 }
                             }
                             .frame(width: 30)  // Width of each bar
@@ -114,20 +109,9 @@ struct AudioPlayerView: View {
             fetchOnce()
             startFetching()
             
-            let screenHeight = UIScreen.main.bounds.size.height
-            let screenWidth = UIScreen.main.bounds.size.width
-            
-            if screenHeight == 568 && screenWidth == 320 {
-                smallScreen = true
-            }
         }
         .onDisappear{
             stopFetching()
-        }
-        .sheet(isPresented: $isShowingModal) {
-            Image(uiImage: artworkImage)
-                .resizable().cornerRadius(10)
-                .aspectRatio(contentMode: .fit)
         }
     }
     

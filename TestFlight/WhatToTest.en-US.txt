@@ -1,4 +1,3 @@
 Please test:
-- system playback controls on lock screen.
-- play button loading feedback performance - made some needed changes
-- pause button
+- interface glitches.
+- playback controls

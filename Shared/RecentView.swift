@@ -15,7 +15,7 @@ struct RecentView: View {
         List {
             ForEach(history.indices, id: \.self) { index in
                 VStack(alignment: .leading) {
-                    Text(history[index].title).font(.headline)
+                    Text(history[index].title).font(.headline).padding()
                 }
             }
         }
