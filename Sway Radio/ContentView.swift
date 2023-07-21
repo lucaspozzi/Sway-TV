@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var audioPlayer = AudioPlayer()
-    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
     
     var body: some View {
         TabView {

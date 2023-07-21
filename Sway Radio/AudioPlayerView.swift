@@ -9,6 +9,7 @@ import SwiftUI
 import AVFoundation
 import Intents
 
+
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
     @State private var artworkImage: UIImage = UIImage(named: "audiodog")!
@@ -16,7 +17,6 @@ struct AudioPlayerView: View {
     @State private var timer: Timer?
     @State private var isShowingModal = false
     @State private var smallScreen = false
-    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
     
     var body: some View {
         
@@ -77,15 +77,13 @@ struct AudioPlayerView: View {
                 Button(action: {
                     DispatchQueue.main.async {
                         self.audioPlayer.isLoading = true
-                    }
-                    
-                    if let url = URL(string: self.audioUrl) {
-                        self.audioPlayer.startPlayback(audioUrl: url, title: self.currentTrackTitle, artwork: artworkImage)
+                        self.audioPlayer.startPlayback(title: self.currentTrackTitle, artwork: artworkImage)
                     }
                 }) {
                     Image(systemName: "play")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
                 }.disabled(audioPlayer.isLoading)
             }
             

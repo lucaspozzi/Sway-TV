@@ -15,17 +15,22 @@ import MediaPlayer
     private var statusObserver: NSKeyValueObservation?
     private var timeControlStatusObserver: NSKeyValueObservation?
     private var nowPlayingInfo: [String : Any] = [:]
+    private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
+    private var artwork: UIImage = UIImage(named: "audiodog")!
     
-    deinit {
-        statusObserver?.invalidate()
-        timeControlStatusObserver?.invalidate()
-    }
     
-    func startPlayback(audioUrl: URL, title: String, artwork: UIImage) {
+    // init audio player with url
+    override init() {
+        super.init()
         
-        self.isLoading = true
+        // Initialize AVPlayer with a single, specific URL
+        if let url = audioUrl {
+            self.audioPlayer = AVPlayer(url: url)
+        }
         
-        audioPlayer = AVPlayer(url: audioUrl)
+        // Set the now playing info
+        nowPlayingInfo[MPMediaItemPropertyTitle] = "Sway Radio"
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in self.artwork }
         
         do {
             let audioSession = AVAudioSession.sharedInstance()
@@ -35,39 +40,45 @@ import MediaPlayer
             print("There was a problem setting up the audio session: \(error)")
         }
         
-        setupRemoteTransportControls()
-        
-        // Set the now playing info
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in artwork }
-        
-        updatePlaybackDuration()
-        
-        statusObserver = audioPlayer?.currentItem?.observe(\.status, options: [.new, .initial]) { [weak self] item, _ in
+        timeControlStatusObserver = audioPlayer?.observe(\.timeControlStatus, options: [.new, .initial]) { [weak self] _, _ in
             DispatchQueue.main.async {
-                switch item.status {
-                case .readyToPlay:
-                    self?.audioPlayer?.play()
-                    self?.isLoading = false
-                    self?.isPlaying = true
-                case .failed:
-                    self?.isLoading = false
-                    // todo handle error
-                case .unknown:
-                    break
-                @unknown default:
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                switch strongSelf.audioPlayer?.timeControlStatus {
+                case .waitingToPlayAtSpecifiedRate:
+                    strongSelf.isLoading = true
+                    strongSelf.isPlaying = false
+                case .playing:
+                    strongSelf.isLoading = false
+                    strongSelf.isPlaying = true
+                case .paused:
+                    strongSelf.isLoading = false
+                    strongSelf.isPlaying = false
+                default:
                     break
                 }
             }
         }
-        
-        timeControlStatusObserver = audioPlayer?.observe(\.timeControlStatus, options: [.new, .initial]) { [weak self] _, _ in
-            DispatchQueue.main.async {
-                self?.isPlaying = self?.audioPlayer?.timeControlStatus == .playing
-                self?.isLoading = self?.audioPlayer?.timeControlStatus == .waitingToPlayAtSpecifiedRate
-            }
-        }
     }
+    
+    deinit {
+        statusObserver?.invalidate()
+        timeControlStatusObserver?.invalidate()
+    }
+    
+    func startPlayback(title: String, artwork: UIImage) {
+        self.isLoading = true
+        self.setupRemoteTransportControls()
+        self.updatePlaybackDuration()
+        self.audioPlayer?.play()
+        
+        // Set the now playing info
+        nowPlayingInfo[MPMediaItemPropertyTitle] = title
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in artwork }
+    }
+    
     
     func setupRemoteTransportControls() {
         // Get the shared command center
@@ -102,7 +113,6 @@ import MediaPlayer
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = durationInSeconds
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
-
 
     
     @objc func stopPlayback() {
