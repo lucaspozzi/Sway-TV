@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentView: View {
     
@@ -14,6 +15,7 @@ struct ContentView: View {
     @State private var isAirPlayEnabled = false
     @State private var isSharePlayEnabled = false
     let featureFlags = FeatureFlags()
+    private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
 
     
     var body: some View {
@@ -39,20 +41,27 @@ struct ContentView: View {
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             HStack {
+                                
                                 Button(action: {
-                                    //
+                                    Task {
+                                        if let url = self.audioUrl {
+                                            let sessionData = RadioActivity.SessionData(url: url)
+                                            let activity = RadioActivity(sessionData: sessionData)
+                                            do {
+                                                try await activity.activate()
+                                            } catch {
+                                                // handle error
+                                                print("Failed to activate activity: \(error)")
+                                            }
+                                        }
+                                    }
                                 }) {
                                     Image(systemName: "shareplay")
-                                        .resizable()
-                                        .scaledToFit()
                                 }.disabled(!isSharePlayEnabled)
-                                Button(action:{
-                                    //
-                                }){
-                                    Image(systemName: "airplayaudio")
-                                        .resizable()
-                                        .scaledToFit()
-                                }.disabled(!isAirPlayEnabled)
+
+
+                                AirPlayView().padding(.horizontal)
+                                
                             }
                         }
                     }

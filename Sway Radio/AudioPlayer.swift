@@ -6,6 +6,7 @@
 import Foundation
 import AVFoundation
 import MediaPlayer
+import GroupActivities
 
 @objc class AudioPlayer: NSObject, ObservableObject {
     
@@ -38,7 +39,7 @@ import MediaPlayer
         
         do {
             let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playback, mode: .default, options: [])
+            try audioSession.setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
             try audioSession.setActive(true)
         } catch {
             print("There was a problem setting up the audio session: \(error)")
@@ -72,6 +73,11 @@ import MediaPlayer
             self?.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
         }
 
+//        Task {
+//            for session in GroupSession<RadioActivity>. {
+//                self.startPlayback(title: "Sway Radio", artwork: UIImage(named: "audiodog")!)
+//            }
+//        }
         
     }
     
