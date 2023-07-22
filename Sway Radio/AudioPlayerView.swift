@@ -15,6 +15,8 @@ struct AudioPlayerView: View {
     @State private var artworkImage: UIImage = UIImage(named: "audiodog")!
     @State private var currentTrackTitle: String = "djclaudiof"
     @State private var timer: Timer?
+    @State private var updateAlbumArt: Bool = false
+    let featureFlags = FeatureFlags()
     
     // Pinch to Zoom
     private struct DragState {
@@ -36,6 +38,9 @@ struct AudioPlayerView: View {
         
         VStack {
             
+            Text(currentTrackTitle)
+                .font(.largeTitle).padding().frame(alignment: .leading)
+            
             Image(uiImage: artworkImage)
                 .resizable().cornerRadius(10)
                 .background(
@@ -52,11 +57,6 @@ struct AudioPlayerView: View {
             
             
             Spacer()
-            
-            Text("Live now:")
-            Text(currentTrackTitle)
-                .font(.headline).lineLimit(2).padding()
-                .multilineTextAlignment(.center)
             
             
             if audioPlayer.isPlaying {
@@ -83,10 +83,8 @@ struct AudioPlayerView: View {
                             .frame(width: 30)  // Width of each bar
                         }
                     }
-                    .padding(.horizontal)
+                    .padding()
                 }
-
-                
                 
             } else {
                 Button(action: {
@@ -104,8 +102,17 @@ struct AudioPlayerView: View {
             
             Spacer()
             
+            //            CustomSlider(value: $audioPlayer.currentVolume)
+            //                .foregroundColor(.accentColor)
+            //                .padding()
+            //                .aspectRatio(contentMode: .fill).disabled(true)
+            //
+            //            Spacer()
         }
         .onAppear{
+            featureFlags.fetchFeatureFlag(named: "UpdateAlbumArt") { (isEnabled) in
+                self.updateAlbumArt = isEnabled
+            }
             fetchOnce()
             startFetching()
             
@@ -120,15 +127,17 @@ struct AudioPlayerView: View {
         fetchRadioStationMetadata { result in
             switch result {
             case .success(let metadata):
-                DispatchQueue.global().async {
-                    if let url = URL(string: metadata.currentTrack.artworkURLLarge),
-                       let data = try? Data(contentsOf: url),
-                       let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            artworkImage = image
+                if(self.updateAlbumArt){
+                    DispatchQueue.global().async {
+                        if let url = URL(string: metadata.currentTrack.artworkURLLarge),
+                           let data = try? Data(contentsOf: url),
+                           let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                artworkImage = image
+                            }
                         }
+                        
                     }
-                    
                 }
                 DispatchQueue.main.async {
                     currentTrackTitle = metadata.currentTrack.title
