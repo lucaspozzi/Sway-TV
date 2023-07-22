@@ -6,44 +6,56 @@
 //
 
 import SwiftUI
-import CloudKit
 
 struct ContentView: View {
     
     @StateObject var audioPlayer = AudioPlayer()
     @State private var isEventsTabEnabled = false
-    private let container = CKContainer(identifier: "iCloud.app.waggie.Sway-TV")
-    private let publicDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").publicCloudDatabase
-    private let recordType = "FeatureFlags"
+    @State private var isAirPlayEnabled = false
+    @State private var isSharePlayEnabled = false
+    let featureFlags = FeatureFlags()
 
-    func fetchFeatureFlag(named featureName: String) {
-        let predicate = NSPredicate(format: "featureName = %@", featureName)
-        let query = CKQuery(recordType: recordType, predicate: predicate)
-        
-        publicDatabase.fetch(withQuery: query, inZoneWith: nil, desiredKeys: nil, resultsLimit: 1) { result in
-            switch result {
-            case .failure(let error):
-                print("An error occurred: \(error.localizedDescription)")
-            case .success((let matchResults, _)):
-                if let record = matchResults.first?.1,
-                   case let .success(recordData) = record,
-                   let isEnabled = recordData["isEnabled"] as? Int64 {
-                    DispatchQueue.main.async {
-                        self.isEventsTabEnabled = isEnabled != 0
-                    }
-                }
-            }
-        }
-    }
-
-
+    
     var body: some View {
         TabView {
             
             NavigationView {
                 HomeTabView()
                     .environmentObject(audioPlayer)
-                    .navigationTitle("Sway Radio")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            if(audioPlayer.isLoading){
+                                HStack {
+                                    Image(systemName: "antenna.radiowaves.left.and.right.slash")
+                                    Text("Tunning...")
+                                }
+                                
+                            } else {
+                                HStack{
+                                    Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.red)
+                                    Text("Live")
+                                }
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            HStack {
+                                Button(action: {
+                                    //
+                                }) {
+                                    Image(systemName: "shareplay")
+                                        .resizable()
+                                        .scaledToFit()
+                                }.disabled(!isSharePlayEnabled)
+                                Button(action:{
+                                    //
+                                }){
+                                    Image(systemName: "airplayaudio")
+                                        .resizable()
+                                        .scaledToFit()
+                                }.disabled(!isAirPlayEnabled)
+                            }
+                        }
+                    }
             }
             .tabItem {
                 Image(systemName: "radio")
@@ -72,7 +84,15 @@ struct ContentView: View {
             
         }
         .onAppear {
-            fetchFeatureFlag(named: "isEventsTabEnabled")
+            featureFlags.fetchFeatureFlag(named: "EventsTab") { (isEnabled) in
+                self.isEventsTabEnabled = isEnabled
+            }
+            featureFlags.fetchFeatureFlag(named: "SharePlay") { (isEnabled) in
+                self.isSharePlayEnabled = isEnabled
+            }
+            featureFlags.fetchFeatureFlag(named: "AirPlay") { (isEnabled) in
+                self.isAirPlayEnabled = isEnabled
+            }
         }
     }
 }
