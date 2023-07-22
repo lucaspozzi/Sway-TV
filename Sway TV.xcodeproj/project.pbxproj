@@ -20,6 +20,9 @@
 		810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
 		810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
 		810CF6F72A66070100600064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6F62A66070100600064 /* ContentView.swift */; };
+		8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
+		8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
+		8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9392A6C687600C283E3 /* CustomSlider.swift */; };
 		81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C402A64779500F2E98E /* Sway_TVApp.swift */; };
 		81546C432A64779500F2E98E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C422A64779500F2E98E /* ContentView.swift */; };
 		81546C452A64779600F2E98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C442A64779600F2E98E /* Assets.xcassets */; };
@@ -101,6 +104,8 @@
 		810CF6E62A65EC5200600064 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = Library/Frameworks/DriverKit.framework; sourceTree = DEVELOPER_DIR; };
 		810CF6F62A66070100600064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sway-Radio-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8136C9362A6C61F200C283E3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		8136C9392A6C687600C283E3 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		81546C3D2A64779500F2E98E /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81546C402A64779500F2E98E /* Sway_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_TVApp.swift; sourceTree = "<group>"; };
 		81546C422A64779500F2E98E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 		810CF6AB2A65E36D00600064 /* Sway Radio */ = {
 			isa = PBXGroup;
 			children = (
+				8136C9392A6C687600C283E3 /* CustomSlider.swift */,
 				810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */,
 				810632472A6706FE008E62AB /* AudioPlayer.swift */,
 				810CF6D52A65E47E00600064 /* AudioPlayerView.swift */,
@@ -299,6 +305,7 @@
 				81546C6F2A64784A00F2E98E /* Media.xcassets */,
 				81546C702A64784B00F2E98E /* RadioStationMetadata.swift */,
 				81546C6B2A64784900F2E98E /* VideoPlayerView.swift */,
+				8136C9362A6C61F200C283E3 /* FeatureFlags.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -536,8 +543,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				810CF6AD2A65E36D00600064 /* Sway_RadioApp.swift in Sources */,
+				8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */,
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
+				8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */,
 				810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */,
 				810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */,
@@ -573,6 +582,7 @@
 				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
 				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
+				8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */,
 				81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */,
 				81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */,
