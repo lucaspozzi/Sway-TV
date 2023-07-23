@@ -40,6 +40,7 @@ import GroupActivities
         if let url = audioUrl {
             self.audioPlayer = AVPlayer(url: url)
         }
+        setupAudioSessionObservers()
         
         // Set the now playing info
         setNowPlayingInfoCenter(title: "Sway Radio", artwork: artworkImage)
@@ -101,6 +102,34 @@ import GroupActivities
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
         timerAnimation.invalidate()
+    }
+    
+    @objc func handleInterruption(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let interruptionTypeRawValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
+              let interruptionType = AVAudioSession.InterruptionType(rawValue: interruptionTypeRawValue) else {
+            return
+        }
+        
+        switch interruptionType {
+        case .began:
+            // Handle audio interruption (e.g., pause the playback).
+            audioPlayer?.pause()
+        case .ended:
+            if let interruptionOptionsRawValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt {
+                let interruptionOptions = AVAudioSession.InterruptionOptions(rawValue: interruptionOptionsRawValue)
+                if interruptionOptions.contains(.shouldResume) {
+                    // Resume the audio playback after the interruption.
+                    audioPlayer?.play()
+                }
+            }
+        @unknown default:
+            break
+        }
+    }
+    
+    func setupAudioSessionObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
     }
     
     func fetchOnce() {
