@@ -42,24 +42,25 @@ struct ContentView: View {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             HStack {
                                 
-                                Button(action: {
-                                    Task {
-                                        if let url = self.audioUrl {
-                                            let sessionData = RadioActivity.SessionData(url: url)
-                                            let activity = RadioActivity(sessionData: sessionData)
-                                            do {
-                                                try await activity.activate()
-                                            } catch {
-                                                // handle error
-                                                print("Failed to activate activity: \(error)")
+                                if(isSharePlayEnabled){
+                                    Button(action: {
+                                        Task {
+                                            if let url = self.audioUrl {
+                                                let sessionData = RadioActivity.SessionData(url: url)
+                                                let activity = RadioActivity(sessionData: sessionData)
+                                                do {
+                                                    try await activity.activate()
+                                                } catch {
+                                                    // handle error
+                                                    print("Failed to activate activity: \(error)")
+                                                }
                                             }
                                         }
+                                    }) {
+                                        Image(systemName: "shareplay")
                                     }
-                                }) {
-                                    Image(systemName: "shareplay")
-                                }.disabled(!isSharePlayEnabled)
-
-
+                                }
+                                
                                 AirPlayView().padding(.horizontal)
                                 
                             }
