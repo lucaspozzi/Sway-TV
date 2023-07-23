@@ -15,13 +15,21 @@ import GroupActivities
     
     @Published var pseudoSoundLevelLeft: CGFloat = 0.0
     @Published var pseudoSoundLevelRight: CGFloat = 0.0
+    
+    @Published var currentTrackTitle: String = "djclaudiof"
+    @Published var artworkImage: UIImage = UIImage(named: "audiodog")!
+    
+    let featureFlags = FeatureFlags()
+    private var updateAlbumArt: Bool = false
 
     private var audioPlayer: AVPlayer?
     private var statusObserver: NSKeyValueObservation?
     private var timeControlStatusObserver: NSKeyValueObservation?
     private var nowPlayingInfo: [String : Any] = [:]
     private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
-    private var artwork: UIImage = UIImage(named: "audiodog")!
+    
+    private var timerMetadata: Timer = Timer()
+    private var timerAnimation: Timer = Timer()
     
     
     // init audio player with url
@@ -34,8 +42,7 @@ import GroupActivities
         }
         
         // Set the now playing info
-        nowPlayingInfo[MPMediaItemPropertyTitle] = "Sway Radio"
-        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in self.artwork }
+        setNowPlayingInfoCenter(title: "Sway Radio", artwork: artworkImage)
         
         do {
             let audioSession = AVAudioSession.sharedInstance()
@@ -67,10 +74,19 @@ import GroupActivities
             }
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
             self?.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
             self?.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+        }
+        
+        featureFlags.fetchFeatureFlag(named: "UpdateAlbumArt") { (isEnabled) in
+            self.updateAlbumArt = isEnabled
+        }
+        
+        fetchOnce()
+        timerMetadata = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+            self.fetchOnce()
         }
 
 //        Task {
@@ -84,18 +100,53 @@ import GroupActivities
     deinit {
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
+        timerAnimation.invalidate()
+    }
+    
+    func fetchOnce() {
+        
+        fetchRadioStationMetadata { result in
+            
+            switch result {
+            case .success(let metadata):
+                if(self.updateAlbumArt){
+                    DispatchQueue.global().async {
+                        if let url = URL(string: metadata.currentTrack.artworkURLLarge),
+                           let data = try? Data(contentsOf: url),
+                           let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                self.artworkImage = image
+                            }
+                        }
+                        
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.currentTrackTitle = metadata.currentTrack.title
+                }
+                self.setNowPlayingInfoCenter(title: metadata.currentTrack.title, artwork: self.artworkImage)
+            case .failure(let error):
+                print("Error \(error)")
+            }
+        }
     }
     
     
-    func startPlayback(title: String, artwork: UIImage) {
-        self.isLoading = true
-        self.setupRemoteTransportControls()
-        self.updatePlaybackDuration()
-        self.audioPlayer?.play()
+    
+    func startPlayback() {
+        isLoading = true
+        setupRemoteTransportControls()
+        updatePlaybackDuration()
+        audioPlayer?.play()
         
         // Set the now playing info
+        setNowPlayingInfoCenter(title: currentTrackTitle, artwork: artworkImage)
+    }
+    
+    func setNowPlayingInfoCenter(title: String, artwork: UIImage) {
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in artwork }
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     
     
