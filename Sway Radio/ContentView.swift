@@ -29,7 +29,7 @@ struct ContentView: View {
                             if(audioPlayer.isLoading){
                                 HStack {
                                     Image(systemName: "antenna.radiowaves.left.and.right.slash")
-                                    Text("Tunning...")
+                                    Text("Tuning...")
                                 }
                                 
                             } else {
