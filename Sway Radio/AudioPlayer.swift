@@ -87,9 +87,10 @@ import GroupActivities
         }
         
         fetchOnce()
-        timerMetadata = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
-            self.fetchOnce()
+        timerMetadata = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+            self?.fetchOnce()
         }
+
 
 //        Task {
 //            for session in GroupSession<RadioActivity>. {
@@ -97,9 +98,19 @@ import GroupActivities
 //            }
 //        }
         
+        if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.headphones }) {
+            setupRemoteTransportControls()
+        }
+
+        
     }
     
     deinit {
+        // Remove remote control event handlers
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.removeTarget(nil)
+        commandCenter.pauseCommand.removeTarget(nil)
+        
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
         timerAnimation.invalidate()
@@ -133,7 +144,27 @@ import GroupActivities
     
     func setupAudioSessionObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRouteChange(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
     }
+    
+    @objc func handleRouteChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let reasonValue = userInfo[AVAudioSessionRouteChangeReasonKey] as? UInt,
+              let reason = AVAudioSession.RouteChangeReason(rawValue:reasonValue) else {
+            return
+        }
+        
+        switch reason {
+        case .newDeviceAvailable:
+            let session = AVAudioSession.sharedInstance()
+            for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.headphones {
+                setupRemoteTransportControls()
+                break
+            }
+        default: ()
+        }
+    }
+
     
     func fetchOnce() {
         
@@ -168,16 +199,19 @@ import GroupActivities
     }
     
     
-    
     func startPlayback() {
         isLoading = true
-        setupRemoteTransportControls()
+        setupRemoteTransportControls() // This function clears old targets and sets up new ones
         updatePlaybackDuration()
         audioPlayer?.play()
         
         // Set the now playing info
         setNowPlayingInfoCenter(title: currentTrackTitle, artwork: artworkImage)
     }
+
+
+    
+    
     
     func setNowPlayingInfoCenter(title: String, artwork: UIImage) {
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
@@ -189,6 +223,10 @@ import GroupActivities
     func setupRemoteTransportControls() {
         // Get the shared command center
         let commandCenter = MPRemoteCommandCenter.shared()
+        
+        // Remove old targets
+        commandCenter.playCommand.removeTarget(nil)
+        commandCenter.pauseCommand.removeTarget(nil)
         
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
@@ -207,7 +245,18 @@ import GroupActivities
             }
             return .commandFailed
         }
+        
+        commandCenter.togglePlayPauseCommand.addTarget { [unowned self] event in
+            // Your play/pause toggle logic goes here.
+            if self.audioPlayer?.rate == 0.0 {
+                self.audioPlayer?.play()
+            } else if self.audioPlayer?.rate == 1.0 {
+                self.audioPlayer?.pause()
+            }
+            return .success
+        }
     }
+
     
     
     func updatePlaybackDuration() {

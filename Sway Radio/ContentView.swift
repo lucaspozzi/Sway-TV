@@ -98,7 +98,7 @@ struct ContentView: View {
                                     }
                                     .disabled(audioPlayer.isLoading)
                                 } else {
-                                    Text("Thanks!").foregroundColor(.gray).animation(.default)
+                                    Text("Sway!").foregroundColor(.gray).animation(.default)
                                 }
                                 
                                 
