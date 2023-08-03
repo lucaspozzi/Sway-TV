@@ -38,6 +38,8 @@ struct ContentView: View {
                                 HStack{
                                     Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.green)
                                     Text("Live")
+                                    
+                                    AirPlayView().padding(.horizontal)
                                 }
                             }
                         }
@@ -63,27 +65,31 @@ struct ContentView: View {
                                     }
                                 }
                                 
-                                AirPlayView().padding(.horizontal)
-                                
-                                Button(action: {
-                                    if audioPlayer.currentTrackTitle != lastSentimentTrackName {
-                                        sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "dislike")
-                                        lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                    Button(action: {
+                                        if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "dislike")
+                                            lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                        }
+                                    }) {
+                                        Image(systemName: "hand.thumbsdown.fill")
                                     }
-                                }) {
-                                    Image(systemName: "hand.thumbsdown.fill")
-                                }
-                                .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
-                                
-                                Button(action: {
-                                    if audioPlayer.currentTrackTitle != lastSentimentTrackName {
-                                        sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
-                                        lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                    .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
+                                    
+                                    Button(action: {
+                                        if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
+                                            lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                        }
+                                    }) {
+                                        Image(systemName: "hand.thumbsup.fill")
                                     }
-                                }) {
-                                    Image(systemName: "hand.thumbsup.fill")
+                                    .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
+                                } else {
+                                    Text("Thanks!").foregroundColor(.gray).animation(.default)
                                 }
-                                .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
+                                
+                                
                             }
                         }
                     }
