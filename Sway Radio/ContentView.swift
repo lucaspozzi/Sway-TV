@@ -11,6 +11,8 @@ import AVKit
 struct ContentView: View {
     
     @StateObject var audioPlayer = AudioPlayer()
+    private var sentiments = Sentiments()
+    @State private var lastSentimentTrackName: String?
     @State private var isEventsTabEnabled = false
     @State private var isAirPlayEnabled = false
     @State private var isSharePlayEnabled = false
@@ -34,7 +36,7 @@ struct ContentView: View {
                                 
                             } else {
                                 HStack{
-                                    Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.red)
+                                    Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.green)
                                     Text("Live")
                                 }
                             }
@@ -63,6 +65,25 @@ struct ContentView: View {
                                 
                                 AirPlayView().padding(.horizontal)
                                 
+                                Button(action: {
+                                    if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                        sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "dislike")
+                                        lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                    }
+                                }) {
+                                    Image(systemName: "hand.thumbsdown.fill")
+                                }
+                                .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
+                                
+                                Button(action: {
+                                    if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                        sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
+                                        lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                    }
+                                }) {
+                                    Image(systemName: "hand.thumbsup.fill")
+                                }
+                                .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
                             }
                         }
                     }

@@ -43,6 +43,8 @@
 		816CB3972A68957A001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
 		816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
 		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
+		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
+		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,7 @@
 		816CB3962A68957A001FB8F5 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
 		81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
+		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +315,7 @@
 				81546C702A64784B00F2E98E /* RadioStationMetadata.swift */,
 				81546C6B2A64784900F2E98E /* VideoPlayerView.swift */,
 				8136C9362A6C61F200C283E3 /* FeatureFlags.swift */,
+				81CA8F702A7B3A5F00835352 /* Sentiments.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -553,6 +557,7 @@
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
 				8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
+				81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */,
 				810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */,
 				814A6A3D2A6C8E8D00C923E6 /* RadioActivity.swift in Sources */,
 				810CF6DC2A65E5A000600064 /* EventScheduleView.swift in Sources */,
@@ -585,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81546C722A64784B00F2E98E /* EventScheduleView.swift in Sources */,
+				81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */,
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
 				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
