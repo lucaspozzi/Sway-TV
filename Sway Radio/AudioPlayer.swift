@@ -21,6 +21,7 @@ import GroupActivities
     
     let featureFlags = FeatureFlags()
     private var updateAlbumArt: Bool = false
+    private var currentAlbumArtUrl: String = ""
 
     private var audioPlayer: AVPlayer?
     private var statusObserver: NSKeyValueObservation?
@@ -86,7 +87,7 @@ import GroupActivities
         }
         
         fetchOnce()
-        timerMetadata = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+        timerMetadata = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
             self.fetchOnce()
         }
 
@@ -102,6 +103,7 @@ import GroupActivities
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
         timerAnimation.invalidate()
+        audioPlayer?.pause()
     }
     
     @objc func handleInterruption(_ notification: Notification) {
@@ -138,21 +140,25 @@ import GroupActivities
             
             switch result {
             case .success(let metadata):
-                if(self.updateAlbumArt){
+                if(self.updateAlbumArt && self.currentAlbumArtUrl != metadata.currentTrack.artworkURLLarge){
                     DispatchQueue.global().async {
                         if let url = URL(string: metadata.currentTrack.artworkURLLarge),
                            let data = try? Data(contentsOf: url),
                            let image = UIImage(data: data) {
                             DispatchQueue.main.async {
                                 self.artworkImage = image
+                                self.currentAlbumArtUrl = metadata.currentTrack.artworkURLLarge
                             }
                         }
                         
                     }
                 }
-                DispatchQueue.main.async {
-                    self.currentTrackTitle = metadata.currentTrack.title
+                if(self.currentTrackTitle != metadata.currentTrack.title){
+                    DispatchQueue.main.async {
+                        self.currentTrackTitle = metadata.currentTrack.title
+                    }
                 }
+                
                 self.setNowPlayingInfoCenter(title: metadata.currentTrack.title, artwork: self.artworkImage)
             case .failure(let error):
                 print("Error \(error)")
