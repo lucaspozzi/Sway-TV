@@ -66,16 +66,16 @@ struct ContentView: View {
                                 }
                                 
                                 if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                    
                                     Button(action: {
                                         if audioPlayer.currentTrackTitle != lastSentimentTrackName {
-                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
+                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
-                                        Image(systemName: "figure.socialdance")
+                                        Image(systemName: "hand.thumbsup.fill")
                                     }
                                     .disabled(audioPlayer.isLoading)
-//                                    .padding(.horizontal)
                                     
                                     Button(action: {
                                         if audioPlayer.currentTrackTitle != lastSentimentTrackName {
@@ -88,15 +88,17 @@ struct ContentView: View {
                                     .disabled(audioPlayer.isLoading)
                                     .padding(.horizontal)
                                     
+                                    
                                     Button(action: {
                                         if audioPlayer.currentTrackTitle != lastSentimentTrackName {
-                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
+                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
-                                        Image(systemName: "hand.thumbsup.fill")
+                                        Image(systemName: "figure.socialdance")
                                     }
                                     .disabled(audioPlayer.isLoading)
+                                    
                                 } else {
                                     Text("Sway!").foregroundColor(.gray).animation(.default)
                                 }
@@ -118,6 +120,15 @@ struct ContentView: View {
             .tabItem {
                 Image(systemName: "music.note.list")
                 Text("Recent")
+            }
+            
+            NavigationView {
+                TopTracksView()
+                    .navigationTitle("Top tracks")
+            }
+            .tabItem {
+                Image(systemName: "medal.fill")
+                Text("Top Tracks")
             }
             
             if(isEventsTabEnabled){

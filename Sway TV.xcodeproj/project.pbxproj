@@ -42,6 +42,8 @@
 		81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */; };
 		816CB3972A68957A001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
 		816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
+		81A425652A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
+		81A425662A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
 		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
@@ -132,6 +134,7 @@
 		81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbientVideoMenuView.swift; sourceTree = "<group>"; };
 		81546C7D2A64849300F2E98E /* Sway TV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway TV.entitlements"; sourceTree = "<group>"; };
 		816CB3962A68957A001FB8F5 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
+		81A425642A7C41A2002498C3 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
 		81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
@@ -316,6 +319,7 @@
 				81546C6B2A64784900F2E98E /* VideoPlayerView.swift */,
 				8136C9362A6C61F200C283E3 /* FeatureFlags.swift */,
 				81CA8F702A7B3A5F00835352 /* Sentiments.swift */,
+				81A425642A7C41A2002498C3 /* TopTracksView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -564,6 +568,7 @@
 				810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */,
 				810632482A6706FE008E62AB /* AudioPlayer.swift in Sources */,
 				814A6A3B2A6C8B3200C923E6 /* AirPlayView.swift in Sources */,
+				81A425662A7C41A2002498C3 /* TopTracksView.swift in Sources */,
 				816CB3972A68957A001FB8F5 /* RecentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +602,7 @@
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
 				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
 				8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
+				81A425652A7C41A2002498C3 /* TopTracksView.swift in Sources */,
 				81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */,
 				81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */,
 				81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */,
