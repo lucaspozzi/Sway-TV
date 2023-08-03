@@ -103,6 +103,7 @@ import GroupActivities
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
         timerAnimation.invalidate()
+        timerMetadata.invalidate()
         audioPlayer?.pause()
     }
     
