@@ -1,3 +1,4 @@
 Please test:
+- Like / dislike buttons
 - AirPlay, playback metadata in Control Center
 - App behavior when you receive calls, open other apps, etc
