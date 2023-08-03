@@ -110,6 +110,7 @@ import GroupActivities
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.removeTarget(nil)
         commandCenter.pauseCommand.removeTarget(nil)
+        commandCenter.togglePlayPauseCommand.removeTarget(nil)
         
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
@@ -153,7 +154,7 @@ import GroupActivities
               let reason = AVAudioSession.RouteChangeReason(rawValue:reasonValue) else {
             return
         }
-        
+
         switch reason {
         case .newDeviceAvailable:
             let session = AVAudioSession.sharedInstance()
@@ -227,7 +228,8 @@ import GroupActivities
         // Remove old targets
         commandCenter.playCommand.removeTarget(nil)
         commandCenter.pauseCommand.removeTarget(nil)
-        
+        commandCenter.togglePlayPauseCommand.removeTarget(nil)
+
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
             if self.audioPlayer?.rate == 0.0 {
@@ -250,10 +252,12 @@ import GroupActivities
             // Your play/pause toggle logic goes here.
             if self.audioPlayer?.rate == 0.0 {
                 self.audioPlayer?.play()
+                return .success
             } else if self.audioPlayer?.rate == 1.0 {
                 self.audioPlayer?.pause()
+                return .success
             }
-            return .success
+            return .commandFailed
         }
     }
 
