@@ -23,7 +23,7 @@ struct TopTracksView: View {
             .padding()
         }
         .onAppear {
-            sentiments.fetchTop10TrackNames { (tracks, error) in
+            sentiments.fetchTop10TrackNamesWeighted { (tracks, error) in
                 if let error = error {
                     print("Error fetching top tracks: \(error)")
                 } else if let tracks = tracks {
