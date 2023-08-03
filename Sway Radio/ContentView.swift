@@ -74,7 +74,8 @@ struct ContentView: View {
                                     }) {
                                         Image(systemName: "hand.thumbsdown.fill")
                                     }
-                                    .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
+                                    .disabled(audioPlayer.isLoading)
+                                    .padding(.horizontal)
                                     
                                     Button(action: {
                                         if audioPlayer.currentTrackTitle != lastSentimentTrackName {
@@ -84,7 +85,7 @@ struct ContentView: View {
                                     }) {
                                         Image(systemName: "hand.thumbsup.fill")
                                     }
-                                    .disabled(audioPlayer.currentTrackTitle == lastSentimentTrackName)
+                                    .disabled(audioPlayer.isLoading)
                                 } else {
                                     Text("Thanks!").foregroundColor(.gray).animation(.default)
                                 }
