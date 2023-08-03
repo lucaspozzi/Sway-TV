@@ -68,11 +68,22 @@ struct ContentView: View {
                                 if audioPlayer.currentTrackTitle != lastSentimentTrackName {
                                     Button(action: {
                                         if audioPlayer.currentTrackTitle != lastSentimentTrackName {
-                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "dislike")
+                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
-                                        Image(systemName: "hand.thumbsdown.fill")
+                                        Image(systemName: "figure.socialdance")
+                                    }
+                                    .disabled(audioPlayer.isLoading)
+//                                    .padding(.horizontal)
+                                    
+                                    Button(action: {
+                                        if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                            sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.dance")
+                                            lastSentimentTrackName = audioPlayer.currentTrackTitle
+                                        }
+                                    }) {
+                                        Image(systemName: "figure.dance")
                                     }
                                     .disabled(audioPlayer.isLoading)
                                     .padding(.horizontal)
