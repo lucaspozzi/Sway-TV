@@ -9,15 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var audioPlayer = AudioPlayer()
-    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
+    private var sentiments = Sentiments()
+    @State private var lastSentimentTrackName: String?
+    @State private var isEventsTabEnabled = false
+    @State private var isAirPlayEnabled = false
+    @State private var isSharePlayEnabled = false
+    let featureFlags = FeatureFlags()
+    private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
     
     var body: some View {
         TabView {
             
             HomeTabView()
                 .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
+//                    Image(systemName: "house")
+                    if(audioPlayer.isLoading){
+                        Image(systemName: "antenna.radiowaves.left.and.right.slash")
+                        //                        Text("Tuning...")
+                        
+                    } else {
+                        Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.green)
+                        //                        Text("Live")
+                    }
+                    Text("Radio")
                 }
                 .environmentObject(audioPlayer)
             
@@ -28,22 +42,39 @@ struct ContentView: View {
                 }
             
             
-            EventScheduleView()
+            TopTracksView()
                 .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Events")
+                    Image(systemName: "medal.fill")
+                    Text("Top Tracks")
                 }
+            
+            if(isEventsTabEnabled){
+                EventScheduleView()
+                    .tabItem {
+                        Image(systemName: "calendar")
+                        Text("Events")
+                    }
+            }
+            
         }
         .onPlayPauseCommand {
             if audioPlayer.isPlaying {
                 audioPlayer.stopPlayback()
             } else {
-                if let url = URL(string: audioUrl) {
-                    audioPlayer.startPlayback(audioUrl: url)
-                }
+                audioPlayer.startPlayback()
             }
         }
-        
+        .onAppear {
+            featureFlags.fetchFeatureFlag(named: "EventsTab") { (isEnabled) in
+                self.isEventsTabEnabled = isEnabled
+            }
+            featureFlags.fetchFeatureFlag(named: "SharePlay") { (isEnabled) in
+                self.isSharePlayEnabled = isEnabled
+            }
+            featureFlags.fetchFeatureFlag(named: "AirPlay") { (isEnabled) in
+                self.isAirPlayEnabled = isEnabled
+            }
+        }
     }
 }
 

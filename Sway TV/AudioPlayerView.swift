@@ -11,11 +11,9 @@ import Intents
 
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
-    @State private var artworkImage: UIImage = UIImage(named: "audiodog")!
-    @State private var currentTrackTitle: String = "djclaudiof"
-    @State private var timer: Timer?
     @State private var isShowingModal = false
-    let audioUrl: String = "https://stream.radio.co/s3f63d156a/listen"
+    private var sentiments = Sentiments()
+    @State private var lastSentimentTrackName: String?
     
     var body: some View {
         
@@ -23,34 +21,92 @@ struct AudioPlayerView: View {
             
             VStack {
                 if audioPlayer.isPlaying {
+                    
                     Button(action: {
                         self.audioPlayer.stopPlayback()
                     }) {
-                        HStack {
-                            Image(systemName: "pause")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit).foregroundColor(.purple)
-                            Text("Pause Radio")
-                        }.padding()
-                    }.buttonStyle(.card)
-                    .frame(height: 190)
+                        HStack(spacing: 91) {
+                            ForEach(0..<2) { index in
+                                GeometryReader { geometry in
+                                    ZStack(alignment: .bottom) {
+                                        Rectangle()  // Grey rectangle in the background
+                                            .fill(Color.gray.opacity(0.2))
+                                            .cornerRadius(15)
+                                        
+                                        // Colored rectangle in the foreground, its height changes with sound level
+                                        Rectangle()
+                                            .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
+                                            .frame(height: geometry.size.height * (index == 0 ? CGFloat(audioPlayer.pseudoSoundLevelLeft) : CGFloat(audioPlayer.pseudoSoundLevelRight)))
+                                            .cornerRadius(15)
+                                            .animation(.default)
+                                    }
+                                }
+                                .frame(width: 70)  // Width of each bar
+                            }
+                        }
+                        .padding()
+                    }.frame(height: 500)
+                    
                 } else {
                     Button(action: {
-                        if let url = URL(string: self.audioUrl) {
-                            self.audioPlayer.startPlayback(audioUrl: url)
+                        DispatchQueue.main.async {
+                            self.audioPlayer.isLoading = true
+                            self.audioPlayer.startPlayback()
                         }
                     }) {
-                        HStack {
-                            Image(systemName: "play")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit).foregroundColor(.purple)
-                            Text("Listen to Radio")
-                        }.padding()
-                    }.buttonStyle(.card)
-                    .frame(height: 190)
+                        Image(systemName: "play")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
+                    }.disabled(audioPlayer.isLoading)
+                        .frame(height: 500)
+                        .foregroundColor(.purple)
                 }
                 
-                Text(currentTrackTitle).font(.headline)
+                Text(audioPlayer.currentTrackTitle).font(.headline)
+                
+                
+                HStack {
+                    
+                    
+                    if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                        
+                        Button(action: {
+                            if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
+                                lastSentimentTrackName = audioPlayer.currentTrackTitle
+                            }
+                        }) {
+                            Image(systemName: "hand.thumbsup.fill")
+                        }
+                        .disabled(audioPlayer.isLoading)
+                        
+                        Button(action: {
+                            if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.dance")
+                                lastSentimentTrackName = audioPlayer.currentTrackTitle
+                            }
+                        }) {
+                            Image(systemName: "figure.dance")
+                        }
+                        .disabled(audioPlayer.isLoading)
+                        .padding(.horizontal)
+                        
+                        
+                        Button(action: {
+                            if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
+                                lastSentimentTrackName = audioPlayer.currentTrackTitle
+                            }
+                        }) {
+                            Image(systemName: "figure.socialdance")
+                        }
+                        .disabled(audioPlayer.isLoading)
+                        
+                    } else {
+                        Text("Sway!").foregroundColor(.gray).animation(.default)
+                    }
+                }
                 
             }
             .aspectRatio(contentMode: .fit)
@@ -61,7 +117,7 @@ struct AudioPlayerView: View {
                 isShowingModal = true
             }) {
                 VStack {
-                    Image(uiImage: artworkImage)
+                    Image(uiImage: audioPlayer.artworkImage)
                         .resizable().cornerRadius(10)
                     Text("View album artwork")
                 }
@@ -81,55 +137,21 @@ struct AudioPlayerView: View {
             
         }
         .frame(height: 740)
-        .onAppear{
-            fetchOnce()
-            startFetching()
-        }
-        .onDisappear{
-            stopFetching()
-        }
+//        .onAppear{
+//            fetchOnce()
+//            startFetching()
+//        }
+//        .onDisappear{
+//            stopFetching()
+//        }
         .sheet(isPresented: $isShowingModal) {
-            Image(uiImage: artworkImage)
+            Image(uiImage: audioPlayer.artworkImage)
                 .resizable().cornerRadius(10)
                 .aspectRatio(contentMode: .fit)
         }
     }
     
-    func fetchOnce() {
-        fetchRadioStationMetadata { result in
-            switch result {
-            case .success(let metadata):
-                DispatchQueue.global().async {
-                    if let url = URL(string: metadata.currentTrack.artworkURLLarge),
-                       let data = try? Data(contentsOf: url),
-                       let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            artworkImage = image
-                        }
-                    }
-                    
-                }
-                DispatchQueue.main.async {
-                    currentTrackTitle = metadata.currentTrack.title
-                }
-            case .failure(let error):
-                print("Error \(error)")
-            }
-            
-        }
-    }
     
-    func startFetching() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { _ in
-            fetchOnce()
-        }
-    }
-    
-    func stopFetching(){
-        timer?.invalidate()
-        timer = nil
-    }
 }
 
 struct AudioPlayerView_Previews: PreviewProvider {

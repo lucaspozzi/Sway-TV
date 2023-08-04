@@ -16,9 +16,9 @@ struct HomeTabView: View {
             VStack {
                 AudioPlayerView()
                     .environmentObject(audioPlayer)
-                HStack {
-                    AmbientVideoMenuView()
-                }
+//                HStack {
+//                    AmbientVideoMenuView()
+//                }
             }
         }
     }
