@@ -35,7 +35,6 @@
 		81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6B2A64784900F2E98E /* VideoPlayerView.swift */; };
 		81546C722A64784B00F2E98E /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6C2A64784A00F2E98E /* EventScheduleView.swift */; };
 		81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */; };
-		81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C6E2A64784A00F2E98E /* AudioPlayer.swift */; };
 		81546C752A64784B00F2E98E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
 		81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
 		81546C7A2A6479BD00F2E98E /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C772A6479BC00F2E98E /* HomeTabView.swift */; };
@@ -44,6 +43,8 @@
 		816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
 		81A425652A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
 		81A425662A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
+		81A425682A7DBF65002498C3 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810632472A6706FE008E62AB /* AudioPlayer.swift */; };
+		81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */; };
 		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
@@ -127,7 +128,6 @@
 		81546C6B2A64784900F2E98E /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		81546C6C2A64784A00F2E98E /* EventScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
 		81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
-		81546C6E2A64784A00F2E98E /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		81546C6F2A64784A00F2E98E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		81546C702A64784B00F2E98E /* RadioStationMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStationMetadata.swift; sourceTree = "<group>"; };
 		81546C772A6479BC00F2E98E /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 			children = (
 				8136C9392A6C687600C283E3 /* CustomSlider.swift */,
 				810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */,
-				810632472A6706FE008E62AB /* AudioPlayer.swift */,
 				810CF6D52A65E47E00600064 /* AudioPlayerView.swift */,
 				810CF6D62A65E47F00600064 /* HomeTabView.swift */,
 				810CF6AC2A65E36D00600064 /* Sway_RadioApp.swift */,
@@ -200,7 +199,6 @@
 				810CF6D42A65E3B100600064 /* Sway Radio.entitlements */,
 				810CF6B22A65E36F00600064 /* Preview Content */,
 				814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */,
-				814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */,
 			);
 			path = "Sway Radio";
 			sourceTree = "<group>";
@@ -271,7 +269,6 @@
 		81546C3F2A64779500F2E98E /* Sway TV */ = {
 			isa = PBXGroup;
 			children = (
-				81546C6E2A64784A00F2E98E /* AudioPlayer.swift */,
 				81546C6D2A64784A00F2E98E /* AudioPlayerView.swift */,
 				81546C7D2A64849300F2E98E /* Sway TV.entitlements */,
 				81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */,
@@ -312,6 +309,8 @@
 		81546C6A2A6477F400F2E98E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				810632472A6706FE008E62AB /* AudioPlayer.swift */,
+				814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */,
 				816CB3962A68957A001FB8F5 /* RecentView.swift */,
 				81546C6C2A64784A00F2E98E /* EventScheduleView.swift */,
 				81546C6F2A64784A00F2E98E /* Media.xcassets */,
@@ -603,9 +602,10 @@
 				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
 				8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				81A425652A7C41A2002498C3 /* TopTracksView.swift in Sources */,
-				81546C742A64784B00F2E98E /* AudioPlayer.swift in Sources */,
 				81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */,
+				81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */,
 				81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */,
+				81A425682A7DBF65002498C3 /* AudioPlayer.swift in Sources */,
 				81546C7A2A6479BD00F2E98E /* HomeTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

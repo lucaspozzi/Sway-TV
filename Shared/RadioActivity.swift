@@ -13,6 +13,8 @@ struct RadioActivity: GroupActivity {
     
     static let activityIdentifier = "app.waggie.Sway-TV.radio"
     
+    let isPlaying: Bool
+    
     var metadata: GroupActivityMetadata {
         let title = NSLocalizedString("Listening to Sway Radio", comment: "")
 //        let image = GroupActivityMetadata.Image(systemImageName: "radio") //Type 'GroupActivityMetadata' has no member 'Image'
