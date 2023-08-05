@@ -60,10 +60,11 @@ struct AudioPlayerView: View {
                             .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 500)
-                        .foregroundColor(.purple)
+                        .foregroundColor(audioPlayer.isLoading ? .gray : .purple)
+
                 }
                 
-                Text(audioPlayer.currentTrackTitle).font(.headline)
+                Text(audioPlayer.currentTrackTitle).font(.headline).padding(.top)
                 
                 
                 HStack {
