@@ -64,7 +64,12 @@ struct AudioPlayerView: View {
 
                 }
                 
-                Text(audioPlayer.currentTrackTitle).font(.headline).padding(.top)
+                Text(audioPlayer.currentTrackTitle)
+                    .font(.headline)
+                    .padding(.top)
+                    .lineLimit(nil) // Allows as many lines as needed
+                    .fixedSize(horizontal: false, vertical: true) // This ensures the text view grows vertically
+                    .multilineTextAlignment(.center)
                 
                 
                 HStack {
