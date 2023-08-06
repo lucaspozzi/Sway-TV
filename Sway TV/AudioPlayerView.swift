@@ -125,6 +125,7 @@ struct AudioPlayerView: View {
                 VStack {
                     Image(uiImage: audioPlayer.artworkImage)
                         .resizable().cornerRadius(10)
+                        .animation(.default)
                     Text("View album artwork")
                 }
             }.buttonStyle(.card)
