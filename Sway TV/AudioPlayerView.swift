@@ -17,7 +17,7 @@ struct AudioPlayerView: View {
     
     var body: some View {
         
-        HStack(alignment: .bottom) {
+        HStack {
             
             VStack {
                 if audioPlayer.isPlaying {
@@ -63,14 +63,6 @@ struct AudioPlayerView: View {
                         .foregroundColor(audioPlayer.isLoading ? .gray : .purple)
 
                 }
-                
-                Text(audioPlayer.currentTrackTitle)
-                    .font(.headline)
-                    .padding(.top)
-                    .lineLimit(nil) // Allows as many lines as needed
-                    .fixedSize(horizontal: false, vertical: true) // This ensures the text view grows vertically
-                    .multilineTextAlignment(.center)
-                
                 
                 HStack {
                     
@@ -119,27 +111,39 @@ struct AudioPlayerView: View {
             .padding()
             .frame(width: 880)
             
-            Button(action: {
-                isShowingModal = true
-            }) {
-                VStack {
-                    Image(uiImage: audioPlayer.artworkImage)
-                        .resizable().cornerRadius(10)
-                        .animation(.default)
-                    Text("View album artwork")
-                }
-            }.buttonStyle(.card)
-            .aspectRatio(contentMode: .fit)
-            .padding()
-            .frame(width: 880)
-            .background(
-                ZStack {
-                    Circle()
-                        .fill(Color.purple)
-                        .blur(radius: 50)
-                        .offset(x: 0, y: 0)
-                }
-            )
+            VStack {
+                Button(action: {
+                    isShowingModal = true
+                }) {
+                    VStack {
+                        Image(uiImage: audioPlayer.artworkImage)
+                            .resizable().cornerRadius(10)
+                            .animation(.default)
+                        Text("View album artwork")
+                    }
+                }.buttonStyle(.card)
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                    .frame(width: 880)
+                    .background(
+                        ZStack {
+                            Circle()
+                                .fill(Color.purple)
+                                .blur(radius: 50)
+                                .offset(x: 0, y: 0)
+                        }
+                    )
+                
+                
+                Text(audioPlayer.currentTrackTitle)
+                    .font(.headline)
+                    .padding(.top)
+                    .lineLimit(nil) // Allows as many lines as needed
+                    .fixedSize(horizontal: false, vertical: true) // This ensures the text view grows vertically
+                    .multilineTextAlignment(.center)
+                
+                
+            }
             
             
         }
