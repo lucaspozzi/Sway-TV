@@ -51,7 +51,7 @@ struct ContentView: View {
                                         Task {
                                             if let url = self.audioUrl {
                                                 let sessionData = RadioActivity.SessionData(url: url)
-                                                let activity = RadioActivity(sessionData: sessionData)
+                                                let activity = RadioActivity(isPlaying: audioPlayer.isPlaying, sessionData: sessionData)
                                                 do {
                                                     try await activity.activate()
                                                 } catch {

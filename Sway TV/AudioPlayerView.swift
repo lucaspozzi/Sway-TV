@@ -17,7 +17,7 @@ struct AudioPlayerView: View {
     
     var body: some View {
         
-        HStack {
+        HStack(alignment: .bottom) {
             
             VStack {
                 if audioPlayer.isPlaying {
@@ -45,7 +45,7 @@ struct AudioPlayerView: View {
                             }
                         }
                         .padding()
-                    }.frame(height: 500)
+                    }.frame(height: 490)
                     
                 } else {
                     Button(action: {
@@ -59,7 +59,7 @@ struct AudioPlayerView: View {
                             .aspectRatio(contentMode: .fit)
                             .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
                     }.disabled(audioPlayer.isLoading)
-                        .frame(height: 500)
+                        .frame(height: 490)
                         .foregroundColor(audioPlayer.isLoading ? .gray : .purple)
 
                 }

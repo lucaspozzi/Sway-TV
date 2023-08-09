@@ -8,13 +8,7 @@
 import SwiftUI
 import CloudKit
 
-struct Event: Identifiable {
-    let id: String
-    let name: String
-    let description: String
-    let start: Date
-    let end: Date
-}
+
 
 struct EventScheduleView: View {
     @State private var listItems = [Event]()

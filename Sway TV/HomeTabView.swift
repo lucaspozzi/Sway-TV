@@ -19,7 +19,7 @@ struct HomeTabView: View {
 //                HStack {
 //                    AmbientVideoMenuView()
 //                }
-            }
+            }.edgesIgnoringSafeArea(.horizontal)
         }
     }
 }

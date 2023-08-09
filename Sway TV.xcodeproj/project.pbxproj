@@ -48,6 +48,22 @@
 		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
+		81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */; };
+		81EBF3192A82F1CD00817353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3182A82F1CD00817353 /* ContentView.swift */; };
+		81EBF31B2A82F1CE00817353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EBF31A2A82F1CE00817353 /* Assets.xcassets */; };
+		81EBF31E2A82F1CE00817353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EBF31D2A82F1CE00817353 /* Preview Assets.xcassets */; };
+		81EBF3282A82F1CE00817353 /* Sway_Radio_DJ_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3272A82F1CE00817353 /* Sway_Radio_DJ_CompanionTests.swift */; };
+		81EBF3322A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3312A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITests.swift */; };
+		81EBF3342A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3332A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITestsLaunchTests.swift */; };
+		81EBF33E2A82F1E300817353 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
+		81EBF3402A82F1F200817353 /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
+		81EBF3412A82F1F900817353 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
+		81EBF3422A82F20C00817353 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
+		81EBF3442A82F24100817353 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3432A82F24000817353 /* TopTracksView.swift */; };
+		81EBF3492A82F92900817353 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3482A82F92900817353 /* EventScheduleView.swift */; };
+		81EBF34B2A82F97000817353 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF34A2A82F97000817353 /* Event.swift */; };
+		81EBF34C2A82F97000817353 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF34A2A82F97000817353 /* Event.swift */; };
+		81EBF34D2A82F97000817353 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF34A2A82F97000817353 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +94,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 81546C3C2A64779500F2E98E;
 			remoteInfo = "Sway TV";
+		};
+		81EBF3242A82F1CE00817353 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81546C352A64779500F2E98E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81EBF3132A82F1CD00817353;
+			remoteInfo = "Sway Radio DJ Companion";
+		};
+		81EBF32E2A82F1CE00817353 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81546C352A64779500F2E98E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81EBF3132A82F1CD00817353;
+			remoteInfo = "Sway Radio DJ Companion";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -138,6 +168,21 @@
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
 		81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
+		81EBF3142A82F1CD00817353 /* Sway Radio DJ Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway Radio DJ Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_Radio_DJ_CompanionApp.swift; sourceTree = "<group>"; };
+		81EBF3182A82F1CD00817353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81EBF31A2A82F1CE00817353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81EBF31D2A82F1CE00817353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81EBF3232A82F1CE00817353 /* Sway Radio DJ CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway Radio DJ CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EBF3272A82F1CE00817353 /* Sway_Radio_DJ_CompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_Radio_DJ_CompanionTests.swift; sourceTree = "<group>"; };
+		81EBF32D2A82F1CE00817353 /* Sway Radio DJ CompanionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sway Radio DJ CompanionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EBF3312A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_Radio_DJ_CompanionUITests.swift; sourceTree = "<group>"; };
+		81EBF3332A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_Radio_DJ_CompanionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		81EBF3432A82F24000817353 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
+		81EBF3462A82F3DF00817353 /* Sway Radio DJ Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway Radio DJ Companion.entitlements"; sourceTree = "<group>"; };
+		81EBF3472A82F57400817353 /* Sway-Radio-DJ-Companion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sway-Radio-DJ-Companion-Info.plist"; sourceTree = SOURCE_ROOT; };
+		81EBF3482A82F92900817353 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
+		81EBF34A2A82F97000817353 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +222,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		81546C542A64779600F2E98E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF3112A82F1CD00817353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF3202A82F1CE00817353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF32A2A82F1CE00817353 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,6 +314,9 @@
 				810CF6AB2A65E36D00600064 /* Sway Radio */,
 				810CF6BC2A65E36F00600064 /* Sway RadioTests */,
 				810CF6C62A65E36F00600064 /* Sway RadioUITests */,
+				81EBF3152A82F1CD00817353 /* Sway Radio DJ Companion */,
+				81EBF3262A82F1CE00817353 /* Sway Radio DJ CompanionTests */,
+				81EBF3302A82F1CE00817353 /* Sway Radio DJ CompanionUITests */,
 				810CF6E52A65EC5200600064 /* Frameworks */,
 				81546C3E2A64779500F2E98E /* Products */,
 			);
@@ -262,6 +331,9 @@
 				810CF6AA2A65E36D00600064 /* Sway Radio.app */,
 				810CF6B92A65E36F00600064 /* Sway RadioTests.xctest */,
 				810CF6C32A65E36F00600064 /* Sway RadioUITests.xctest */,
+				81EBF3142A82F1CD00817353 /* Sway Radio DJ Companion.app */,
+				81EBF3232A82F1CE00817353 /* Sway Radio DJ CompanionTests.xctest */,
+				81EBF32D2A82F1CE00817353 /* Sway Radio DJ CompanionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,6 +391,7 @@
 				8136C9362A6C61F200C283E3 /* FeatureFlags.swift */,
 				81CA8F702A7B3A5F00835352 /* Sentiments.swift */,
 				81A425642A7C41A2002498C3 /* TopTracksView.swift */,
+				81EBF34A2A82F97000817353 /* Event.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -329,6 +402,46 @@
 				81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */,
 			);
 			path = TestFlight;
+			sourceTree = "<group>";
+		};
+		81EBF3152A82F1CD00817353 /* Sway Radio DJ Companion */ = {
+			isa = PBXGroup;
+			children = (
+				81EBF3472A82F57400817353 /* Sway-Radio-DJ-Companion-Info.plist */,
+				81EBF3462A82F3DF00817353 /* Sway Radio DJ Companion.entitlements */,
+				81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */,
+				81EBF3182A82F1CD00817353 /* ContentView.swift */,
+				81EBF31A2A82F1CE00817353 /* Assets.xcassets */,
+				81EBF31C2A82F1CE00817353 /* Preview Content */,
+				81EBF3432A82F24000817353 /* TopTracksView.swift */,
+				81EBF3482A82F92900817353 /* EventScheduleView.swift */,
+			);
+			path = "Sway Radio DJ Companion";
+			sourceTree = "<group>";
+		};
+		81EBF31C2A82F1CE00817353 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				81EBF31D2A82F1CE00817353 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		81EBF3262A82F1CE00817353 /* Sway Radio DJ CompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+				81EBF3272A82F1CE00817353 /* Sway_Radio_DJ_CompanionTests.swift */,
+			);
+			path = "Sway Radio DJ CompanionTests";
+			sourceTree = "<group>";
+		};
+		81EBF3302A82F1CE00817353 /* Sway Radio DJ CompanionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				81EBF3312A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITests.swift */,
+				81EBF3332A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITestsLaunchTests.swift */,
+			);
+			path = "Sway Radio DJ CompanionUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +554,59 @@
 			productReference = 81546C572A64779600F2E98E /* Sway TVUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		81EBF3132A82F1CD00817353 /* Sway Radio DJ Companion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81EBF33B2A82F1CE00817353 /* Build configuration list for PBXNativeTarget "Sway Radio DJ Companion" */;
+			buildPhases = (
+				81EBF3102A82F1CD00817353 /* Sources */,
+				81EBF3112A82F1CD00817353 /* Frameworks */,
+				81EBF3122A82F1CD00817353 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sway Radio DJ Companion";
+			productName = "Sway Radio DJ Companion";
+			productReference = 81EBF3142A82F1CD00817353 /* Sway Radio DJ Companion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81EBF3222A82F1CE00817353 /* Sway Radio DJ CompanionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81EBF33C2A82F1CE00817353 /* Build configuration list for PBXNativeTarget "Sway Radio DJ CompanionTests" */;
+			buildPhases = (
+				81EBF31F2A82F1CE00817353 /* Sources */,
+				81EBF3202A82F1CE00817353 /* Frameworks */,
+				81EBF3212A82F1CE00817353 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81EBF3252A82F1CE00817353 /* PBXTargetDependency */,
+			);
+			name = "Sway Radio DJ CompanionTests";
+			productName = "Sway Radio DJ CompanionTests";
+			productReference = 81EBF3232A82F1CE00817353 /* Sway Radio DJ CompanionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		81EBF32C2A82F1CE00817353 /* Sway Radio DJ CompanionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81EBF33D2A82F1CE00817353 /* Build configuration list for PBXNativeTarget "Sway Radio DJ CompanionUITests" */;
+			buildPhases = (
+				81EBF3292A82F1CE00817353 /* Sources */,
+				81EBF32A2A82F1CE00817353 /* Frameworks */,
+				81EBF32B2A82F1CE00817353 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81EBF32F2A82F1CE00817353 /* PBXTargetDependency */,
+			);
+			name = "Sway Radio DJ CompanionUITests";
+			productName = "Sway Radio DJ CompanionUITests";
+			productReference = 81EBF32D2A82F1CE00817353 /* Sway Radio DJ CompanionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -473,6 +639,17 @@
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 81546C3C2A64779500F2E98E;
 					};
+					81EBF3132A82F1CD00817353 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					81EBF3222A82F1CE00817353 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 81EBF3132A82F1CD00817353;
+					};
+					81EBF32C2A82F1CE00817353 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 81EBF3132A82F1CD00817353;
+					};
 				};
 			};
 			buildConfigurationList = 81546C382A64779500F2E98E /* Build configuration list for PBXProject "Sway TV" */;
@@ -494,6 +671,9 @@
 				810CF6A92A65E36D00600064 /* Sway Radio */,
 				810CF6B82A65E36F00600064 /* Sway RadioTests */,
 				810CF6C22A65E36F00600064 /* Sway RadioUITests */,
+				81EBF3132A82F1CD00817353 /* Sway Radio DJ Companion */,
+				81EBF3222A82F1CE00817353 /* Sway Radio DJ CompanionTests */,
+				81EBF32C2A82F1CE00817353 /* Sway Radio DJ CompanionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -548,6 +728,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81EBF3122A82F1CD00817353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EBF31E2A82F1CE00817353 /* Preview Assets.xcassets in Resources */,
+				81EBF31B2A82F1CE00817353 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF3212A82F1CE00817353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF32B2A82F1CE00817353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -559,6 +762,7 @@
 				8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */,
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
+				81EBF34C2A82F97000817353 /* Event.swift in Sources */,
 				8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */,
 				810CF6D92A65E47F00600064 /* HomeTabView.swift in Sources */,
@@ -597,6 +801,7 @@
 				81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */,
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
+				81EBF34B2A82F97000817353 /* Event.swift in Sources */,
 				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
 				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
@@ -627,6 +832,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81EBF3102A82F1CD00817353 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EBF3422A82F20C00817353 /* Sentiments.swift in Sources */,
+				81EBF34D2A82F97000817353 /* Event.swift in Sources */,
+				81EBF3412A82F1F900817353 /* FeatureFlags.swift in Sources */,
+				81EBF3402A82F1F200817353 /* RadioStationMetadata.swift in Sources */,
+				81EBF3442A82F24100817353 /* TopTracksView.swift in Sources */,
+				81EBF3492A82F92900817353 /* EventScheduleView.swift in Sources */,
+				81EBF3192A82F1CD00817353 /* ContentView.swift in Sources */,
+				81EBF33E2A82F1E300817353 /* RecentView.swift in Sources */,
+				81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF31F2A82F1CE00817353 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EBF3282A82F1CE00817353 /* Sway_Radio_DJ_CompanionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81EBF3292A82F1CE00817353 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EBF3322A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITests.swift in Sources */,
+				81EBF3342A82F1CE00817353 /* Sway_Radio_DJ_CompanionUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -649,6 +887,16 @@
 			isa = PBXTargetDependency;
 			target = 81546C3C2A64779500F2E98E /* Sway TV */;
 			targetProxy = 81546C582A64779600F2E98E /* PBXContainerItemProxy */;
+		};
+		81EBF3252A82F1CE00817353 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81EBF3132A82F1CD00817353 /* Sway Radio DJ Companion */;
+			targetProxy = 81EBF3242A82F1CE00817353 /* PBXContainerItemProxy */;
+		};
+		81EBF32F2A82F1CE00817353 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81EBF3132A82F1CD00817353 /* Sway Radio DJ Companion */;
+			targetProxy = 81EBF32E2A82F1CE00817353 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1059,6 +1307,162 @@
 			};
 			name = Release;
 		};
+		81EBF3352A82F1CE00817353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Sway Radio DJ Companion/Sway Radio DJ Companion.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sway Radio DJ Companion/Preview Content\"";
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sway-Radio-DJ-Companion-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sway DJ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio-DJ-Companion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		81EBF3362A82F1CE00817353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Sway Radio DJ Companion/Sway Radio DJ Companion.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sway Radio DJ Companion/Preview Content\"";
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sway-Radio-DJ-Companion-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sway DJ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio-DJ-Companion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		81EBF3372A82F1CE00817353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio-DJ-CompanionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sway Radio DJ Companion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sway Radio DJ Companion";
+			};
+			name = Debug;
+		};
+		81EBF3382A82F1CE00817353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio-DJ-CompanionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sway Radio DJ Companion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sway Radio DJ Companion";
+			};
+			name = Release;
+		};
+		81EBF3392A82F1CE00817353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio-DJ-CompanionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sway Radio DJ Companion";
+			};
+			name = Debug;
+		};
+		81EBF33A2A82F1CE00817353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGH757AD8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-Radio-DJ-CompanionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Sway Radio DJ Companion";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1121,6 +1525,33 @@
 			buildConfigurations = (
 				81546C682A64779600F2E98E /* Debug */,
 				81546C692A64779600F2E98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81EBF33B2A82F1CE00817353 /* Build configuration list for PBXNativeTarget "Sway Radio DJ Companion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EBF3352A82F1CE00817353 /* Debug */,
+				81EBF3362A82F1CE00817353 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81EBF33C2A82F1CE00817353 /* Build configuration list for PBXNativeTarget "Sway Radio DJ CompanionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EBF3372A82F1CE00817353 /* Debug */,
+				81EBF3382A82F1CE00817353 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81EBF33D2A82F1CE00817353 /* Build configuration list for PBXNativeTarget "Sway Radio DJ CompanionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EBF3392A82F1CE00817353 /* Debug */,
+				81EBF33A2A82F1CE00817353 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

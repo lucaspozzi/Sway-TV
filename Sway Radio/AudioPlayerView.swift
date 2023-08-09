@@ -34,7 +34,7 @@ struct AudioPlayerView: View {
         VStack {
             
             Text(audioPlayer.currentTrackTitle)
-                .font(.largeTitle)
+                .font(.title)
                 .multilineTextAlignment(.center)
             
             Image(uiImage: audioPlayer.artworkImage)
