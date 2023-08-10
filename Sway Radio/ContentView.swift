@@ -18,12 +18,14 @@ struct ContentView: View {
     @State private var isSharePlayEnabled = false
     let featureFlags = FeatureFlags()
     private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
-    @State private var countdownSeconds = 5
+    @State private var countdownSeconds = 50
     @State private var isCountdownActive = false
+    @State private var isOnboarding = false
+    @State private var isOnboarded = false
     
     func startCountdown() {
         isCountdownActive = true
-        countdownSeconds = 5
+        countdownSeconds = 50
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             countdownSeconds -= 1
@@ -38,6 +40,7 @@ struct ContentView: View {
         TabView {
             
             NavigationView {
+                
                 HomeTabView()
                     .environmentObject(audioPlayer)
                     .toolbar {
@@ -91,6 +94,8 @@ struct ContentView: View {
                                         Image(systemName: "hand.thumbsup.fill")
                                     }
                                     .disabled(audioPlayer.isLoading)
+                                    .animation(.easeOut)
+                                    
                                     
                                     Button(action: {
                                         if !isCountdownActive {
@@ -103,6 +108,7 @@ struct ContentView: View {
                                     }
                                     .disabled(audioPlayer.isLoading)
                                     .padding(.horizontal)
+                                    .animation(.spring())
                                     
                                     
                                     Button(action: {
@@ -115,16 +121,91 @@ struct ContentView: View {
                                         Image(systemName: "figure.socialdance")
                                     }
                                     .disabled(audioPlayer.isLoading)
+                                    .animation(.easeIn)
                                     
                                 } else {
-                                    Text("Sway!").foregroundColor(.gray).animation(.default)
-                                    Image(systemName: "\(countdownSeconds).circle").foregroundColor(.gray).animation(.default)
+                                    HStack {
+                                        Text("Sway!")
+                                        Image(systemName: "\(countdownSeconds).circle")
+                                    }
+                                    .foregroundColor(.gray)
+                                    .animation(.default)
                                 }
                                 
                                 
                             }
                         }
                     }
+                    .sheet(isPresented: $isOnboarding, onDismiss: {
+                        UserDefaults.standard.set(true, forKey: "isOnboarded")
+                    }) {
+                        VStack(spacing: 10) {
+                            Text("Welcome to Sway")
+                                .font(.largeTitle)
+                                .foregroundColor(.purple)
+                            
+                            Text("Free Music Radio")
+                                .font(.title)
+                                .foregroundColor(.purple)
+                            
+                            Spacer()
+                            
+                            Text("To start listening, press play")
+                                .font(.headline)
+                            
+                            Image(systemName: "play")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(.purple)
+                                .frame(width: 100, height: 100)
+                            
+                            Spacer()
+                            
+                            Text("If you really liked a song, let us know how much")
+                                .font(.headline)
+                            
+                            HStack(spacing: 20) {
+                                Image(systemName: "hand.thumbsup.fill")
+                                Image(systemName: "figure.dance")
+                                Image(systemName: "figure.socialdance")
+                            }
+                            .foregroundColor(.purple)
+                            .font(.system(size: 40))
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                isOnboarding = false
+                                UserDefaults.standard.set(true, forKey: "isOnboarded")
+                            }) {
+                                Text("Got It")
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .frame(width: 200, height: 60)
+                                    .background(Color.purple)
+                                    .cornerRadius(30)
+                            }
+                            
+                        }
+                        .padding()
+                    }
+
+                    .onAppear {
+                        
+                        // If user defaults isOnboarded is false or empty
+                        isOnboarded = UserDefaults.standard.bool(forKey: "isOnboarded")
+                        if(!isOnboarded){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+                                withAnimation {
+                                    isOnboarding = true
+                                }
+                            }
+                        }
+                        
+                    }
+                
+                
+                
             }
             .tabItem {
                 Image(systemName: "radio")
