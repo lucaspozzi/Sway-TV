@@ -164,6 +164,7 @@ struct ContentView: View {
                             
                             Text("When you really like a song, let us know how much by tapping any of these reactions:")
                                 .font(.title2)
+                                .padding(.horizontal)
                             
                             HStack(spacing: 25) {
                                 Image(systemName: "hand.thumbsup.fill")
