@@ -18,7 +18,21 @@ struct ContentView: View {
     @State private var isSharePlayEnabled = false
     let featureFlags = FeatureFlags()
     private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
-
+    @State private var countdownSeconds = 5
+    @State private var isCountdownActive = false
+    
+    func startCountdown() {
+        isCountdownActive = true
+        countdownSeconds = 5
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            countdownSeconds -= 1
+            if countdownSeconds <= 0 {
+                timer.invalidate()
+                isCountdownActive = false
+            }
+        }
+    }
     
     var body: some View {
         TabView {
@@ -65,10 +79,11 @@ struct ContentView: View {
                                     }
                                 }
                                 
-                                if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                if !isCountdownActive {
                                     
                                     Button(action: {
-                                        if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                        if !isCountdownActive {
+                                            startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
@@ -78,7 +93,8 @@ struct ContentView: View {
                                     .disabled(audioPlayer.isLoading)
                                     
                                     Button(action: {
-                                        if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                        if !isCountdownActive {
+                                            startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.dance")
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
@@ -90,7 +106,8 @@ struct ContentView: View {
                                     
                                     
                                     Button(action: {
-                                        if audioPlayer.currentTrackTitle != lastSentimentTrackName {
+                                        if !isCountdownActive {
+                                            startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
@@ -101,6 +118,7 @@ struct ContentView: View {
                                     
                                 } else {
                                     Text("Sway!").foregroundColor(.gray).animation(.default)
+                                    Image(systemName: "\(countdownSeconds).circle").foregroundColor(.gray).animation(.default)
                                 }
                                 
                                 
