@@ -139,19 +139,20 @@ struct ContentView: View {
                     .sheet(isPresented: $isOnboarding, onDismiss: {
                         UserDefaults.standard.set(true, forKey: "isOnboarded")
                     }) {
-                        VStack(spacing: 10) {
+                        VStack {
                             Text("Welcome to Sway")
                                 .font(.largeTitle)
                                 .foregroundColor(.purple)
+                                .padding(.top)
                             
                             Text("Free Music Radio")
                                 .font(.title)
                                 .foregroundColor(.purple)
                             
-                            Spacer()
                             
-                            Text("To start listening, press play")
-                                .font(.headline)
+                            Text("To start listening, press play:")
+                                .font(.title2)
+                                .padding(.top)
                             
                             Image(systemName: "play")
                                 .resizable()
@@ -161,10 +162,10 @@ struct ContentView: View {
                             
                             Spacer()
                             
-                            Text("If you really liked a song, let us know how much")
-                                .font(.headline)
+                            Text("When you really like a song, let us know how much by tapping any of these reactions:")
+                                .font(.title2)
                             
-                            HStack(spacing: 20) {
+                            HStack(spacing: 25) {
                                 Image(systemName: "hand.thumbsup.fill")
                                 Image(systemName: "figure.dance")
                                 Image(systemName: "figure.socialdance")
@@ -186,8 +187,8 @@ struct ContentView: View {
                                     .cornerRadius(30)
                             }
                             
+                            Spacer()
                         }
-                        .padding()
                     }
 
                     .onAppear {
