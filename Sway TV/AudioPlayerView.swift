@@ -102,7 +102,7 @@ struct AudioPlayerView: View {
                         .disabled(audioPlayer.isLoading)
                         
                     } else {
-                        Text("Sway!").foregroundColor(.gray).animation(.default)
+                        Text("Sway!").foregroundColor(.gray).animation(.default).padding()
                     }
                 }
                 
