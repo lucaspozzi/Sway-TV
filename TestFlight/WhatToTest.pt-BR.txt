@@ -1,0 +1,6 @@
+Por favor, teste:
+- Traduções para espanhol, português, italiano, ucraniano.
+- Experiência de onboarding.
+- Botões de reação, contagem regressiva.
+- Centro de controle: AirPlay, fones de ouvido com fio
+- Comportamento do aplicativo quando você recebe chamadas, abre outros aplicativos, etc

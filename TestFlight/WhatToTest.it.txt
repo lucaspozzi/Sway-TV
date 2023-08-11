@@ -1,0 +1,6 @@
+Si prega di testare:
+- Spagnolo, portoghese, italiano, ucraino traduzioni.
+- Esperienza di onboarding.
+- Pulsanti di reazione, conto alla rovescia.
+- Centro di controllo: AirPlay, cuffie cablate
+- Comportamento dell'app quando ricevi chiamate, apri altre app, ecc.

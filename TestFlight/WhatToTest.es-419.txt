@@ -1,0 +1,6 @@
+Por favor pruebe:
+- Traducciones al español, portugués, italiano, ucraniano.
+- Experiencia de incorporación.
+- Botones de reacción, cuenta atrás.
+- Centro de control: AirPlay, auriculares con cable
+- Comportamiento de la aplicación cuando recibe llamadas, abre otras aplicaciones, etc.
