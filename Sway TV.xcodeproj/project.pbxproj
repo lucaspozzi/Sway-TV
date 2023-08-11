@@ -51,7 +51,6 @@
 		81A425662A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
 		81A425682A7DBF65002498C3 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810632472A6706FE008E62AB /* AudioPlayer.swift */; };
 		81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */; };
-		81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */; };
@@ -158,6 +157,11 @@
 		811EF6A92A86AD34008BC665 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		811EF6AA2A86AEE2008BC665 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		811EF6AB2A86AEE2008BC665 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = "uk.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6AE2A86B25C008BC665 /* WhatToTest.it.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatToTest.it.txt; sourceTree = "<group>"; };
+		811EF6AF2A86B25C008BC665 /* WhatToTest.es-419.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.es-419.txt"; sourceTree = "<group>"; };
+		811EF6B02A86B25C008BC665 /* WhatToTest.pt-BR.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.pt-BR.txt"; sourceTree = "<group>"; };
+		811EF6B12A86B25C008BC665 /* WhatToTest.uk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatToTest.uk.txt; sourceTree = "<group>"; };
+		811EF6B22A86B399008BC665 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		8136C9362A6C61F200C283E3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		8136C9392A6C687600C283E3 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
@@ -183,7 +187,6 @@
 		816CB3962A68957A001FB8F5 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
 		81A425642A7C41A2002498C3 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
-		81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
 		81EBF3142A82F1CD00817353 /* Sway Radio DJ Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway Radio DJ Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_Radio_DJ_CompanionApp.swift; sourceTree = "<group>"; };
@@ -419,7 +422,11 @@
 		81B631B12A64E8BB00EDFE03 /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
-				81B631B22A64E92D00EDFE03 /* WhatToTest.en-US.txt */,
+				811EF6B22A86B399008BC665 /* WhatToTest.en-US.txt */,
+				811EF6AF2A86B25C008BC665 /* WhatToTest.es-419.txt */,
+				811EF6AE2A86B25C008BC665 /* WhatToTest.it.txt */,
+				811EF6B02A86B25C008BC665 /* WhatToTest.pt-BR.txt */,
+				811EF6B12A86B25C008BC665 /* WhatToTest.uk.txt */,
 			);
 			path = TestFlight;
 			sourceTree = "<group>";
@@ -736,7 +743,6 @@
 			files = (
 				811EF69B2A869A23008BC665 /* Localizable.strings in Resources */,
 				81546C482A64779600F2E98E /* Preview Assets.xcassets in Resources */,
-				81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */,
 				811EF6A42A869A23008BC665 /* Sway-TV-InfoPlist.strings in Resources */,
 				81546C752A64784B00F2E98E /* Media.xcassets in Resources */,
 				81546C452A64779600F2E98E /* Assets.xcassets in Resources */,

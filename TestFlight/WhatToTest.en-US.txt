@@ -1,5 +1,5 @@
 Please test:
-- Spanish and Portuguese translations.
+- Spanish, Portuguese, Italian, Ukrainian translations.
 - Onboarding experience.
 - Reaction buttons, countdown.
 - Control Center: AirPlay, wired headphones
