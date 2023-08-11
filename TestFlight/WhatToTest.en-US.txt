@@ -1,6 +1,6 @@
 Please test:
 - Spanish and Portuguese translations.
-- Wired headphones
-- Reaction buttons
-- AirPlay, AirPods, playback metadata in Control Center
+- Onboarding experience.
+- Reaction buttons, countdown.
+- Control Center: AirPlay, wired headphones
 - App behavior when you receive calls, open other apps, etc
