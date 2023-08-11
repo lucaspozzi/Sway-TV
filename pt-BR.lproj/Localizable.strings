@@ -68,13 +68,13 @@
 "Sway!" = "Sway!";
 
 /* No comment provided by engineer. */
-"To start listening, press play:" = "Aperte o triângulo para começar a tocar";
+"To start listening, press play:" = "Aperte o triângulo play para começar a tocar:";
 
 /* No comment provided by engineer. */
-"Top tracks" = "Música Top";
+"Top tracks" = "Favoritas dos ouvintes";
 
 /* No comment provided by engineer. */
-"Top Tracks" = "Favoritas dos ouvintes";
+"Top Tracks" = "Música Top";
 
 /* No comment provided by engineer. */
 "Triangles" = "Triangulos";
@@ -86,7 +86,7 @@
 "View album artwork" = "Veja capa do álbum";
 
 /* No comment provided by engineer. */
-"Welcome to Sway" = "Bem-vindos ao Sway Rádio DJ";
+"Welcome to Sway" = "Bem-vindos ao Sway";
 
 /* No comment provided by engineer. */
 "When you really like a song, let us know how much by tapping any of these reactions:" = "Quando você realmente gosta de uma música, deixe-nos saber. É só tocar em qualquer uma destas reações:";

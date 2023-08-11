@@ -1,4 +1,5 @@
 Please test:
+- Spanish and Portuguese translations.
 - Wired headphones
 - Reaction buttons
 - AirPlay, AirPods, playback metadata in Control Center
