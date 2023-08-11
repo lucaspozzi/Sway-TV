@@ -20,6 +20,12 @@
 		810CF6DE2A65E66400600064 /* RadioStationMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C702A64784B00F2E98E /* RadioStationMetadata.swift */; };
 		810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81546C6F2A64784A00F2E98E /* Media.xcassets */; };
 		810CF6F72A66070100600064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CF6F62A66070100600064 /* ContentView.swift */; };
+		811EF6992A869A23008BC665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF6972A869A23008BC665 /* Localizable.strings */; };
+		811EF69A2A869A23008BC665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF6972A869A23008BC665 /* Localizable.strings */; };
+		811EF69B2A869A23008BC665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF6972A869A23008BC665 /* Localizable.strings */; };
+		811EF69E2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF69C2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings */; };
+		811EF6A12A869A23008BC665 /* Sway-Radio-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF69F2A869A23008BC665 /* Sway-Radio-InfoPlist.strings */; };
+		811EF6A42A869A23008BC665 /* Sway-TV-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF6A22A869A23008BC665 /* Sway-TV-InfoPlist.strings */; };
 		8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
 		8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
 		8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9392A6C687600C283E3 /* CustomSlider.swift */; };
@@ -141,6 +147,14 @@
 		810CF6E62A65EC5200600064 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = Library/Frameworks/DriverKit.framework; sourceTree = DEVELOPER_DIR; };
 		810CF6F62A66070100600064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sway-Radio-Info.plist"; sourceTree = SOURCE_ROOT; };
+		811EF6982A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		811EF69D2A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Sway-Radio-DJ-Companion-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6A02A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6A32A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6A52A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		811EF6A62A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Sway-Radio-DJ-Companion-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6A72A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6A82A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
 		8136C9362A6C61F200C283E3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		8136C9392A6C687600C283E3 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
@@ -257,6 +271,8 @@
 			children = (
 				8136C9392A6C687600C283E3 /* CustomSlider.swift */,
 				810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */,
+				811EF69F2A869A23008BC665 /* Sway-Radio-InfoPlist.strings */,
+				811EF6972A869A23008BC665 /* Localizable.strings */,
 				810CF6D52A65E47E00600064 /* AudioPlayerView.swift */,
 				810CF6D62A65E47F00600064 /* HomeTabView.swift */,
 				810CF6AC2A65E36D00600064 /* Sway_RadioApp.swift */,
@@ -307,6 +323,7 @@
 			children = (
 				81B631B12A64E8BB00EDFE03 /* TestFlight */,
 				81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */,
+				811EF6A22A869A23008BC665 /* Sway-TV-InfoPlist.strings */,
 				81546C6A2A6477F400F2E98E /* Shared */,
 				81546C3F2A64779500F2E98E /* Sway TV */,
 				81546C502A64779600F2E98E /* Sway TVTests */,
@@ -408,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				81EBF3472A82F57400817353 /* Sway-Radio-DJ-Companion-Info.plist */,
+				811EF69C2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings */,
 				81EBF3462A82F3DF00817353 /* Sway Radio DJ Companion.entitlements */,
 				81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */,
 				81EBF3182A82F1CD00817353 /* ContentView.swift */,
@@ -659,6 +677,10 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				"es-419",
+				uk,
+				it,
 			);
 			mainGroup = 81546C342A64779500F2E98E;
 			productRefGroup = 81546C3E2A64779500F2E98E /* Products */;
@@ -684,8 +706,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				810CF6B42A65E36F00600064 /* Preview Assets.xcassets in Resources */,
+				811EF6992A869A23008BC665 /* Localizable.strings in Resources */,
 				810CF6F52A65EF0F00600064 /* Media.xcassets in Resources */,
 				810CF6B12A65E36F00600064 /* Assets.xcassets in Resources */,
+				811EF6A12A869A23008BC665 /* Sway-Radio-InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,8 +731,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811EF69B2A869A23008BC665 /* Localizable.strings in Resources */,
 				81546C482A64779600F2E98E /* Preview Assets.xcassets in Resources */,
 				81B631B32A64E92D00EDFE03 /* WhatToTest.en-US.txt in Resources */,
+				811EF6A42A869A23008BC665 /* Sway-TV-InfoPlist.strings in Resources */,
 				81546C752A64784B00F2E98E /* Media.xcassets in Resources */,
 				81546C452A64779600F2E98E /* Assets.xcassets in Resources */,
 			);
@@ -733,6 +759,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81EBF31E2A82F1CE00817353 /* Preview Assets.xcassets in Resources */,
+				811EF69A2A869A23008BC665 /* Localizable.strings in Resources */,
+				811EF69E2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings in Resources */,
 				81EBF31B2A82F1CE00817353 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -899,6 +927,48 @@
 			targetProxy = 81EBF32E2A82F1CE00817353 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		811EF6972A869A23008BC665 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				811EF6982A869A23008BC665 /* pt-BR */,
+				811EF6A52A869DEC008BC665 /* es-419 */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		811EF69C2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				811EF69D2A869A23008BC665 /* pt-BR */,
+				811EF6A62A869DEC008BC665 /* es-419 */,
+			);
+			name = "Sway-Radio-DJ-Companion-InfoPlist.strings";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		811EF69F2A869A23008BC665 /* Sway-Radio-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				811EF6A02A869A23008BC665 /* pt-BR */,
+				811EF6A72A869DEC008BC665 /* es-419 */,
+			);
+			name = "Sway-Radio-InfoPlist.strings";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		811EF6A22A869A23008BC665 /* Sway-TV-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				811EF6A32A869A23008BC665 /* pt-BR */,
+				811EF6A82A869DEC008BC665 /* es-419 */,
+			);
+			name = "Sway-TV-InfoPlist.strings";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		810CF6CC2A65E36F00600064 /* Debug */ = {
@@ -1112,6 +1182,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TVOS_DEPLOYMENT_TARGET = 16.4;
 			};
@@ -1165,6 +1236,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = appletvos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TVOS_DEPLOYMENT_TARGET = 16.4;
 				VALIDATE_PRODUCT = YES;

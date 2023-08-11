@@ -24,8 +24,10 @@ struct EventScheduleView: View {
                     VStack(alignment: .leading) {
                         Text(item.name).font(.headline)
                         Text(item.description)
-                        Text("Starts \(formatDate(date: item.start))")
-                        Text("Ends \(formatDate(date: item.end))")
+                        Text("Starts:")
+                        Text(formatDate(date: item.start))
+                        Text("Ends:")
+                        Text(formatDate(date: item.end))
                     }//.padding()
                 }
                 .onDelete(perform: deleteItems) // Enable swipe to delete
