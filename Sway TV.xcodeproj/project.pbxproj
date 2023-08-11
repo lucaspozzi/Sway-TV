@@ -155,6 +155,7 @@
 		811EF6A62A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Sway-Radio-DJ-Companion-InfoPlist.strings"; sourceTree = "<group>"; };
 		811EF6A72A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
 		811EF6A82A869DEC008BC665 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
+		811EF6A92A86AD34008BC665 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8136C9362A6C61F200C283E3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		8136C9392A6C687600C283E3 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
@@ -934,6 +935,7 @@
 			children = (
 				811EF6982A869A23008BC665 /* pt-BR */,
 				811EF6A52A869DEC008BC665 /* es-419 */,
+				811EF6A92A86AD34008BC665 /* it */,
 			);
 			name = Localizable.strings;
 			path = ..;
