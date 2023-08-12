@@ -130,11 +130,11 @@ class Sentiments {
                     
                     switch sentimentName {
                     case "like":
-                        scoreToAdd = 1
-                    case "figure.dance":
-                        scoreToAdd = 2
-                    case "figure.socialdance":
                         scoreToAdd = 3
+                    case "figure.dance":
+                        scoreToAdd = 4
+                    case "figure.socialdance":
+                        scoreToAdd = 5
                     default:
                         continue
                     }

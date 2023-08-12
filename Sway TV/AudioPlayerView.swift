@@ -60,7 +60,7 @@ struct AudioPlayerView: View {
                             .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 490)
-                        .foregroundColor(audioPlayer.isLoading ? .gray : .purple)
+                        .foregroundColor(audioPlayer.isLoading ? .gray : .accentColor)
 
                 }
                 
@@ -131,7 +131,7 @@ struct AudioPlayerView: View {
                     .background(
                         ZStack {
                             Circle()
-                                .fill(Color.purple)
+                                .fill(Color.accentColor)
                                 .blur(radius: 50)
                                 .offset(x: 0, y: 0)
                         }

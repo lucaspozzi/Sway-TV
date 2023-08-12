@@ -76,10 +76,9 @@ struct MyFavoritesView: View {
                                 .padding(.trailing, 10)
                         }
                     }
-                    Spacer()
                 }
                 VStack(alignment: .leading) {
-                    Text(item.trackName).multilineTextAlignment(.trailing)
+                    Text(item.trackName).multilineTextAlignment(.leading)
                         .font(.headline)
                         .lineLimit(3)
                 }

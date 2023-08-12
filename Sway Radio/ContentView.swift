@@ -142,42 +142,64 @@ struct ContentView: View {
                     .sheet(isPresented: $isOnboarding, onDismiss: {
                         UserDefaults.standard.set(true, forKey: "isOnboarded")
                     }) {
-                        VStack {
-                            Text("Welcome to Sway")
-                                .font(.largeTitle)
-                                .foregroundColor(.purple)
-                                .padding(.top)
+                        VStack(spacing: 20) {
                             
-                            Text("Free Music Radio")
-                                .font(.title)
-                                .foregroundColor(.purple)
+                            VStack {
+                                Text("Welcome to Sway")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.accentColor)
+                                    .padding(.top)
+                                
+                                Text("Free Music Radio")
+                                    .font(.title)
+                                    .foregroundColor(.accentColor)
+                            }
+                            
+                            VStack {
+                                Text("To start listening, press play:")
+                                    .font(.title2)
+                                    .padding(.top)
+                                
+                                Image(systemName: "play")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(.accentColor)
+                                    .frame(width: 100, height: 100)
+                            }
+                            
+                            VStack {
+                                
+                            }
                             
                             
-                            Text("To start listening, press play:")
-                                .font(.title2)
-                                .padding(.top)
-                            
-                            Image(systemName: "play")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(.purple)
-                                .frame(width: 100, height: 100)
-                            
-                            Spacer()
-                            
-                            Text("When you really like a song, let us know how much by tapping any of these reactions:")
+                            Text("When you sway to a song, save them to your favorites by tapping any of these reactions:")
                                 .font(.title2)
                                 .padding(.horizontal)
                             
-                            HStack(spacing: 25) {
-                                Image(systemName: "hand.thumbsup.fill")
-                                Image(systemName: "figure.dance")
-                                Image(systemName: "figure.socialdance")
+                            HStack(alignment: .bottom ,spacing: 25) {
+                                VStack {
+                                    Image(systemName: "hand.thumbsup.fill")
+                                        .foregroundColor(.accentColor)
+                                        .font(.system(size: 40))
+                                    Text("Sway")
+                                }
+                                VStack {
+                                    Image(systemName: "figure.dance")
+                                        .foregroundColor(.accentColor)
+                                        .font(.system(size: 40))
+                                    Text("Swaay!")
+                                }
+                                VStack {
+                                    Image(systemName: "figure.socialdance")
+                                        .foregroundColor(.accentColor)
+                                        .font(.system(size: 40))
+                                    Text("Swaaay!")
+                                }
+                                
                             }
-                            .foregroundColor(.purple)
-                            .font(.system(size: 40))
+                            Text("Your sways count towards the Top Tracks.")
+                                .padding(.horizontal)
                             
-                            Spacer()
                             
                             Button(action: {
                                 isOnboarding = false
@@ -187,11 +209,10 @@ struct ContentView: View {
                                     .font(.title)
                                     .foregroundColor(.white)
                                     .frame(width: 200, height: 60)
-                                    .background(Color.purple)
+                                    .background(Color.accentColor)
                                     .cornerRadius(30)
                             }
-                            
-                            Spacer()
+                            .padding(.vertical)
                         }
                     }
 

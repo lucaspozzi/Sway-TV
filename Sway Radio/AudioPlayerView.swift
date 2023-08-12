@@ -42,7 +42,7 @@ struct AudioPlayerView: View {
                 .background(
                     ZStack {
                         Circle()
-                            .fill(Color.purple)
+                            .fill(Color.accentColor)
                             .blur(radius: 15)
                             .offset(x: 0, y: 0)
                     }
