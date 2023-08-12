@@ -88,6 +88,7 @@ struct ContentView: View {
                                         if !isCountdownActive {
                                             startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
+                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle)
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
@@ -101,6 +102,7 @@ struct ContentView: View {
                                         if !isCountdownActive {
                                             startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.dance")
+                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle)
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
@@ -115,6 +117,7 @@ struct ContentView: View {
                                         if !isCountdownActive {
                                             startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
+                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle)
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
@@ -212,6 +215,15 @@ struct ContentView: View {
             .tabItem {
                 Image(systemName: "radio")
                 Text("Radio")
+            }
+            
+            NavigationView {
+                MyFavoritesView()
+                    .navigationTitle("My favorites")
+            }
+            .tabItem {
+                Image(systemName: "star.fill")
+                Text("Favorites")
             }
             
             NavigationView {

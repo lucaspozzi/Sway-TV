@@ -47,6 +47,9 @@
 		81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */; };
 		816CB3972A68957A001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
 		816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CB3962A68957A001FB8F5 /* RecentView.swift */; };
+		81757AA22A8729B5007AEFEF /* MyFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */; };
+		81757AA32A8729B5007AEFEF /* MyFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */; };
+		81757AA42A8729B5007AEFEF /* MyFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */; };
 		81A425652A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
 		81A425662A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
 		81A425682A7DBF65002498C3 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810632472A6706FE008E62AB /* AudioPlayer.swift */; };
@@ -185,6 +188,7 @@
 		81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbientVideoMenuView.swift; sourceTree = "<group>"; };
 		81546C7D2A64849300F2E98E /* Sway TV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway TV.entitlements"; sourceTree = "<group>"; };
 		816CB3962A68957A001FB8F5 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
+		81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesView.swift; sourceTree = "<group>"; };
 		81A425642A7C41A2002498C3 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
 		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 				81CA8F702A7B3A5F00835352 /* Sentiments.swift */,
 				81A425642A7C41A2002498C3 /* TopTracksView.swift */,
 				81EBF34A2A82F97000817353 /* Event.swift */,
+				81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -799,6 +804,7 @@
 				8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */,
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
+				81757AA32A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
 				81EBF34C2A82F97000817353 /* Event.swift in Sources */,
 				8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */,
@@ -838,6 +844,7 @@
 				81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */,
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
+				81757AA22A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
 				81EBF34B2A82F97000817353 /* Event.swift in Sources */,
 				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
@@ -881,6 +888,7 @@
 				81EBF3492A82F92900817353 /* EventScheduleView.swift in Sources */,
 				81EBF3192A82F1CD00817353 /* ContentView.swift in Sources */,
 				81EBF33E2A82F1E300817353 /* RecentView.swift in Sources */,
+				81757AA42A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
 				81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
