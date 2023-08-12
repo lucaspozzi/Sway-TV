@@ -21,7 +21,7 @@ import GroupActivities
     
     let featureFlags = FeatureFlags()
     private var updateAlbumArt: Bool = false
-    private var currentAlbumArtUrl: String = ""
+    @Published var currentAlbumArtUrl: String = "https://swayradio.app/audiodog.jpg"
 
     private var audioPlayer: AVPlayer?
     private var statusObserver: NSKeyValueObservation?

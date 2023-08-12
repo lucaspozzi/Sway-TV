@@ -15,9 +15,10 @@ class Sentiments {
     private let publicDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").publicCloudDatabase
     private let privateDatabase = CKContainer(identifier: "iCloud.app.waggie.Sway-TV").privateCloudDatabase
     private let recordType = "Sentiment"
+    private let recordTypeFavorites = "MyFavorites"
     
     func fetchUserFavorites(completion: @escaping ([CKRecord]?, Error?) -> Void) {
-        let query = CKQuery(recordType: recordType, predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: recordTypeFavorites, predicate: NSPredicate(value: true))
         query.sortDescriptors = [NSSortDescriptor(key: "time", ascending: false)]
         
         privateDatabase.perform(query, inZoneWith: nil) { (records, error) in
@@ -30,8 +31,8 @@ class Sentiments {
         }
     }
     
-    func addToPrivateDatabaseOrUpdateTime(currentTrack: String) {
-        let query = CKQuery(recordType: recordType, predicate: NSPredicate(format: "currentTrack = %@", currentTrack))
+    func addToPrivateDatabaseOrUpdateTime(currentTrack: String, sentimentName: String, artUrl: String) {
+        let query = CKQuery(recordType: recordTypeFavorites, predicate: NSPredicate(format: "trackName = %@", currentTrack))
         
         privateDatabase.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
@@ -41,6 +42,8 @@ class Sentiments {
             
             if let existingRecord = records?.first {
                 existingRecord["time"] = Date()
+                existingRecord["sentimentName"] = sentimentName
+                existingRecord["artUrl"] = artUrl
                 let modifyOp = CKModifyRecordsOperation(recordsToSave: [existingRecord], recordIDsToDelete: nil)
                 modifyOp.savePolicy = .changedKeys
                 
@@ -56,9 +59,11 @@ class Sentiments {
             } else {
                 // Create a new record
                 let recordID = CKRecord.ID(recordName: UUID().uuidString)
-                let newRecord = CKRecord(recordType: self.recordType, recordID: recordID)
-                newRecord["currentTrack"] = currentTrack
+                let newRecord = CKRecord(recordType: self.recordTypeFavorites, recordID: recordID)
+                newRecord["trackName"] = currentTrack
                 newRecord["time"] = Date()
+                newRecord["sentimentName"] = sentimentName
+                newRecord["artUrl"] = artUrl
                 
                 let modifyOp = CKModifyRecordsOperation(recordsToSave: [newRecord], recordIDsToDelete: nil)
                 modifyOp.savePolicy = .allKeys

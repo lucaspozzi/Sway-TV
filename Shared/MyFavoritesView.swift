@@ -10,21 +10,29 @@ import CloudKit
 
 struct MyFavoritesView: View {
     
-    @State private var listItems: [String] = []
+    struct TrackItem: Identifiable {
+        let id = UUID()
+        let trackName: String
+        var artURL: String
+    }
+    
+    @State private var trackItems: [TrackItem] = []
     private let sentiments = Sentiments()
+    private let defaultArtwork: UIImage = UIImage(named: "audiodog")!
     
     func loadData() {
-        var newList: [String] = []
+        var newList: [TrackItem] = []
         sentiments.fetchUserFavorites { (tracks, error) in
             if let error = error {
                 print("Error fetching top tracks: \(error)")
             } else if let tracks = tracks {
                 for record in tracks {
-                    if let currentTrack = record["currentTrack"] as? String {
-                        newList.append(currentTrack)
+                    if let trackName = record["trackName"] as? String,
+                       let artURL = record["artUrl"] as? String {
+                        newList.append(TrackItem(trackName: trackName, artURL: artURL))
                     }
                 }
-                listItems = newList
+                trackItems = newList
             }
         }
     }
@@ -39,11 +47,50 @@ struct MyFavoritesView: View {
     }
     
     var body: some View {
-        List(listItems, id: \.self) { track in
+        List(trackItems) { item in
             HStack(alignment: .top) {
-                Text(track).font(.headline)
+                if let url = URL(string: item.artURL) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .empty:
+                            defaultImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(8) // Apply corner radius for image
+                                .padding(.trailing, 10)
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(8) // Apply corner radius for image
+                                .padding(.trailing, 10)
+                        case .failure:
+                            defaultImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(8) // Apply corner radius for image
+                                .padding(.trailing, 10)
+                        @unknown default:
+                            defaultImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(8) // Apply corner radius for image
+                                .padding(.trailing, 10)
+                        }
+                    }
+                    Spacer()
+                }
+                VStack(alignment: .leading) {
+                    Text(item.trackName).multilineTextAlignment(.trailing)
+                        .font(.headline)
+                        .lineLimit(3)
+                }
             }
-            .padding()
+            .padding(.vertical, 8)
         }
         .refreshable {
             await refreshData()
@@ -52,7 +99,12 @@ struct MyFavoritesView: View {
             loadData()
         }
     }
+    
+    private var defaultImage: Image {
+        Image(uiImage: defaultArtwork)
+    }
 }
+
 
 struct MyFavoritesView_Previews: PreviewProvider {
     static var previews: some View {

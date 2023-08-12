@@ -88,7 +88,7 @@ struct ContentView: View {
                                         if !isCountdownActive {
                                             startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like")
-                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle)
+                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "like", artUrl: audioPlayer.currentAlbumArtUrl)
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
@@ -102,7 +102,7 @@ struct ContentView: View {
                                         if !isCountdownActive {
                                             startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.dance")
-                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle)
+                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.dance", artUrl: audioPlayer.currentAlbumArtUrl)
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
@@ -117,7 +117,7 @@ struct ContentView: View {
                                         if !isCountdownActive {
                                             startCountdown()
                                             sentiments.add(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance")
-                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle)
+                                            sentiments.addToPrivateDatabaseOrUpdateTime(currentTrack: audioPlayer.currentTrackTitle, sentimentName: "figure.socialdance", artUrl: audioPlayer.currentAlbumArtUrl)
                                             lastSentimentTrackName = audioPlayer.currentTrackTitle
                                         }
                                     }) {
