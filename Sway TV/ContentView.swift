@@ -35,6 +35,12 @@ struct ContentView: View {
                 }
                 .environmentObject(audioPlayer)
             
+            MyFavoritesView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("My favorites")
+                }
+            
             RecentView()
                 .tabItem {
                     Image(systemName: "music.note.list")
