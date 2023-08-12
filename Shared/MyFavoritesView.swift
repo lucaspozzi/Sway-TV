@@ -66,6 +66,7 @@ struct MyFavoritesView: View {
                                 .frame(width: 60, height: 60)
                                 .cornerRadius(8) // Apply corner radius for image
                                 .padding(.trailing, 10)
+                                .animation(.default)
                         case .failure:
                             defaultImage
                                 .resizable()
