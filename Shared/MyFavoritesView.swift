@@ -52,7 +52,7 @@ struct MyFavoritesView: View {
                 if let url = URL(string: item.artURL) {
                     AsyncImage(url: url) { phase in
                         switch phase {
-                        case .empty:
+                        case .empty, .failure:
                             defaultImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -67,13 +67,6 @@ struct MyFavoritesView: View {
                                 .cornerRadius(8) // Apply corner radius for image
                                 .padding(.trailing, 10)
                                 .animation(.default)
-                        case .failure:
-                            defaultImage
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 60, height: 60)
-                                .cornerRadius(8) // Apply corner radius for image
-                                .padding(.trailing, 10)
                         @unknown default:
                             defaultImage
                                 .resizable()
