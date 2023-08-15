@@ -11,6 +11,54 @@
         }
       },
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.575",
+          "green" : "0.129",
+          "red" : "0.581"
+        }
+      },
+      "idiom" : "universal"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.575",
+          "green" : "0.129",
+          "red" : "0.581"
+        }
+      },
+      "idiom" : "tv"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.725",
+          "green" : "0.163",
+          "red" : "0.733"
+        }
+      },
+      "idiom" : "tv"
     }
   ],
   "info" : {

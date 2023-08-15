@@ -60,7 +60,7 @@ struct AudioPlayerView: View {
                             .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 490)
-                        .foregroundColor(audioPlayer.isLoading ? .gray : .accentColor)
+                        .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
 
                 }
                 

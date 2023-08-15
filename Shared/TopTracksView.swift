@@ -13,23 +13,37 @@ struct TopTracksView: View {
     @State private var listItems: [(String, Int)] = []
     private let sentiments = Sentiments()
     
+    private func loadData() {
+        sentiments.fetchTop10TrackNamesWeighted { (tracks, error) in
+            if let error = error {
+                print("Error fetching top tracks: \(error)")
+            } else if let tracks = tracks {
+                listItems = tracks
+            }
+        }
+    }
+    
+    private func refreshData() async {
+        do {
+            try await Task.sleep(nanoseconds: 1_000_000_000) // Simulating a refresh delay
+            loadData()
+        } catch {
+            print("Error during refreshData: \(error)")
+        }
+    }
+    
     var body: some View {
         List(listItems, id: \.0) { track, count in
             HStack(alignment: .top) {
                 Text(track).font(.headline)
-//                Spacer()
-//                Text("Sways: \(count)")
             }
             .padding()
         }
         .onAppear {
-            sentiments.fetchTop10TrackNamesWeighted { (tracks, error) in
-                if let error = error {
-                    print("Error fetching top tracks: \(error)")
-                } else if let tracks = tracks {
-                    listItems = tracks
-                }
-            }
+            loadData()
+        }
+        .refreshable {
+            await refreshData()
         }
     }
 }

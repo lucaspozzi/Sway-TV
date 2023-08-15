@@ -152,7 +152,7 @@ struct ContentView: View {
                                 
                                 Text("Free Music Radio")
                                     .font(.title)
-                                    .foregroundColor(.accentColor)
+//                                    .foregroundColor(.accentColor)
                             }
                             
                             VStack {
@@ -168,37 +168,39 @@ struct ContentView: View {
                             }
                             
                             VStack {
+                                Text("When you sway to a song, save them to your favorites by tapping any of these reactions:")
+                                    .font(.title2)
+                                    .padding(.horizontal)
                                 
+                                HStack(alignment: .bottom ,spacing: 25) {
+                                    VStack {
+                                        Image(systemName: "hand.thumbsup.fill")
+                                            .foregroundColor(.accentColor)
+                                            .font(.system(size: 40))
+                                        Text("Sway")
+                                    }
+                                    VStack {
+                                        Image(systemName: "figure.dance")
+                                            .foregroundColor(.accentColor)
+                                            .font(.system(size: 40))
+                                        Text("Swaay!")
+                                    }
+                                    VStack {
+                                        Image(systemName: "figure.socialdance")
+                                            .foregroundColor(.accentColor)
+                                            .font(.system(size: 40))
+                                        Text("Swaaay!")
+                                    }
+                                    
+                                }
+                                
+                                Text("Your sways count towards the Top Tracks, but only you can see your favorite songs.")
+                                    .font(.title2)
+                                    .padding()
                             }
                             
                             
-                            Text("When you sway to a song, save them to your favorites by tapping any of these reactions:")
-                                .font(.title2)
-                                .padding(.horizontal)
                             
-                            HStack(alignment: .bottom ,spacing: 25) {
-                                VStack {
-                                    Image(systemName: "hand.thumbsup.fill")
-                                        .foregroundColor(.accentColor)
-                                        .font(.system(size: 40))
-                                    Text("Sway")
-                                }
-                                VStack {
-                                    Image(systemName: "figure.dance")
-                                        .foregroundColor(.accentColor)
-                                        .font(.system(size: 40))
-                                    Text("Swaay!")
-                                }
-                                VStack {
-                                    Image(systemName: "figure.socialdance")
-                                        .foregroundColor(.accentColor)
-                                        .font(.system(size: 40))
-                                    Text("Swaaay!")
-                                }
-                                
-                            }
-                            Text("Your sways count towards the Top Tracks.")
-                                .padding(.horizontal)
                             
                             
                             Button(action: {
