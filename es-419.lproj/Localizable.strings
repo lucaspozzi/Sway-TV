@@ -71,6 +71,12 @@
 "Starts:" = "Comienza:";
 
 /* No comment provided by engineer. */
+"Swaaay!" = "¡Swaaay!";
+
+/* No comment provided by engineer. */
+"Swaay!" = "¡Swaay!";
+
+/* No comment provided by engineer. */
 "Sway!" = "¡Sway!";
 
 /* No comment provided by engineer. */
@@ -98,5 +104,8 @@
 "Welcome to Sway" = "Bienvenido a Sway";
 
 /* No comment provided by engineer. */
-"When you really like a song, let us know how much by tapping any of these reactions:" = "Cuando realmente te guste una canción, cuéntanos cuánto. Simplemente toque cualquiera de estas reacciones:";
+"When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Cuando te inclines hacia una canción, guárdala en tus favoritos tocando cualquiera de estas reacciones:";
+
+/* No comment provided by engineer. */
+"Your sways count towards the Top Tracks, but only you can see your favorite songs." = "Tus balanceos cuentan para las pistas principales, pero solo tú puedes ver tus canciones favoritas.";
 

@@ -98,5 +98,8 @@
 "Welcome to Sway" = "Benvenuto in Sway";
 
 /* No comment provided by engineer. */
-"When you really like a song, let us know how much by tapping any of these reactions:" = "Quando ti piace davvero una canzone, faccelo sapere quanto toccando una qualsiasi di queste reazioni:";
+"When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Quando si passa a un brano, salvarlo nei preferiti toccando una di queste reazioni:";
+
+/* No comment provided by engineer. */
+"Your sways count towards the Top Tracks, but only you can see your favorite songs." = "I tuoi ondeggiamenti contano verso le tracce principali, ma solo tu puoi vedere le tue canzoni preferite.";
 

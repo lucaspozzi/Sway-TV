@@ -92,5 +92,8 @@
 "Welcome to Sway" = "Ласкаво просимо до Sway";
 
 /* No comment provided by engineer. */
-"When you really like a song, let us know how much by tapping any of these reactions:" = "Коли вам дійсно подобається пісня, дайте нам знати, наскільки, торкнувши будь-яку з цих реакцій:";
+"When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Коли ви переходите до пісні, збережіть її в уподобання, торкнувшись будь-якої з наведених нижче реакцій.";
+
+/* No comment provided by engineer. */
+"Your sways count towards the Top Tracks, but only you can see your favorite songs." = "Ваші погойдування зараховуються до найпопулярніших композицій, але улюблені пісні можете бачити лише ви.";
 
