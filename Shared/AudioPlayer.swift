@@ -32,7 +32,6 @@ import GroupActivities
     private var timerMetadata: Timer = Timer()
     private var timerAnimation: Timer = Timer()
     
-    private var loadingTimer: Timer?
     
     // init audio player with url
     override init() {
@@ -65,11 +64,9 @@ import GroupActivities
                 case .waitingToPlayAtSpecifiedRate:
                     strongSelf.isLoading = true
                     strongSelf.isPlaying = false
-                    self?.startLoadingTimer()
                 case .playing:
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = true
-                    self?.stopLoadingTimer()
                 case .paused:
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = false
@@ -119,44 +116,7 @@ import GroupActivities
         timeControlStatusObserver?.invalidate()
         timerAnimation.invalidate()
         timerMetadata.invalidate()
-        loadingTimer?.invalidate()
         audioPlayer?.pause()
-    }
-    
-    
-    // Call this method to start the loading timer
-    func startLoadingTimer() {
-        loadingTimer?.invalidate() // Invalidate any previous timer
-        
-        loadingTimer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: false) { [weak self] _ in
-            // This block of code will run after 30 seconds if the loading state persists
-            // Perform actions to fix the loading issue here
-            // For example, you could retry loading, show an error message, or take other relevant actions
-            
-            // Call your method to handle the issue
-            self?.handleLoadingIssue()
-        }
-    }
-    
-    func stopLoadingTimer() {
-        loadingTimer?.invalidate()
-        loadingTimer = nil
-    }
-    
-    private func handleLoadingIssue() {
-        // Implement the logic to handle the loading issue here
-        // For example, show an error message to the user or attempt to reload content
-        
-        // You can access isLoading and isPlaying properties to make decisions based on the current state
-        if isLoading {
-            if self.audioPlayer == nil {
-                if let url = self.audioUrl {
-                    self.audioPlayer = AVPlayer(url: url)
-                }
-            }
-            stopPlayback()
-            startPlayback()
-        }
     }
     
     @objc func handleInterruption(_ notification: Notification) {

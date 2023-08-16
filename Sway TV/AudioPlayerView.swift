@@ -121,21 +121,13 @@ struct AudioPlayerView: View {
                     VStack {
                         Image(uiImage: audioPlayer.artworkImage)
                             .resizable().cornerRadius(10)
-                            .animation(.default)
                         Text("View album artwork")
                     }
+                    .shadow(color: .purple, radius: 1, x: 0, y: 1)
                 }.buttonStyle(.card)
                     .aspectRatio(contentMode: .fit)
                     .padding()
                     .frame(width: 880)
-                    .background(
-                        ZStack {
-                            Circle()
-                                .fill(Color.accentColor)
-                                .blur(radius: 50)
-                                .offset(x: 0, y: 0)
-                        }
-                    )
                 
                 
                 Text(audioPlayer.currentTrackTitle)

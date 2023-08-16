@@ -39,14 +39,7 @@ struct AudioPlayerView: View {
             
             Image(uiImage: audioPlayer.artworkImage)
                 .resizable().cornerRadius(10)
-                .background(
-                    ZStack {
-                        Circle()
-                            .fill(Color.accentColor)
-                            .blur(radius: 15)
-                            .offset(x: 0, y: 0)
-                    }
-                )
+                .shadow(color: .accentColor, radius: 3)
                 .scaleEffect(dragState.zoom)
                 .gesture(pinchGesture(updating: $dragState))
                 .aspectRatio(contentMode: .fit)

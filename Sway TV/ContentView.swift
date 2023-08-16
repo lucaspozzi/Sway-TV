@@ -25,13 +25,11 @@ struct ContentView: View {
 //                    Image(systemName: "house")
                     if(audioPlayer.isLoading){
                         Image(systemName: "antenna.radiowaves.left.and.right.slash")
-                        //                        Text("Tuning...")
                         
                     } else {
                         Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.green)
-                        //                        Text("Live")
                     }
-                    Text("Radio")
+                    Text("Sway Radio")
                 }
                 .environmentObject(audioPlayer)
             

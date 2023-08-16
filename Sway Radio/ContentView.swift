@@ -95,7 +95,7 @@ struct ContentView: View {
                                         Image(systemName: "hand.thumbsup.fill")
                                     }
                                     .disabled(audioPlayer.isLoading)
-                                    .animation(.easeOut)
+                                    .animation(.easeIn)
                                     
                                     
                                     Button(action: {
@@ -110,7 +110,7 @@ struct ContentView: View {
                                     }
                                     .disabled(audioPlayer.isLoading)
                                     .padding(.horizontal)
-                                    .animation(.spring())
+                                    .animation(.easeIn)
                                     
                                     
                                     Button(action: {
