@@ -62,7 +62,7 @@ import GroupActivities
                 
                 switch strongSelf.audioPlayer?.timeControlStatus {
                 case .waitingToPlayAtSpecifiedRate:
-                    strongSelf.isLoading = true
+                    strongSelf.isLoading = self?.audioPlayer?.rate ?? 1 > 0
                     strongSelf.isPlaying = false
                 case .playing:
                     strongSelf.isLoading = false
@@ -87,7 +87,7 @@ import GroupActivities
         }
         
         fetchOnce()
-        timerMetadata = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+        timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
             self?.fetchOnce()
         }
 
@@ -217,6 +217,7 @@ import GroupActivities
     func setNowPlayingInfoCenter(title: String, artwork: UIImage) {
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in artwork }
+        nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = NSNumber(1)
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     

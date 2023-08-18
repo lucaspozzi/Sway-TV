@@ -696,6 +696,11 @@
 				"es-419",
 				uk,
 				it,
+				fr,
+				de,
+				ja,
+				hi,
+				ar,
 			);
 			mainGroup = 81546C342A64779500F2E98E;
 			productRefGroup = 81546C3E2A64779500F2E98E /* Products */;
