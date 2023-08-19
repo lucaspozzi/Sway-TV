@@ -237,12 +237,15 @@ import GroupActivities
     func startPlayback() {
         debugMessage = "starting playback with url \(String(describing: self.audioUrl))"
         isLoading = true
-        setupRemoteTransportControls() // This function clears old targets and sets up new ones
-        updatePlaybackDuration()
         
         if audioPlayer == nil {
             debugMessage = "start playback on null audio player"
+            setupAudioPlayer()
         }
+        
+        setupRemoteTransportControls() // This function clears old targets and sets up new ones
+        updatePlaybackDuration()
+        
         audioPlayer?.play()
         
         // Set the now playing info
@@ -318,7 +321,6 @@ import GroupActivities
     @objc func stopPlayback() {
         audioPlayer?.pause()
         isPlaying = false
-//        audioPlayer?.seek(to: CMTime.zero)
     }
     
 }
