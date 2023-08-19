@@ -95,7 +95,7 @@ import GroupActivities
         
         fetchOnce()
         timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
-            self?.debugMessage = "fetching metadata"
+//            self?.debugMessage = "fetching metadata"
             self?.fetchOnce()
         }
 
@@ -215,6 +215,10 @@ import GroupActivities
         isLoading = true
         setupRemoteTransportControls() // This function clears old targets and sets up new ones
         updatePlaybackDuration()
+        
+        if audioPlayer == nil {
+            debugMessage = "start playback on null audio player"
+        }
         audioPlayer?.play()
         
         // Set the now playing info
@@ -226,6 +230,7 @@ import GroupActivities
     
     
     func setNowPlayingInfoCenter(title: String, artwork: UIImage) {
+        debugMessage = "setup now playing info center"
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in artwork }
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = NSNumber(1)
