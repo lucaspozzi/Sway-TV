@@ -12,6 +12,7 @@ import Intents
 
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
+    @State var showDebugMessage: Bool = false
     
     // Pinch to Zoom
     private struct DragState {
@@ -44,6 +45,13 @@ struct AudioPlayerView: View {
                 .gesture(pinchGesture(updating: $dragState))
                 .aspectRatio(contentMode: .fit)
                 .padding(.bottom)
+                .onTapGesture(count: 15, perform: {
+                    if(showDebugMessage){
+                        showDebugMessage = false
+                    } else {
+                        showDebugMessage = true
+                    }
+                })
             
             
             if audioPlayer.isPlaying {
@@ -88,7 +96,11 @@ struct AudioPlayerView: View {
             }
             
             Spacer()
-            Text(audioPlayer.debugMessage)
+            
+            if(showDebugMessage){
+                Text(audioPlayer.debugMessage)
+            }
+            
             
             //            CustomSlider(value: $audioPlayer.currentVolume)
             //                .foregroundColor(.accentColor)

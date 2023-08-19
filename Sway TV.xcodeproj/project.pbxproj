@@ -171,6 +171,13 @@
 		813FCAEB2A90724E003F1A7D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = "ar.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
 		813FCAEC2A90724E003F1A7D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = "ar.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
 		813FCAED2A907263003F1A7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		813FCAEE2A913730003F1A7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		813FCAEF2A91395C003F1A7D /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		813FCAF02A91395C003F1A7D /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = "hi.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		813FCAF12A91395C003F1A7D /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = "hi.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
+		813FCAF22A913B3E003F1A7D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		813FCAF32A913B3E003F1A7D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		813FCAF42A913B3E003F1A7D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ja.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
 		814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
 		814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioActivity.swift; sourceTree = "<group>"; };
 		81546C3D2A64779500F2E98E /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -964,6 +971,9 @@
 				811EF6AA2A86AEE2008BC665 /* uk */,
 				813FCAEA2A90724E003F1A7D /* ar */,
 				813FCAED2A907263003F1A7D /* de */,
+				813FCAEE2A913730003F1A7D /* fr */,
+				813FCAEF2A91395C003F1A7D /* hi */,
+				813FCAF22A913B3E003F1A7D /* ja */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -986,6 +996,8 @@
 				811EF6A72A869DEC008BC665 /* es-419 */,
 				811EF6AB2A86AEE2008BC665 /* uk */,
 				813FCAEB2A90724E003F1A7D /* ar */,
+				813FCAF02A91395C003F1A7D /* hi */,
+				813FCAF32A913B3E003F1A7D /* ja */,
 			);
 			name = "Sway-Radio-InfoPlist.strings";
 			path = ..;
@@ -997,6 +1009,8 @@
 				811EF6A32A869A23008BC665 /* pt-BR */,
 				811EF6A82A869DEC008BC665 /* es-419 */,
 				813FCAEC2A90724E003F1A7D /* ar */,
+				813FCAF12A91395C003F1A7D /* hi */,
+				813FCAF42A913B3E003F1A7D /* ja */,
 			);
 			name = "Sway-TV-InfoPlist.strings";
 			sourceTree = "<group>";

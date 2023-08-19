@@ -204,6 +204,7 @@ import GroupActivities
                 
                 self.setNowPlayingInfoCenter(title: metadata.currentTrack.title, artwork: self.artworkImage)
             case .failure(let error):
+                self.debugMessage = error.localizedDescription
                 print("Error \(error)")
             }
         }
@@ -230,7 +231,7 @@ import GroupActivities
     
     
     func setNowPlayingInfoCenter(title: String, artwork: UIImage) {
-        debugMessage = "setup now playing info center"
+//        debugMessage = "setup now playing info center"
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: artwork.size) { _ in artwork }
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = NSNumber(1)
