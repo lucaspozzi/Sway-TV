@@ -39,6 +39,11 @@ import GroupActivities
     override init() {
         super.init()
         
+        myInit()
+        
+    }
+    
+    func setupAudioPlayer() {
         // Initialize AVPlayer with a single, specific URL
         if let url = audioUrl {
             self.audioPlayer = AVPlayer(url: url)
@@ -57,6 +62,15 @@ import GroupActivities
             print("There was a problem setting up the audio session: \(error)")
         }
         
+        if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.headphones }) {
+            setupRemoteTransportControls()
+        }
+    }
+    
+    func myInit() {
+        
+        setupAudioPlayer()
+        
         timeControlStatusObserver = audioPlayer?.observe(\.timeControlStatus, options: [.new, .initial]) { [weak self] _, _ in
             DispatchQueue.main.async {
                 guard let strongSelf = self else {
@@ -66,12 +80,17 @@ import GroupActivities
                 switch strongSelf.audioPlayer?.timeControlStatus {
                 case .waitingToPlayAtSpecifiedRate:
                     self?.debugMessage = "waitingToPlayAtSpecifiedRate"
-                    strongSelf.isLoading = self?.audioPlayer?.rate ?? 1 > 0
+                    strongSelf.isLoading = true
                     strongSelf.isPlaying = false
+                    if(self?.audioPlayer == nil){
+                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - Found nil player"
+                        self?.setupAudioPlayer()
+                        self?.startPlayback()
+                    }
                 case .playing:
                     self?.debugMessage = "playing"
                     strongSelf.isLoading = false
-                    strongSelf.isPlaying = self?.audioPlayer?.rate ?? 1 > 0
+                    strongSelf.isPlaying = true
                 case .paused:
                     self?.debugMessage = "paused"
                     strongSelf.isLoading = false
@@ -95,25 +114,29 @@ import GroupActivities
         
         fetchOnce()
         timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
-//            self?.debugMessage = "fetching metadata"
+            //            self?.debugMessage = "fetching metadata"
             self?.fetchOnce()
         }
-
-
-//        Task {
-//            for session in GroupSession<RadioActivity>. {
-//                self.startPlayback(title: "Sway Radio", artwork: UIImage(named: "audiodog")!)
-//            }
-//        }
         
-        if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.headphones }) {
-            setupRemoteTransportControls()
-        }
-
+        
+        //        Task {
+        //            for session in GroupSession<RadioActivity>. {
+        //                self.startPlayback(title: "Sway Radio", artwork: UIImage(named: "audiodog")!)
+        //            }
+        //        }
+        
+        
+        
         
     }
     
     deinit {
+        
+        debugMessage = "deinit"
+        myDeinit()
+    }
+    
+    func myDeinit() {
         // Remove remote control event handlers
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.removeTarget(nil)
@@ -295,7 +318,7 @@ import GroupActivities
     @objc func stopPlayback() {
         audioPlayer?.pause()
         isPlaying = false
-        audioPlayer?.seek(to: CMTime.zero)
+//        audioPlayer?.seek(to: CMTime.zero)
     }
     
 }
