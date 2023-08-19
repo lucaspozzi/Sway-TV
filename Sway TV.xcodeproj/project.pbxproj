@@ -167,6 +167,10 @@
 		811EF6B22A86B399008BC665 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		8136C9362A6C61F200C283E3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		8136C9392A6C687600C283E3 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		813FCAEA2A90724E003F1A7D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		813FCAEB2A90724E003F1A7D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = "ar.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		813FCAEC2A90724E003F1A7D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = "ar.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
+		813FCAED2A907263003F1A7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
 		814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioActivity.swift; sourceTree = "<group>"; };
 		81546C3D2A64779500F2E98E /* Sway TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -958,6 +962,8 @@
 				811EF6A52A869DEC008BC665 /* es-419 */,
 				811EF6A92A86AD34008BC665 /* it */,
 				811EF6AA2A86AEE2008BC665 /* uk */,
+				813FCAEA2A90724E003F1A7D /* ar */,
+				813FCAED2A907263003F1A7D /* de */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -979,6 +985,7 @@
 				811EF6A02A869A23008BC665 /* pt-BR */,
 				811EF6A72A869DEC008BC665 /* es-419 */,
 				811EF6AB2A86AEE2008BC665 /* uk */,
+				813FCAEB2A90724E003F1A7D /* ar */,
 			);
 			name = "Sway-Radio-InfoPlist.strings";
 			path = ..;
@@ -989,6 +996,7 @@
 			children = (
 				811EF6A32A869A23008BC665 /* pt-BR */,
 				811EF6A82A869DEC008BC665 /* es-419 */,
+				813FCAEC2A90724E003F1A7D /* ar */,
 			);
 			name = "Sway-TV-InfoPlist.strings";
 			sourceTree = "<group>";
