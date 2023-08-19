@@ -71,7 +71,7 @@ import GroupActivities
                 case .playing:
                     self?.debugMessage = "playing"
                     strongSelf.isLoading = false
-                    strongSelf.isPlaying = true
+                    strongSelf.isPlaying = self?.audioPlayer?.rate ?? 1 > 0
                 case .paused:
                     self?.debugMessage = "paused"
                     strongSelf.isLoading = false
@@ -295,6 +295,7 @@ import GroupActivities
     @objc func stopPlayback() {
         audioPlayer?.pause()
         isPlaying = false
+        audioPlayer?.seek(to: CMTime.zero)
     }
     
 }
