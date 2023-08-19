@@ -13,6 +13,8 @@ import GroupActivities
     @Published var isPlaying = false
     @Published var isLoading = false
     
+    @Published var debugMessage: String = "Normal"
+    
     @Published var pseudoSoundLevelLeft: CGFloat = 0.0
     @Published var pseudoSoundLevelRight: CGFloat = 0.0
     
@@ -51,6 +53,7 @@ import GroupActivities
             try audioSession.setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
             try audioSession.setActive(true)
         } catch {
+            debugMessage = error.localizedDescription
             print("There was a problem setting up the audio session: \(error)")
         }
         
@@ -62,15 +65,19 @@ import GroupActivities
                 
                 switch strongSelf.audioPlayer?.timeControlStatus {
                 case .waitingToPlayAtSpecifiedRate:
+                    self?.debugMessage = "waitingToPlayAtSpecifiedRate"
                     strongSelf.isLoading = self?.audioPlayer?.rate ?? 1 > 0
                     strongSelf.isPlaying = false
                 case .playing:
+                    self?.debugMessage = "playing"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = true
                 case .paused:
+                    self?.debugMessage = "paused"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = false
                 default:
+                    self?.debugMessage = "default"
                     break
                 }
             }
@@ -88,6 +95,7 @@ import GroupActivities
         
         fetchOnce()
         timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
+            self?.debugMessage = "fetching metadata"
             self?.fetchOnce()
         }
 
@@ -117,6 +125,8 @@ import GroupActivities
         timerAnimation.invalidate()
         timerMetadata.invalidate()
         audioPlayer?.pause()
+        
+        debugMessage = "deinit"
     }
     
     @objc func handleInterruption(_ notification: Notification) {
@@ -201,6 +211,7 @@ import GroupActivities
     
     
     func startPlayback() {
+        debugMessage = "starting playback with url \(String(describing: self.audioUrl))"
         isLoading = true
         setupRemoteTransportControls() // This function clears old targets and sets up new ones
         updatePlaybackDuration()

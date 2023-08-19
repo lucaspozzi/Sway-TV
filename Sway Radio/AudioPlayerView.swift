@@ -88,6 +88,7 @@ struct AudioPlayerView: View {
             }
             
             Spacer()
+            Text(audioPlayer.debugMessage)
             
             //            CustomSlider(value: $audioPlayer.currentVolume)
             //                .foregroundColor(.accentColor)

@@ -136,7 +136,7 @@ struct AudioPlayerView: View {
                     .lineLimit(nil) // Allows as many lines as needed
                     .fixedSize(horizontal: false, vertical: true) // This ensures the text view grows vertically
                     .multilineTextAlignment(.center)
-                
+                Text(audioPlayer.debugMessage)
                 
             }
             
