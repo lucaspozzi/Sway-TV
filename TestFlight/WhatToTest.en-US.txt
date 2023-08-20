@@ -1,7 +1,4 @@
-Please test:
-- My favorites
-- Spanish, Portuguese, Italian, Ukrainian translations.
-- Onboarding experience.
-- Reaction buttons, countdown.
-- Control Center: AirPlay, wired headphones
-- App behavior when you receive calls, open other apps, etc
+Please test audio playback.
+It should match artwork and metadata.
+It should not get stuck loading.
+It should not fall too behind the live stream.

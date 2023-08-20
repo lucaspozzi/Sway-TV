@@ -83,10 +83,8 @@ struct AudioPlayerView: View {
                 
             } else {
                 Button(action: {
-                    DispatchQueue.main.async {
-                        self.audioPlayer.isLoading = true
-                        self.audioPlayer.startPlayback()
-                    }
+                    self.audioPlayer.isLoading = true
+                    self.audioPlayer.startPlayback()
                 }) {
                     Image(systemName: "play")
                         .resizable()

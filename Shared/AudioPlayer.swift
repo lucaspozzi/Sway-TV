@@ -67,6 +67,12 @@ import GroupActivities
         if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.headphones }) {
             setupRemoteTransportControls()
         }
+        guard let playerItem = audioPlayer?.currentItem else {
+            return
+        }
+        playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = true
+        playerItem.configuredTimeOffsetFromLive = playerItem.recommendedTimeOffsetFromLive
+        playerItem.automaticallyPreservesTimeOffsetFromLive = true
     }
     
     func myInit() {
@@ -250,26 +256,22 @@ import GroupActivities
     
     func startPlayback() {
         debugMessage = "starting playback with url \(String(describing: self.audioUrl))"
+        
         isLoading = true
         
         if audioPlayer == nil {
             debugMessage = "start playback on null audio player. setup anyway."
             setupAudioPlayer()
+            audioPlayer?.preroll(atRate: 1)
+            audioPlayer?.playImmediately(atRate: 1)
         } else {
-            if let url = audioUrl {
-                let asset = AVURLAsset(url: url)
-                let item = AVPlayerItem(asset: asset)
-                self.audioPlayer?.replaceCurrentItem(with: item)
-//                self.audioPlayer = AVPlayer(url: url)
-            } else {
-                debugMessage = "AVPlayer init with url failed."
-            }
+            audioPlayer?.preroll(atRate: 1)
+            audioPlayer?.playImmediately(atRate: 1)
         }
         
         setupRemoteTransportControls() // This function clears old targets and sets up new ones
         updatePlaybackDuration()
         
-        audioPlayer?.play()
         
         // Set the now playing info
         setNowPlayingInfoCenter(title: currentTrackTitle, artwork: artworkImage)
