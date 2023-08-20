@@ -156,6 +156,8 @@ import GroupActivities
         NotificationCenter.default.removeObserver(AVAudioSession.interruptionNotification)
         NotificationCenter.default.removeObserver(AVAudioSession.routeChangeNotification)
         
+        audioPlayer = nil
+        
         debugMessage = "deinit"
     }
     
@@ -252,9 +254,18 @@ import GroupActivities
         
         if audioPlayer == nil {
             debugMessage = "start playback on null audio player. setup anyway."
+            setupAudioPlayer()
+        } else {
+            if let url = audioUrl {
+                let asset = AVURLAsset(url: url)
+                let item = AVPlayerItem(asset: asset)
+                self.audioPlayer?.replaceCurrentItem(with: item)
+//                self.audioPlayer = AVPlayer(url: url)
+            } else {
+                debugMessage = "AVPlayer init with url failed."
+            }
         }
         
-        setupAudioPlayer()
         setupRemoteTransportControls() // This function clears old targets and sets up new ones
         updatePlaybackDuration()
         
