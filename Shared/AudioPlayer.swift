@@ -51,7 +51,6 @@ import GroupActivities
         } else {
             debugMessage = "AVPlayer init with url failed."
         }
-        setupAudioSessionObservers()
         
         // Set the now playing info
         setNowPlayingInfoCenter(title: "Sway Radio", artwork: artworkImage)
@@ -73,6 +72,7 @@ import GroupActivities
     func myInit() {
         
         setupAudioPlayer()
+        setupAudioSessionObservers()
         
         timeControlStatusObserver = audioPlayer?.observe(\.timeControlStatus, options: [.new, .initial]) { [weak self] _, _ in
             DispatchQueue.main.async {
@@ -140,6 +140,8 @@ import GroupActivities
     }
     
     func myDeinit() {
+        audioPlayer?.pause()
+        
         // Remove remote control event handlers
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.removeTarget(nil)
@@ -150,7 +152,9 @@ import GroupActivities
         timeControlStatusObserver?.invalidate()
         timerAnimation.invalidate()
         timerMetadata.invalidate()
-        audioPlayer?.pause()
+        
+        NotificationCenter.default.removeObserver(AVAudioSession.interruptionNotification)
+        NotificationCenter.default.removeObserver(AVAudioSession.routeChangeNotification)
         
         debugMessage = "deinit"
     }
