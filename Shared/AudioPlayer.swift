@@ -267,11 +267,13 @@ import GroupActivities
         if audioPlayer.currentItem == nil {
             debugMessage = "start playback on null audio player. setup anyway."
             setupAudioPlayer()
-            audioPlayer.preroll(atRate: 1)
-            audioPlayer.playImmediately(atRate: 1)
+            audioPlayer.play()
+//            audioPlayer.preroll(atRate: 1)
+//            audioPlayer.playImmediately(atRate: 1)
         } else {
-            audioPlayer.preroll(atRate: 1)
-            audioPlayer.playImmediately(atRate: 1)
+//            audioPlayer.preroll(atRate: 1)
+//            audioPlayer.playImmediately(atRate: 1)
+            audioPlayer.play()
         }
         
         setupRemoteTransportControls() // This function clears old targets and sets up new ones
