@@ -20,6 +20,7 @@ import GroupActivities
     
     @Published var currentTrackTitle: String = "djclaudiof"
     @Published var artworkImage: UIImage = UIImage(named: "audiodog")!
+    private var alreadyLoadingMetadata: Bool = false
     
     let featureFlags = FeatureFlags()
     private var updateAlbumArt: Bool = false
@@ -47,6 +48,8 @@ import GroupActivities
         // Initialize AVPlayer with a single, specific URL
         if let url = audioUrl {
             self.audioPlayer = AVPlayer(url: url)
+        } else {
+            debugMessage = "AVPlayer init with url failed."
         }
         setupAudioSessionObservers()
         
@@ -202,6 +205,10 @@ import GroupActivities
     
     func fetchOnce() {
         
+        if(alreadyLoadingMetadata){
+            return
+        }
+        alreadyLoadingMetadata = true
         fetchRadioStationMetadata { result in
             
             switch result {
@@ -231,6 +238,7 @@ import GroupActivities
                 print("Error \(error)")
             }
         }
+        alreadyLoadingMetadata = false
     }
     
     
@@ -239,10 +247,10 @@ import GroupActivities
         isLoading = true
         
         if audioPlayer == nil {
-            debugMessage = "start playback on null audio player"
-            setupAudioPlayer()
+            debugMessage = "start playback on null audio player. setup anyway."
         }
         
+        setupAudioPlayer()
         setupRemoteTransportControls() // This function clears old targets and sets up new ones
         updatePlaybackDuration()
         
