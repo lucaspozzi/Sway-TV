@@ -47,7 +47,7 @@ import GroupActivities
     func setupAudioPlayer() {
         
         self.audioPlayer.automaticallyWaitsToMinimizeStalling = true
-        self.audioPlayer.usesExternalPlaybackWhileExternalScreenIsActive = true
+//        self.audioPlayer.usesExternalPlaybackWhileExternalScreenIsActive = true
         
         // Initialize AVPlayer with a single, specific URL
         if let url = audioUrl {
