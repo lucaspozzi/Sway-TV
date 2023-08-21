@@ -46,7 +46,6 @@ import GroupActivities
     
     func setupAudioPlayer() {
         
-        self.audioPlayer = AVPlayer()
         self.audioPlayer.automaticallyWaitsToMinimizeStalling = true
         self.audioPlayer.usesExternalPlaybackWhileExternalScreenIsActive = true
         
@@ -98,6 +97,11 @@ import GroupActivities
                     strongSelf.isPlaying = false
                     if(self?.audioPlayer.currentItem == nil){
                         self?.debugMessage = "\(String(describing: self?.debugMessage)) - Found nil player"
+                        self?.setupAudioPlayer()
+                        self?.startPlayback()
+                    }
+                    if(self?.audioPlayer.reasonForWaitingToPlay == .noItemToPlay){
+                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - No item to play"
                         self?.setupAudioPlayer()
                         self?.startPlayback()
                     }
