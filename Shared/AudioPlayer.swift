@@ -13,7 +13,7 @@ import GroupActivities
     @Published var isPlaying = false
     @Published var isLoading = false
     
-    @Published var debugMessage: String = "Normal"
+//    @Published var debugMessage: String = "Normal"
     
     @Published var pseudoSoundLevelLeft: CGFloat = 0.0
     @Published var pseudoSoundLevelRight: CGFloat = 0.0
@@ -61,7 +61,7 @@ import GroupActivities
             item.automaticallyPreservesTimeOffsetFromLive = true
             self.audioPlayer.replaceCurrentItem(with: item)
         } else {
-            debugMessage = "\(String(describing: self.debugMessage)) - AVPlayer init with url failed."
+//            debugMessage = "\(String(describing: self.debugMessage)) - AVPlayer init with url failed."
         }
         
         setupAudioSession()
@@ -83,18 +83,18 @@ import GroupActivities
             try audioSession.setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
             try audioSession.setActive(true)
         } catch {
-            debugMessage = error.localizedDescription
+//            debugMessage = error.localizedDescription
             print("There was a problem setting up the audio session: \(error)")
         }
     }
     
     func startPlayback() {
-        debugMessage = "\(String(describing: self.debugMessage)) - starting playback with url \(String(describing: self.audioUrl))"
+//        debugMessage = "\(String(describing: self.debugMessage)) - starting playback with url \(String(describing: self.audioUrl))"
         
         isLoading = true
         
         if audioPlayer.currentItem == nil {
-            debugMessage = "\(String(describing: self.debugMessage)) - start playback on null audio player. setup anyway."
+//            debugMessage = "\(String(describing: self.debugMessage)) - start playback on null audio player. setup anyway."
             setupAudioPlayer()
             audioPlayer.play()
         } else {
@@ -115,39 +115,39 @@ import GroupActivities
                 
                 switch strongSelf.audioPlayer.timeControlStatus {
                 case .waitingToPlayAtSpecifiedRate:
-                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingToPlayAtSpecifiedRate"
+//                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingToPlayAtSpecifiedRate"
                     strongSelf.isLoading = true
                     strongSelf.isPlaying = false
                     if(self?.audioPlayer.currentItem == nil){
-                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - Found nil player"
+//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - Found nil player"
                         self?.setupAudioPlayer()
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .noItemToPlay){
-                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - No item to play"
+//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - No item to play"
                         self?.setupAudioPlayer()
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .evaluatingBufferingRate){
-                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - evaluatingBufferingRate"
+//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - evaluatingBufferingRate"
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .waitingForCoordinatedPlayback){
-                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingForCoordinatedPlayback"
+//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingForCoordinatedPlayback"
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .toMinimizeStalls){
-                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - toMinimizeStalls"
+//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - toMinimizeStalls"
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == nil){
-                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - nil..."
+//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - nil..."
                     }
                 case .playing:
-                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - playing"
+//                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - playing"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = true
                 case .paused:
-                    self?.debugMessage = "paused"
+//                    self?.debugMessage = "paused"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = false
                 default:
-                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - default"
+//                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - default"
                     break
                 }
             }
@@ -158,7 +158,7 @@ import GroupActivities
     
     deinit {
         
-        debugMessage = "deinit"
+//        debugMessage = "deinit"
         stopPlayback()
         
         // Remove remote control event handlers
@@ -178,7 +178,7 @@ import GroupActivities
         
         audioPlayer.replaceCurrentItem(with: nil)
         
-        debugMessage = "deinit"
+//        debugMessage = "deinit"
     }
     
     @objc func handleInterruption(_ notification: Notification) {
@@ -235,17 +235,17 @@ import GroupActivities
         case .newDeviceAvailable:
             let session = AVAudioSession.sharedInstance()
             for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.headphones {
-                debugMessage = "\(String(describing: self.debugMessage)) - headphones"
+//                debugMessage = "\(String(describing: self.debugMessage)) - headphones"
                 setupRemoteTransportControls()
                 break
             }
             for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.airPlay {
-                debugMessage = "\(String(describing: self.debugMessage)) - airplay"
+//                debugMessage = "\(String(describing: self.debugMessage)) - airplay"
                 startPlayback()
                 break
             }
             for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.builtInSpeaker {
-                debugMessage = "\(String(describing: self.debugMessage)) - builtInSpeaker"
+//                debugMessage = "\(String(describing: self.debugMessage)) - builtInSpeaker"
                 startPlayback()
                 break
             }
