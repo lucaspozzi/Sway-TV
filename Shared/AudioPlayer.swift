@@ -19,13 +19,10 @@ import GroupActivities
     @Published var pseudoSoundLevelRight: CGFloat = 0.0
     
     @Published var currentTrackTitle: String = "djclaudiof"
+    @Published var currentAlbumArtUrl: String = "https://swayradio.app/audiodog.jpg"
     @Published var artworkImage: UIImage = UIImage(named: "audiodog")!
     private var alreadyLoadingMetadata: Bool = false
     
-    let featureFlags = FeatureFlags()
-    private var updateAlbumArt: Bool = false
-    @Published var currentAlbumArtUrl: String = "https://swayradio.app/audiodog.jpg"
-
     private var audioPlayer: AVPlayer = AVPlayer()
     private var statusObserver: NSKeyValueObservation?
     private var timeControlStatusObserver: NSKeyValueObservation?
@@ -40,18 +37,23 @@ import GroupActivities
     override init() {
         super.init()
         
-        myInit()
+        setupAudioPlayer()
+        setupAudioSessionObservers()
+        setScheduledTimers()
         
+        setupAudioPlayerTimeControlStatusObserver()
+        
+        fetchOnce()
     }
     
     func setupAudioPlayer() {
         
         self.audioPlayer.automaticallyWaitsToMinimizeStalling = true
+        self.audioPlayer.allowsExternalPlayback = true
 //        self.audioPlayer.usesExternalPlaybackWhileExternalScreenIsActive = true
         
         // Initialize AVPlayer with a single, specific URL
         if let url = audioUrl {
-//            self.audioPlayer = AVPlayer(url: url)
             let asset = AVURLAsset(url: url)
             let item = AVPlayerItem(asset: asset)
             item.canUseNetworkResourcesForLiveStreamingWhilePaused = false
@@ -59,12 +61,23 @@ import GroupActivities
             item.automaticallyPreservesTimeOffsetFromLive = true
             self.audioPlayer.replaceCurrentItem(with: item)
         } else {
-            debugMessage = "AVPlayer init with url failed."
+            debugMessage = "\(String(describing: self.debugMessage)) - AVPlayer init with url failed."
         }
         
-        // Set the now playing info
+        setupAudioSession()
         setNowPlayingInfoCenter(title: "Sway Radio", artwork: artworkImage)
+        setupRemoteTransportControls()
         
+//        if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.headphones }) {
+//            setupRemoteTransportControls()
+//        }
+//        if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.airPlay }) {
+////            setupRemoteTransportControls()
+//            // do some airplay setup
+//        }
+    }
+    
+    func setupAudioSession() {
         do {
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
@@ -73,16 +86,26 @@ import GroupActivities
             debugMessage = error.localizedDescription
             print("There was a problem setting up the audio session: \(error)")
         }
-        
-        if AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == AVAudioSession.Port.headphones }) {
-            setupRemoteTransportControls()
-        }
     }
     
-    func myInit() {
+    func startPlayback() {
+        debugMessage = "\(String(describing: self.debugMessage)) - starting playback with url \(String(describing: self.audioUrl))"
         
-        setupAudioPlayer()
-        setupAudioSessionObservers()
+        isLoading = true
+        
+        if audioPlayer.currentItem == nil {
+            debugMessage = "\(String(describing: self.debugMessage)) - start playback on null audio player. setup anyway."
+            setupAudioPlayer()
+            audioPlayer.play()
+        } else {
+            audioPlayer.play()
+        }
+        
+        setupRemoteTransportControls() // This function clears old targets and sets up new ones
+        setNowPlayingInfoCenter(title: currentTrackTitle, artwork: artworkImage)
+    }
+    
+    func setupAudioPlayerTimeControlStatusObserver() {
         
         timeControlStatusObserver = audioPlayer.observe(\.timeControlStatus, options: [.new, .initial]) { [weak self] _, _ in
             DispatchQueue.main.async {
@@ -92,70 +115,51 @@ import GroupActivities
                 
                 switch strongSelf.audioPlayer.timeControlStatus {
                 case .waitingToPlayAtSpecifiedRate:
-                    self?.debugMessage = "waitingToPlayAtSpecifiedRate"
+                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingToPlayAtSpecifiedRate"
                     strongSelf.isLoading = true
                     strongSelf.isPlaying = false
                     if(self?.audioPlayer.currentItem == nil){
                         self?.debugMessage = "\(String(describing: self?.debugMessage)) - Found nil player"
                         self?.setupAudioPlayer()
-                        self?.startPlayback()
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .noItemToPlay){
                         self?.debugMessage = "\(String(describing: self?.debugMessage)) - No item to play"
                         self?.setupAudioPlayer()
-                        self?.startPlayback()
+                    }
+                    if(self?.audioPlayer.reasonForWaitingToPlay == .evaluatingBufferingRate){
+                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - evaluatingBufferingRate"
+                    }
+                    if(self?.audioPlayer.reasonForWaitingToPlay == .waitingForCoordinatedPlayback){
+                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingForCoordinatedPlayback"
+                    }
+                    if(self?.audioPlayer.reasonForWaitingToPlay == .toMinimizeStalls){
+                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - toMinimizeStalls"
+                    }
+                    if(self?.audioPlayer.reasonForWaitingToPlay == nil){
+                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - nil..."
                     }
                 case .playing:
-                    self?.debugMessage = "playing"
+                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - playing"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = true
                 case .paused:
-                    self?.debugMessage = "paused"
+                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - paused"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = false
                 default:
-                    self?.debugMessage = "default"
+                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - default"
                     break
                 }
             }
         }
-        
-        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-            // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
-            self?.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-            self?.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
-        }
-        
-        featureFlags.fetchFeatureFlag(named: "UpdateAlbumArt") { (isEnabled) in
-            self.updateAlbumArt = isEnabled
-        }
-        
-        fetchOnce()
-        timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
-            //            self?.debugMessage = "fetching metadata"
-            self?.fetchOnce()
-        }
-        
-        
-        //        Task {
-        //            for session in GroupSession<RadioActivity>. {
-        //                self.startPlayback(title: "Sway Radio", artwork: UIImage(named: "audiodog")!)
-        //            }
-        //        }
-        
-        
-        
-        
     }
+    
+    
     
     deinit {
         
         debugMessage = "deinit"
-        myDeinit()
-    }
-    
-    func myDeinit() {
-        audioPlayer.pause()
+        stopPlayback()
         
         // Remove remote control event handlers
         let commandCenter = MPRemoteCommandCenter.shared()
@@ -170,6 +174,7 @@ import GroupActivities
         
         NotificationCenter.default.removeObserver(AVAudioSession.interruptionNotification)
         NotificationCenter.default.removeObserver(AVAudioSession.routeChangeNotification)
+        NotificationCenter.default.removeObserver(AVAudioSession.mediaServicesWereResetNotification)
         
         audioPlayer.replaceCurrentItem(with: nil)
         
@@ -186,13 +191,13 @@ import GroupActivities
         switch interruptionType {
         case .began:
             // Handle audio interruption (e.g., pause the playback).
-            audioPlayer.pause()
+            stopPlayback()
         case .ended:
             if let interruptionOptionsRawValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt {
                 let interruptionOptions = AVAudioSession.InterruptionOptions(rawValue: interruptionOptionsRawValue)
                 if interruptionOptions.contains(.shouldResume) {
                     // Resume the audio playback after the interruption.
-                    audioPlayer.play()
+                    startPlayback()
                 }
             }
         @unknown default:
@@ -203,6 +208,11 @@ import GroupActivities
     func setupAudioSessionObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleRouteChange(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(forName: AVAudioSession.mediaServicesWereResetNotification, object: nil, queue: nil){ [unowned self] _ in
+//            self.setupAudioSession()
+//            self.startPlayback()
+            setupAudioPlayer()
+        }
     }
     
     @objc func handleRouteChange(_ notification: Notification) {
@@ -216,10 +226,22 @@ import GroupActivities
         case .newDeviceAvailable:
             let session = AVAudioSession.sharedInstance()
             for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.headphones {
+                debugMessage = "\(String(describing: self.debugMessage)) - headphones"
                 setupRemoteTransportControls()
                 break
             }
-        default: ()
+            for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.airPlay {
+                debugMessage = "\(String(describing: self.debugMessage)) - airplay"
+                startPlayback()
+                break
+            }
+            for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.builtInSpeaker {
+                debugMessage = "\(String(describing: self.debugMessage)) - builtInSpeaker"
+                startPlayback()
+                break
+            }
+        default:
+            startPlayback()
         }
     }
 
@@ -234,7 +256,7 @@ import GroupActivities
             
             switch result {
             case .success(let metadata):
-                if(self.updateAlbumArt && self.currentAlbumArtUrl != metadata.currentTrack.artworkURLLarge){
+                if(self.currentAlbumArtUrl != metadata.currentTrack.artworkURLLarge){
                     DispatchQueue.global().async {
                         if let url = URL(string: metadata.currentTrack.artworkURLLarge),
                            let data = try? Data(contentsOf: url),
@@ -255,40 +277,11 @@ import GroupActivities
                 
                 self.setNowPlayingInfoCenter(title: metadata.currentTrack.title, artwork: self.artworkImage)
             case .failure(let error):
-                self.debugMessage = error.localizedDescription
                 print("Error \(error)")
             }
         }
         alreadyLoadingMetadata = false
     }
-    
-    
-    func startPlayback() {
-        debugMessage = "starting playback with url \(String(describing: self.audioUrl))"
-        
-        isLoading = true
-        
-        if audioPlayer.currentItem == nil {
-            debugMessage = "start playback on null audio player. setup anyway."
-            setupAudioPlayer()
-            audioPlayer.play()
-//            audioPlayer.preroll(atRate: 1)
-//            audioPlayer.playImmediately(atRate: 1)
-        } else {
-//            audioPlayer.preroll(atRate: 1)
-//            audioPlayer.playImmediately(atRate: 1)
-            audioPlayer.play()
-        }
-        
-        setupRemoteTransportControls() // This function clears old targets and sets up new ones
-//        updatePlaybackDuration()
-        
-        
-        // Set the now playing info
-        setNowPlayingInfoCenter(title: currentTrackTitle, artwork: artworkImage)
-    }
-
-
     
     
     
@@ -313,7 +306,7 @@ import GroupActivities
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
             if self.audioPlayer.rate == 0.0 {
-                self.audioPlayer.play()
+                self.startPlayback()
                 return .success
             }
             return .commandFailed
@@ -322,7 +315,7 @@ import GroupActivities
         // Add handler for Pause Command
         commandCenter.pauseCommand.addTarget { [unowned self] event in
             if self.audioPlayer.rate == 1.0 {
-                self.audioPlayer.pause()
+                self.stopPlayback()
                 return .success
             }
             return .commandFailed
@@ -331,10 +324,10 @@ import GroupActivities
         commandCenter.togglePlayPauseCommand.addTarget { [unowned self] event in
             // Your play/pause toggle logic goes here.
             if self.audioPlayer.rate == 0.0 {
-                self.audioPlayer.play()
+                self.startPlayback()
                 return .success
             } else if self.audioPlayer.rate == 1.0 {
-                self.audioPlayer.pause()
+                self.stopPlayback()
                 return .success
             }
             return .commandFailed
@@ -342,21 +335,22 @@ import GroupActivities
     }
 
     
-    
-//    func updatePlaybackDuration() {
-//        guard let duration = audioPlayer.currentItem?.asset.duration else {
-//            return
-//        }
-//
-//        let durationInSeconds = CMTimeGetSeconds(duration)
-//        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = durationInSeconds
-//        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-//    }
 
     
-    @objc func stopPlayback() {
+    func stopPlayback() {
         audioPlayer.pause()
         isPlaying = false
+    }
+    
+    func setScheduledTimers() {
+        timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
+            self?.fetchOnce()
+        }
+        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
+            self?.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
+            self?.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+        }
     }
     
 }
