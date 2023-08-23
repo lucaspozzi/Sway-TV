@@ -712,6 +712,7 @@
 				ja,
 				hi,
 				ar,
+				"zh-Hans",
 			);
 			mainGroup = 81546C342A64779500F2E98E;
 			productRefGroup = 81546C3E2A64779500F2E98E /* Products */;
@@ -1042,7 +1043,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1079,7 +1080,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1297,7 +1298,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Sway TV/Sway TV.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sway TV/Preview Content\"";
 				DEVELOPMENT_TEAM = LGH757AD8S;
 				ENABLE_PREVIEWS = YES;
@@ -1311,7 +1312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1327,7 +1328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Sway TV/Sway TV.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sway TV/Preview Content\"";
 				DEVELOPMENT_TEAM = LGH757AD8S;
 				ENABLE_PREVIEWS = YES;
@@ -1341,7 +1342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
