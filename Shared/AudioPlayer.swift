@@ -209,9 +209,18 @@ import GroupActivities
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleRouteChange(_:)), name: AVAudioSession.routeChangeNotification, object: nil)
         NotificationCenter.default.addObserver(forName: AVAudioSession.mediaServicesWereResetNotification, object: nil, queue: nil){ [unowned self] _ in
-//            self.setupAudioSession()
-//            self.startPlayback()
-            setupAudioPlayer()
+            //            self.setupAudioSession()
+            //            self.startPlayback()
+//            setupAudioPlayer()
+            setupAudioSession()
+            startPlayback()
+        }
+        NotificationCenter.default.addObserver(forName: AVAudioSession.mediaServicesWereLostNotification, object: nil, queue: nil){ [unowned self] _ in
+            //            self.setupAudioSession()
+            //            self.startPlayback()
+//            setupAudioPlayer()
+            setupAudioSession()
+            startPlayback()
         }
     }
     
