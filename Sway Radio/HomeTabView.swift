@@ -16,6 +16,13 @@ struct HomeTabView: View {
             AudioPlayerView()
                 .environmentObject(audioPlayer)
         }
+        .background(content: {
+            Image(uiImage: audioPlayer.artworkImage)
+                .resizable()
+                .scaledToFill()
+                .opacity(0.3)
+                .blur(radius: 10)
+        })
     }
 }
 

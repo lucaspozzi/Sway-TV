@@ -143,7 +143,7 @@ import GroupActivities
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = true
                 case .paused:
-                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - paused"
+                    self?.debugMessage = "paused"
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = false
                 default:
