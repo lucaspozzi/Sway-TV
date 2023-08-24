@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeTabView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         
@@ -17,11 +18,13 @@ struct HomeTabView: View {
                 .environmentObject(audioPlayer)
         }
         .background(content: {
-            Image(uiImage: audioPlayer.artworkImage)
-                .resizable()
-                .scaledToFill()
-                .opacity(0.3)
-                .blur(radius: 10)
+            if colorScheme == .light {
+                Image(uiImage: audioPlayer.artworkImage)
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(0.2)
+                    .blur(radius: 10)
+            }
         })
     }
 }
