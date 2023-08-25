@@ -46,12 +46,12 @@ struct ContentView: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
                             HStack {
-                                AirPlayView()//.padding(.horizontal)
+                                AirPlayView()
                                 if(audioPlayer.isLoading){
                                     Image(systemName: "antenna.radiowaves.left.and.right.slash").foregroundColor(.gray)
                                     Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 } else {
-                                    Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.gray)
+                                    Image(systemName: "antenna.radiowaves.left.and.right").foregroundColor(.gray)
                                     Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 }
                             }
