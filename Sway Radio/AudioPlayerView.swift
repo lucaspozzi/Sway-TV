@@ -12,7 +12,11 @@ import Intents
 
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
-//    @State var showDebugMessage: Bool = false
+    
+//    public var timerAnimation: Timer = Timer()
+    @State private var timerAnimation: Timer? = nil
+    @State var pseudoSoundLevelLeft: CGFloat = 0.0
+    @State var pseudoSoundLevelRight: CGFloat = 0.0
     
     // Pinch to Zoom
     private struct DragState {
@@ -45,18 +49,14 @@ struct AudioPlayerView: View {
                 .gesture(pinchGesture(updating: $dragState))
                 .aspectRatio(contentMode: .fit)
                 .padding(.bottom)
-//                .onTapGesture(count: 15, perform: {
-//                    if(showDebugMessage){
-//                        showDebugMessage = false
-//                    } else {
-//                        showDebugMessage = true
-//                    }
-//                })
             
             
             if audioPlayer.isPlaying {
                 
                 Button(action: {
+                    invalidateTimers()
+                    pseudoSoundLevelLeft = 0.0
+                    pseudoSoundLevelRight = 0.0
                     self.audioPlayer.stopPlayback()
                 }) {
                     HStack(spacing: 61) {
@@ -70,7 +70,7 @@ struct AudioPlayerView: View {
                                     // Colored rectangle in the foreground, its height changes with sound level
                                     Rectangle()
                                         .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
-                                        .frame(height: geometry.size.height * (index == 0 ? CGFloat(audioPlayer.pseudoSoundLevelLeft) : CGFloat(audioPlayer.pseudoSoundLevelRight)))
+                                        .frame(height: geometry.size.height * (index == 0 ? CGFloat(pseudoSoundLevelLeft) : CGFloat(pseudoSoundLevelRight)))
                                         .cornerRadius(15)
                                         .animation(.default)
                                 }
@@ -85,6 +85,7 @@ struct AudioPlayerView: View {
                 Button(action: {
                     self.audioPlayer.isLoading = true
                     self.audioPlayer.startPlayback()
+                    setupTimers()
                 }) {
                     Image(systemName: "play")
                         .resizable()
@@ -95,20 +96,26 @@ struct AudioPlayerView: View {
             
             Spacer()
             
-//            if(showDebugMessage){
-//                Text(audioPlayer.debugMessage)
-//            }
-            
-            
-            //            CustomSlider(value: $audioPlayer.currentVolume)
-            //                .foregroundColor(.accentColor)
-            //                .padding()
-            //                .aspectRatio(contentMode: .fill).disabled(true)
-            //
-            //            Spacer()
         }
+        .onAppear(perform: {
+            if(audioPlayer.isPlaying){
+                setupTimers()
+            }
+        })
+        .onDisappear(perform: invalidateTimers)
     }
     
+    func invalidateTimers() {
+        timerAnimation?.invalidate()
+    }
+    
+    func setupTimers() {
+        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
+            self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
+            self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+        }
+    }
 }
 
 struct AudioPlayerView_Previews: PreviewProvider {

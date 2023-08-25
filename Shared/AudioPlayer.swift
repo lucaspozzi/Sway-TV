@@ -15,9 +15,6 @@ import GroupActivities
     
 //    @Published var debugMessage: String = "Normal"
     
-    @Published var pseudoSoundLevelLeft: CGFloat = 0.0
-    @Published var pseudoSoundLevelRight: CGFloat = 0.0
-    
     @Published var currentTrackTitle: String = "djclaudiof"
     @Published var currentAlbumArtUrl: String = "https://swayradio.app/audiodog.jpg"
     @Published var artworkImage: UIImage = UIImage(named: "audiodog")!
@@ -30,7 +27,6 @@ import GroupActivities
     private var audioUrl: URL? = URL(string: "https://stream.radio.co/s3f63d156a/listen")
     
     private var timerMetadata: Timer = Timer()
-    private var timerAnimation: Timer = Timer()
     
     
     // init audio player with url
@@ -158,7 +154,6 @@ import GroupActivities
     
     deinit {
         
-//        debugMessage = "deinit"
         stopPlayback()
         
         // Remove remote control event handlers
@@ -169,7 +164,6 @@ import GroupActivities
         
         statusObserver?.invalidate()
         timeControlStatusObserver?.invalidate()
-        timerAnimation.invalidate()
         timerMetadata.invalidate()
         
         NotificationCenter.default.removeObserver(AVAudioSession.interruptionNotification)
@@ -177,8 +171,6 @@ import GroupActivities
         NotificationCenter.default.removeObserver(AVAudioSession.mediaServicesWereResetNotification)
         
         audioPlayer.replaceCurrentItem(with: nil)
-        
-//        debugMessage = "deinit"
     }
     
     @objc func handleInterruption(_ notification: Notification) {
@@ -354,11 +346,6 @@ import GroupActivities
     func setScheduledTimers() {
         timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
             self?.fetchOnce()
-        }
-        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-            // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
-            self?.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-            self?.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
         }
     }
     

@@ -45,18 +45,14 @@ struct ContentView: View {
                     .environmentObject(audioPlayer)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
-                            if(audioPlayer.isLoading){
-                                HStack {
-                                    Image(systemName: "antenna.radiowaves.left.and.right.slash")
-                                    Text("Tuning...")
-                                }
-                                
-                            } else {
-                                HStack{
-                                    Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.green)
-                                    Text("Live")
-                                    
-                                    AirPlayView().padding(.horizontal)
+                            HStack {
+                                AirPlayView()//.padding(.horizontal)
+                                if(audioPlayer.isLoading){
+                                    Image(systemName: "antenna.radiowaves.left.and.right.slash").foregroundColor(.gray)
+                                    Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
+                                } else {
+                                    Image(systemName: "antenna.radiowaves.left.and.right.circle.fill").foregroundColor(.gray)
+                                    Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 }
                             }
                         }
