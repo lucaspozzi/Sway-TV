@@ -116,23 +116,24 @@ import GroupActivities
                     strongSelf.isPlaying = false
                     if(self?.audioPlayer.currentItem == nil){
 //                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - Found nil player"
+                        print("nil player")
                         self?.setupAudioPlayer()
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .noItemToPlay){
-//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - No item to play"
+                        print("noItemToPlay")
                         self?.setupAudioPlayer()
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .evaluatingBufferingRate){
-//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - evaluatingBufferingRate"
+                        print("evaluatingBufferingRate")
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .waitingForCoordinatedPlayback){
-//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - waitingForCoordinatedPlayback"
+                        print("waitingForCoordinatedPlayback")
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .toMinimizeStalls){
-//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - toMinimizeStalls"
+                        print("toMinimizeStalls")
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == nil){
-//                        self?.debugMessage = "\(String(describing: self?.debugMessage)) - nil..."
+                        print("nil")
                     }
                 case .playing:
 //                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - playing"
@@ -143,7 +144,7 @@ import GroupActivities
                     strongSelf.isLoading = false
                     strongSelf.isPlaying = false
                 default:
-//                    self?.debugMessage = "\(String(describing: self?.debugMessage)) - default"
+                    print("default")
                     break
                 }
             }

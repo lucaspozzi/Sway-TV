@@ -13,7 +13,6 @@ import Intents
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
     
-//    public var timerAnimation: Timer = Timer()
     @State private var timerAnimation: Timer? = nil
     @State var pseudoSoundLevelLeft: CGFloat = 0.0
     @State var pseudoSoundLevelRight: CGFloat = 0.0
@@ -106,6 +105,8 @@ struct AudioPlayerView: View {
     }
     
     func invalidateTimers() {
+        pseudoSoundLevelLeft = 0.0
+        pseudoSoundLevelRight = 0.0
         timerAnimation?.invalidate()
     }
     

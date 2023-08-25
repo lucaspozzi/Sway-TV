@@ -180,6 +180,8 @@ struct AudioPlayerView: View {
     }
     
     func invalidateTimers() {
+        pseudoSoundLevelLeft = 0.0
+        pseudoSoundLevelRight = 0.0
         timerAnimation?.invalidate()
     }
     

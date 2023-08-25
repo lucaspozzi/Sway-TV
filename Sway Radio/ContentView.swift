@@ -48,10 +48,10 @@ struct ContentView: View {
                             HStack {
                                 AirPlayView()
                                 if(audioPlayer.isLoading){
-                                    Image(systemName: "antenna.radiowaves.left.and.right.slash").foregroundColor(.gray)
+//                                    Image(systemName: "antenna.radiowaves.left.and.right.slash").foregroundColor(.gray)
                                     Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 } else {
-                                    Image(systemName: "antenna.radiowaves.left.and.right").foregroundColor(.gray)
+//                                    Image(systemName: "antenna.radiowaves.left.and.right").foregroundColor(.gray)
                                     Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 }
                             }
