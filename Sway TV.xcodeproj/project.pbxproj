@@ -56,7 +56,6 @@
 		81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
-		81DCA1252A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
 		81DCA1262A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
 		81DCA1272A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
 		81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */; };
@@ -868,7 +867,6 @@
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
 				81757AA22A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
-				81DCA1252A999C63007F15A3 /* SettingsView.swift in Sources */,
 				81EBF34B2A82F97000817353 /* Event.swift in Sources */,
 				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
