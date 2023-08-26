@@ -138,101 +138,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .sheet(isPresented: $isOnboarding, onDismiss: {
-                        UserDefaults.standard.set(true, forKey: "isOnboarded")
-                    }) {
-                        VStack(spacing: 20) {
-                            
-                            VStack {
-                                Text("Welcome to Sway")
-                                    .font(.largeTitle)
-                                    .foregroundColor(.accentColor)
-                                    .padding(.top)
-                                
-                                Text("Free Music Radio")
-                                    .font(.title)
-//                                    .foregroundColor(.accentColor)
-                            }
-                            
-                            VStack {
-                                Text("To start listening, press play:")
-                                    .font(.title2)
-                                    .padding(.top)
-                                
-                                Image(systemName: "play")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .foregroundColor(.accentColor)
-                                    .frame(width: 100, height: 100)
-                            }
-                            
-                            VStack {
-                                Text("When you sway to a song, save them to your favorites by tapping any of these reactions:")
-                                    .font(.title2)
-                                    .padding(.horizontal)
-                                
-                                HStack(alignment: .bottom ,spacing: 25) {
-                                    VStack {
-                                        Image(systemName: "hand.thumbsup.fill")
-                                            .foregroundColor(.accentColor)
-                                            .font(.system(size: 40))
-                                        Text("Sway")
-                                    }
-                                    VStack {
-                                        Image(systemName: "figure.dance")
-                                            .foregroundColor(.accentColor)
-                                            .font(.system(size: 40))
-                                        Text("Swaay!")
-                                    }
-                                    VStack {
-                                        Image(systemName: "figure.socialdance")
-                                            .foregroundColor(.accentColor)
-                                            .font(.system(size: 40))
-                                        Text("Swaaay!")
-                                    }
-                                    
-                                }
-                                
-                                Text("Your sways count towards the Top Tracks, but only you can see your favorite songs.")
-                                    .font(.title2)
-                                    .padding()
-                            }
-                            
-                            
-                            
-                            
-                            
-                            Button(action: {
-                                isOnboarding = false
-                                UserDefaults.standard.set(true, forKey: "isOnboarded")
-                            }) {
-                                Text("Got It")
-                                    .font(.title)
-                                    .foregroundColor(.white)
-                                    .frame(width: 200, height: 60)
-                                    .background(Color.accentColor)
-                                    .cornerRadius(30)
-                            }
-                            .padding(.vertical)
-                        }
-                    }
-
-                    .onAppear {
-                        
-                        // If user defaults isOnboarded is false or empty
-                        isOnboarded = UserDefaults.standard.bool(forKey: "isOnboarded")
-                        if(!isOnboarded){
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-                                withAnimation {
-                                    isOnboarding = true
-                                }
-                            }
-                        }
-                        
-                    }
-                
-                
-                
+                    
             }
             .tabItem {
                 Image(systemName: "radio")
@@ -277,7 +183,92 @@ struct ContentView: View {
             }
             
         }
+        .sheet(isPresented: $isOnboarding, onDismiss: {
+            UserDefaults.standard.set(true, forKey: "isOnboarded")
+        }) {
+            VStack(spacing: 20) {
+                
+                VStack {
+                    Text("Welcome to Sway")
+                        .font(.largeTitle)
+                        .foregroundColor(.accentColor)
+                        .padding(.top)
+                    
+                    Text("Free Music Radio")
+                        .font(.title)
+                }
+                
+                VStack {
+                    Text("To start listening, press play:")
+                        .font(.title2)
+                        .padding(.top)
+                    
+                    Image(systemName: "play")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.accentColor)
+                        .frame(width: 100, height: 100)
+                }
+                
+                VStack {
+                    Text("When you sway to a song, save them to your favorites by tapping any of these reactions:")
+                        .font(.title2)
+                        .padding(.horizontal)
+                    
+                    HStack(alignment: .bottom ,spacing: 25) {
+                        VStack {
+                            Image(systemName: "hand.thumbsup.fill")
+                                .foregroundColor(.accentColor)
+                                .font(.system(size: 40))
+                            Text("Sway")
+                        }
+                        VStack {
+                            Image(systemName: "figure.dance")
+                                .foregroundColor(.accentColor)
+                                .font(.system(size: 40))
+                            Text("Swaay!")
+                        }
+                        VStack {
+                            Image(systemName: "figure.socialdance")
+                                .foregroundColor(.accentColor)
+                                .font(.system(size: 40))
+                            Text("Swaaay!")
+                        }
+                        
+                    }
+                    
+                    Text("Your sways count towards the Top Tracks, but only you can see your favorite songs.")
+                        .font(.title2)
+                        .padding()
+                }
+                
+                Button(action: {
+                    isOnboarding = false
+                    UserDefaults.standard.set(true, forKey: "isOnboarded")
+                }) {
+                    Text("Got It")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 60)
+                        .background(Color.accentColor)
+                        .cornerRadius(30)
+                }
+                .padding(.vertical)
+            }
+        }
+        
         .onAppear {
+            
+            // If user defaults isOnboarded is false or empty
+            isOnboarded = UserDefaults.standard.bool(forKey: "isOnboarded")
+            if(!isOnboarded){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+                    withAnimation {
+                        isOnboarding = true
+                    }
+                }
+            }
+            
             featureFlags.fetchFeatureFlag(named: "EventsTab") { (isEnabled) in
                 self.isEventsTabEnabled = isEnabled
             }
