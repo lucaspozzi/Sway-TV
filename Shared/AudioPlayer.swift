@@ -53,7 +53,7 @@ import GroupActivities
         
         let asset = AVURLAsset(url: streamURL)
         let item = AVPlayerItem(asset: asset)
-        item.canUseNetworkResourcesForLiveStreamingWhilePaused = false
+        item.canUseNetworkResourcesForLiveStreamingWhilePaused = true
         item.configuredTimeOffsetFromLive = item.recommendedTimeOffsetFromLive
         item.automaticallyPreservesTimeOffsetFromLive = true
         self.audioPlayer.replaceCurrentItem(with: item)

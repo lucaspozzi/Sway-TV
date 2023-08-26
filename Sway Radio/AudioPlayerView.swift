@@ -38,8 +38,9 @@ struct AudioPlayerView: View {
         VStack {
             
             Text(audioPlayer.currentTrackTitle)
-                .font(.title)
+                .font(.title2)
                 .multilineTextAlignment(.center)
+                .padding(.horizontal)
             
             Image(uiImage: audioPlayer.artworkImage)
                 .resizable().cornerRadius(10)
