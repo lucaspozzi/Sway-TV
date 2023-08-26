@@ -56,6 +56,9 @@
 		81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
+		81DCA1252A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
+		81DCA1262A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
+		81DCA1272A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
 		81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */; };
 		81EBF3192A82F1CD00817353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3182A82F1CD00817353 /* ContentView.swift */; };
 		81EBF31B2A82F1CE00817353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EBF31A2A82F1CE00817353 /* Assets.xcassets */; };
@@ -203,6 +206,7 @@
 		81A425642A7C41A2002498C3 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
 		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
+		81DCA1242A999C63007F15A3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		81EBF3142A82F1CD00817353 /* Sway Radio DJ Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway Radio DJ Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sway_Radio_DJ_CompanionApp.swift; sourceTree = "<group>"; };
 		81EBF3182A82F1CD00817353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 				810CF6D42A65E3B100600064 /* Sway Radio.entitlements */,
 				810CF6B22A65E36F00600064 /* Preview Content */,
 				814A6A3A2A6C8B3200C923E6 /* AirPlayView.swift */,
+				81DCA1242A999C63007F15A3 /* SettingsView.swift */,
 			);
 			path = "Sway Radio";
 			sourceTree = "<group>";
@@ -822,6 +827,7 @@
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
 				81757AA32A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
+				81DCA1262A999C63007F15A3 /* SettingsView.swift in Sources */,
 				81EBF34C2A82F97000817353 /* Event.swift in Sources */,
 				8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */,
@@ -862,6 +868,7 @@
 				81546C432A64779500F2E98E /* ContentView.swift in Sources */,
 				81546C412A64779500F2E98E /* Sway_TVApp.swift in Sources */,
 				81757AA22A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
+				81DCA1252A999C63007F15A3 /* SettingsView.swift in Sources */,
 				81EBF34B2A82F97000817353 /* Event.swift in Sources */,
 				816CB3982A689C9E001FB8F5 /* RecentView.swift in Sources */,
 				81546C712A64784B00F2E98E /* VideoPlayerView.swift in Sources */,
@@ -907,6 +914,7 @@
 				81EBF33E2A82F1E300817353 /* RecentView.swift in Sources */,
 				81757AA42A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
 				81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */,
+				81DCA1272A999C63007F15A3 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

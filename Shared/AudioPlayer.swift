@@ -48,17 +48,15 @@ import GroupActivities
         self.audioPlayer.allowsExternalPlayback = true
 //        self.audioPlayer.usesExternalPlaybackWhileExternalScreenIsActive = true
         
-        // Initialize AVPlayer with a single, specific URL
-        if let url = audioUrl {
-            let asset = AVURLAsset(url: url)
-            let item = AVPlayerItem(asset: asset)
-            item.canUseNetworkResourcesForLiveStreamingWhilePaused = false
-            item.configuredTimeOffsetFromLive = item.recommendedTimeOffsetFromLive
-            item.automaticallyPreservesTimeOffsetFromLive = true
-            self.audioPlayer.replaceCurrentItem(with: item)
-        } else {
-//            debugMessage = "\(String(describing: self.debugMessage)) - AVPlayer init with url failed."
-        }
+        let currentQuality = StreamingQualityObserver().getCurrentStreamingQuality()
+        let streamURL = getStreamURL(for: currentQuality)
+        
+        let asset = AVURLAsset(url: streamURL)
+        let item = AVPlayerItem(asset: asset)
+        item.canUseNetworkResourcesForLiveStreamingWhilePaused = false
+        item.configuredTimeOffsetFromLive = item.recommendedTimeOffsetFromLive
+        item.automaticallyPreservesTimeOffsetFromLive = true
+        self.audioPlayer.replaceCurrentItem(with: item)
         
         setupAudioSession()
         setNowPlayingInfoCenter(title: "Sway Radio", artwork: artworkImage)
@@ -336,7 +334,22 @@ import GroupActivities
         }
     }
 
+    func handleStreamingQualityChange() {
+        if isPlaying {
+            stopPlayback()
+            setupAudioPlayer()
+            startPlayback()
+        }
+    }
     
+    private func getStreamURL(for quality: StreamingQuality) -> URL {
+        switch quality {
+        case .low:
+            return URL(string: "https://stream.radio.co/s3f63d156a/low")!
+        case .high:
+            return URL(string: "https://stream.radio.co/s3f63d156a/listen")!
+        }
+    }
 
     
     func stopPlayback() {
@@ -350,4 +363,26 @@ import GroupActivities
         }
     }
     
+}
+
+enum StreamingQuality: Int {
+    case low = 1
+    case high = 0
+}
+
+
+class StreamingQualityObserver: ObservableObject {
+    @Published var streamingQuality: Int {
+        didSet {
+            UserDefaults.standard.set(streamingQuality, forKey: "useLowQuality")
+        }
+    }
+    
+    init() {
+        self.streamingQuality = UserDefaults.standard.integer(forKey: "useLowQuality")
+    }
+    
+    func getCurrentStreamingQuality() -> StreamingQuality {
+        return StreamingQuality(rawValue: streamingQuality) ?? .high
+    }
 }

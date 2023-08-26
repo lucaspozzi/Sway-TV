@@ -263,15 +263,14 @@ struct ContentView: View {
                 Text("Top Tracks")
             }
             
-            if(isEventsTabEnabled){
-                NavigationView {
-                    EventScheduleView()
-                        .navigationTitle("Event Schedule")
-                }
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Events")
-                }
+            NavigationView {
+                SettingsView()
+                    .environmentObject(audioPlayer)
+                    .navigationTitle("Settings")
+            }
+            .tabItem {
+                Image(systemName: "gear")
+                Text("Settings")
             }
             
         }

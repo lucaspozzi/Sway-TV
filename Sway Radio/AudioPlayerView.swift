@@ -54,8 +54,6 @@ struct AudioPlayerView: View {
                 
                 Button(action: {
                     invalidateTimers()
-                    pseudoSoundLevelLeft = 0.0
-                    pseudoSoundLevelRight = 0.0
                     self.audioPlayer.stopPlayback()
                 }) {
                     HStack(spacing: 61) {
@@ -82,7 +80,6 @@ struct AudioPlayerView: View {
                 
             } else {
                 Button(action: {
-                    self.audioPlayer.isLoading = true
                     self.audioPlayer.startPlayback()
                     setupTimers()
                 }) {
@@ -96,11 +93,7 @@ struct AudioPlayerView: View {
             Spacer()
             
         }
-        .onAppear(perform: {
-            if(audioPlayer.isPlaying){
-                setupTimers()
-            }
-        })
+        .onAppear(perform: setupTimers)
         .onDisappear(perform: invalidateTimers)
     }
     
@@ -113,8 +106,13 @@ struct AudioPlayerView: View {
     func setupTimers() {
         timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
-            self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-            self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+            if(audioPlayer.isPlaying){
+                self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
+                self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+            } else {
+                pseudoSoundLevelLeft = 0.0
+                pseudoSoundLevelRight = 0.0
+            }
         }
     }
 }
