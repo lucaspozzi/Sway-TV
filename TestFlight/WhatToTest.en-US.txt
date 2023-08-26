@@ -1,4 +1,2 @@
-Please test audio playback.
-It should match artwork and metadata.
-It should not get stuck loading.
-It should not fall too behind the live stream.
+Please test:
+- are the colors right???
