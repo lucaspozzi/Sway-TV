@@ -23,6 +23,8 @@ struct ContentView: View {
     @State private var isOnboarding = false
     @State private var isOnboarded = false
     
+    private var airplayview = AirPlayView()
+    
     func startCountdown() {
         isCountdownActive = true
         countdownSeconds = 50
@@ -47,12 +49,12 @@ struct ContentView: View {
                         ToolbarItem(placement: .navigationBarLeading) {
                             if(audioPlayer.isLoading){
                                 HStack {
-                                    AirPlayView()
+                                    airplayview
                                     Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 }
                             } else {
                                 HStack {
-                                    AirPlayView()
+                                    airplayview
                                     Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                                 }
                             }
