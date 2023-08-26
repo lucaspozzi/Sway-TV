@@ -48,7 +48,7 @@ import GroupActivities
         self.audioPlayer.allowsExternalPlayback = true
 //        self.audioPlayer.usesExternalPlaybackWhileExternalScreenIsActive = true
         
-        let currentQuality = StreamingQualityObserver().getCurrentStreamingQuality()
+        let currentQuality = getCurrentStreamingQuality()
         let streamURL = getStreamURL(for: currentQuality)
         
         let asset = AVURLAsset(url: streamURL)
@@ -363,26 +363,12 @@ import GroupActivities
         }
     }
     
+    func getCurrentStreamingQuality() -> StreamingQuality {
+        return StreamingQuality(rawValue: UserDefaults.standard.integer(forKey: "useLowQuality")) ?? .high
+    }
 }
 
 enum StreamingQuality: Int {
     case low = 1
     case high = 0
-}
-
-
-class StreamingQualityObserver: ObservableObject {
-    @Published var streamingQuality: Int {
-        didSet {
-            UserDefaults.standard.set(streamingQuality, forKey: "useLowQuality")
-        }
-    }
-    
-    init() {
-        self.streamingQuality = UserDefaults.standard.integer(forKey: "useLowQuality")
-    }
-    
-    func getCurrentStreamingQuality() -> StreamingQuality {
-        return StreamingQuality(rawValue: streamingQuality) ?? .high
-    }
 }

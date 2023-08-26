@@ -15,10 +15,10 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Streaming"), footer: Text("Choose low sound quality if the music playback is being interrupted.")) {
+            Section(header: Text("Streaming"), footer: Text("Choose normal sound quality if you are having connection issues.")) {
                 Picker("Sound Quality", selection: $streamingQuality) {
                     Text("High").tag(0)
-                    Text("Low").tag(1)
+                    Text("Normal").tag(1)
                 }
                 .pickerStyle(.automatic)
             }
