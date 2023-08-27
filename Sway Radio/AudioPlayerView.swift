@@ -91,7 +91,7 @@ struct AudioPlayerView: View {
                 }.disabled(audioPlayer.isLoading)
             }
             
-            Spacer()
+//            Spacer()
             
         }
         .onAppear(perform: setupTimers)
