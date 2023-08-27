@@ -17,12 +17,12 @@ struct RadioActivity: GroupActivity {
     
     var metadata: GroupActivityMetadata {
         let title = NSLocalizedString("Listening to Sway Radio", comment: "")
-//        let image = GroupActivityMetadata.Image(systemImageName: "radio") //Type 'GroupActivityMetadata' has no member 'Image'
+        let previewImage = UIImage(named: "audiodog")!.cgImage
         let audioDescription = NSLocalizedString("Join me for a radio session!", comment: "")
         
         var metadata = GroupActivityMetadata()
         metadata.title = title
-//        metadata.previewImage = image
+        metadata.previewImage = previewImage
         metadata.subtitle = audioDescription
         return metadata
     }

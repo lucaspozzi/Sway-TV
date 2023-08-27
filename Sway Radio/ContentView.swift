@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import GroupActivities
 
 struct ContentView: View {
     
@@ -23,7 +24,7 @@ struct ContentView: View {
     @State private var isOnboarding = false
     @State private var isOnboarded = false
     
-    private var airplayview = AirPlayView()
+    // need to disable shareplay button if session is active
     
     func startCountdown() {
         isCountdownActive = true
@@ -38,6 +39,13 @@ struct ContentView: View {
         }
     }
     
+    func activateSharePlay() {
+        if let url = self.audioUrl {
+            let sessionData = RadioActivity.SessionData(url: url)
+            let activity = RadioActivity(isPlaying: audioPlayer.isPlaying, sessionData: sessionData)
+        }
+    }
+    
     var body: some View {
         TabView {
             
@@ -46,40 +54,26 @@ struct ContentView: View {
                 HomeTabView()
                     .environmentObject(audioPlayer)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
+                        ToolbarItem(placement: .bottomBar, content: {
                             if(audioPlayer.isLoading){
-                                HStack {
-                                    airplayview
-                                    Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
-                                }
+                                Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
                             } else {
-                                HStack {
-                                    airplayview
-                                    Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
+                                Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
+                            }
+                        })
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            HStack {
+                                AirPlayView()
+                                Button(action: {
+                                    activateSharePlay()
+                                }) {
+                                    Image(systemName: "shareplay")
                                 }
+//                                .disabled(GroupActivity.sessions().)
                             }
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             HStack {
-                                
-                                if(isSharePlayEnabled){
-                                    Button(action: {
-                                        Task {
-                                            if let url = self.audioUrl {
-                                                let sessionData = RadioActivity.SessionData(url: url)
-                                                let activity = RadioActivity(isPlaying: audioPlayer.isPlaying, sessionData: sessionData)
-                                                do {
-                                                    try await activity.activate()
-                                                } catch {
-                                                    // handle error
-                                                    print("Failed to activate activity: \(error)")
-                                                }
-                                            }
-                                        }
-                                    }) {
-                                        Image(systemName: "shareplay")
-                                    }
-                                }
                                 
                                 if !isCountdownActive {
                                     
