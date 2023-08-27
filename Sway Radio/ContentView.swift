@@ -52,7 +52,7 @@ struct ContentView: View {
             NavigationView {
                 
                 HomeTabView()
-                    .navigationTitle("Sway")
+//                    .navigationTitle("Sway")
                     .environmentObject(audioPlayer)
                     .toolbar {
                         ToolbarItem(placement: .bottomBar, content: {
@@ -64,7 +64,9 @@ struct ContentView: View {
                         })
                         ToolbarItem(placement: .navigationBarLeading) {
                             HStack {
+//                                Text("Sway").fixedSize(horizontal: true, vertical: false).fontDesign(.rounded)
                                 AirPlayView()
+//                                    .padding(.horizontal)
                                 if(isSharePlayEnabled) {
                                     Button(action: {
                                         activateSharePlay()

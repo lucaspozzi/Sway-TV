@@ -76,7 +76,7 @@ struct AudioPlayerView: View {
                             .frame(width: 30)  // Width of each bar
                         }
                     }
-                    .padding()
+//                    .padding()
                 }
                 
             } else {
