@@ -204,14 +204,14 @@ import GroupActivities
             //            self.startPlayback()
 //            setupAudioPlayer()
             setupAudioSession()
-            startPlayback()
+//            startPlayback()
         }
         NotificationCenter.default.addObserver(forName: AVAudioSession.mediaServicesWereLostNotification, object: nil, queue: nil){ [unowned self] _ in
             //            self.setupAudioSession()
             //            self.startPlayback()
 //            setupAudioPlayer()
             setupAudioSession()
-            startPlayback()
+//            startPlayback()
         }
     }
     
@@ -223,11 +223,12 @@ import GroupActivities
         }
 
         switch reason {
-        case .newDeviceAvailable:
+        case .newDeviceAvailable, .oldDeviceUnavailable:
             let session = AVAudioSession.sharedInstance()
             for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.headphones {
 //                debugMessage = "\(String(describing: self.debugMessage)) - headphones"
                 setupRemoteTransportControls()
+                startPlayback()
                 break
             }
             for output in session.currentRoute.outputs where output.portType == AVAudioSession.Port.airPlay {
@@ -241,7 +242,7 @@ import GroupActivities
                 break
             }
         default:
-            startPlayback()
+            setupAudioPlayer()
         }
     }
 
