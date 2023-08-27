@@ -108,8 +108,11 @@ struct AudioPlayerView: View {
         timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
             if(audioPlayer.isPlaying){
-                self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-                self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+                DispatchQueue.main.async {
+                    self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
+                    self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+                }
+                
             } else {
                 pseudoSoundLevelLeft = 0.0
                 pseudoSoundLevelRight = 0.0
