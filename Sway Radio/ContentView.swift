@@ -55,18 +55,26 @@ struct ContentView: View {
 //                    .navigationTitle("Sway")
                     .environmentObject(audioPlayer)
                     .toolbar {
-                        ToolbarItem(placement: .bottomBar, content: {
-                            if(audioPlayer.isLoading){
-                                Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
-                            } else {
-                                Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
-                            }
-                        })
+//                        ToolbarItem(placement: .bottomBar, content: {
+//                            if(audioPlayer.isLoading){
+//                                Text("Tuning...").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
+//                            } else {
+//                                Text("Live").foregroundColor(.gray).fixedSize(horizontal: true, vertical: false)
+//                            }
+//                        })
+                        
                         ToolbarItem(placement: .navigationBarLeading) {
                             HStack {
-//                                Text("Sway").fixedSize(horizontal: true, vertical: false).fontDesign(.rounded)
+                                if(audioPlayer.isLoading){
+                                    Image(systemName: "antenna.radiowaves.left.and.right.slash")
+                                        .foregroundColor(.gray)
+                                } else {
+                                    Image(systemName: "antenna.radiowaves.left.and.right")
+                                        .foregroundColor(.gray)
+                                }
                                 AirPlayView()
-//                                    .padding(.horizontal)
+                                    .padding(.horizontal)
+                                
                                 if(isSharePlayEnabled) {
                                     Button(action: {
                                         activateSharePlay()
