@@ -57,7 +57,6 @@
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81DCA1262A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
-		81DCA1272A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
 		81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3162A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift */; };
 		81EBF3192A82F1CD00817353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBF3182A82F1CD00817353 /* ContentView.swift */; };
 		81EBF31B2A82F1CE00817353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EBF31A2A82F1CE00817353 /* Assets.xcassets */; };
@@ -911,7 +910,6 @@
 				81EBF33E2A82F1E300817353 /* RecentView.swift in Sources */,
 				81757AA42A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
 				81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */,
-				81DCA1272A999C63007F15A3 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

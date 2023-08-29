@@ -101,7 +101,7 @@ struct ContentView: View {
                                         Image(systemName: "hand.thumbsup.fill")
                                     }
                                     .disabled(audioPlayer.isLoading)
-                                    .animation(.easeIn)
+                                    .animation(.easeIn, value: isCountdownActive)
                                     
                                     
                                     Button(action: {
@@ -116,7 +116,7 @@ struct ContentView: View {
                                     }
                                     .disabled(audioPlayer.isLoading)
                                     .padding(.horizontal)
-                                    .animation(.easeIn)
+                                    .animation(.easeIn, value: isCountdownActive)
                                     
                                     
                                     Button(action: {
@@ -130,7 +130,7 @@ struct ContentView: View {
                                         Image(systemName: "figure.socialdance")
                                     }
                                     .disabled(audioPlayer.isLoading)
-                                    .animation(.easeIn)
+                                    .animation(.easeIn, value: isCountdownActive)
                                     
                                 } else {
                                     HStack {
@@ -138,7 +138,7 @@ struct ContentView: View {
                                         Image(systemName: "\(countdownSeconds).circle")
                                     }
                                     .foregroundColor(.gray)
-                                    .animation(.default)
+                                    .animation(.easeIn, value: isCountdownActive)
                                 }
                                 
                                 

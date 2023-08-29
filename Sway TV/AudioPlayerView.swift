@@ -19,8 +19,8 @@ struct AudioPlayerView: View {
     @State private var isCountdownActive = false
     
     @State private var timerAnimation: Timer? = nil
-    @State var pseudoSoundLevelLeft: CGFloat = 0.0
-    @State var pseudoSoundLevelRight: CGFloat = 0.0
+    @State var pseudoSoundLevelLeft: CGFloat = 0.1
+    @State var pseudoSoundLevelRight: CGFloat = 0.1
     
     func startCountdown() {
         isCountdownActive = true
@@ -47,23 +47,37 @@ struct AudioPlayerView: View {
                         audioPlayer.stopPlayback()
                     }) {
                         HStack(spacing: 91) {
-                            ForEach(0..<2) { index in
-                                GeometryReader { geometry in
-                                    ZStack(alignment: .bottom) {
-                                        Rectangle()  // Grey rectangle in the background
-                                            .fill(Color.gray.opacity(0.2))
-                                            .cornerRadius(15)
-                                        
-                                        // Colored rectangle in the foreground, its height changes with sound level
-                                        Rectangle()
-                                            .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
-                                            .frame(height: geometry.size.height * (index == 0 ? CGFloat(pseudoSoundLevelLeft) : CGFloat(pseudoSoundLevelRight)))
-                                            .cornerRadius(15)
-                                            .animation(.default)
-                                    }
+                            GeometryReader { geometry in
+                                ZStack(alignment: .bottom) {
+                                    Rectangle()  // Grey rectangle in the background
+                                        .fill(Color.gray.opacity(0.2))
+                                        .cornerRadius(15)
+                                    
+                                    // Colored rectangle in the foreground, its height changes with sound level
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
+                                        .frame(height: geometry.size.height * pseudoSoundLevelLeft)
+                                        .cornerRadius(15)
+                                        .animation(.default, value: pseudoSoundLevelLeft)
                                 }
-                                .frame(width: 70)  // Width of each bar
                             }
+                            .frame(width: 70)  // Width of each bar
+                            
+                            GeometryReader { geometry in
+                                ZStack(alignment: .bottom) {
+                                    Rectangle()  // Grey rectangle in the background
+                                        .fill(Color.gray.opacity(0.2))
+                                        .cornerRadius(15)
+                                    
+                                    // Colored rectangle in the foreground, its height changes with sound level
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
+                                        .frame(height: geometry.size.height * pseudoSoundLevelRight)
+                                        .cornerRadius(15)
+                                        .animation(.default, value: pseudoSoundLevelRight)
+                                }
+                            }
+                            .frame(width: 70)  // Width of each bar
                         }
                         .padding()
                     }.frame(height: 490).buttonStyle(PlainButtonStyle())
@@ -76,7 +90,7 @@ struct AudioPlayerView: View {
                         Image(systemName: "play")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .animation(.default)
+                            .animation(.default, value: audioPlayer.isLoading)
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 490)
                         .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
@@ -174,8 +188,8 @@ struct AudioPlayerView: View {
     }
     
     func invalidateTimers() {
-        pseudoSoundLevelLeft = 0.0
-        pseudoSoundLevelRight = 0.0
+        pseudoSoundLevelLeft = 0.1
+        pseudoSoundLevelRight = 0.1
         timerAnimation?.invalidate()
     }
     
@@ -188,8 +202,8 @@ struct AudioPlayerView: View {
                     self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
                 }
             } else {
-                pseudoSoundLevelLeft = 0.0
-                pseudoSoundLevelRight = 0.0
+                pseudoSoundLevelLeft = 0.1
+                pseudoSoundLevelRight = 0.1
             }
         }
     }
