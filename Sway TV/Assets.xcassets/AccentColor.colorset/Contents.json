@@ -2,12 +2,30 @@
   "colors" : [
     {
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "display-p3",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.500",
-          "green" : "0.000",
-          "red" : "0.500"
+          "blue" : "0.839",
+          "green" : "0.337",
+          "red" : "0.345"
+        }
+      },
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "color" : {
+        "color-space" : "display-p3",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.839",
+          "green" : "0.337",
+          "red" : "0.345"
         }
       },
       "idiom" : "universal"
@@ -20,45 +38,77 @@
         }
       ],
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "display-p3",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.552",
-          "green" : "0.000",
-          "red" : "0.552"
+          "blue" : "0.902",
+          "green" : "0.361",
+          "red" : "0.369"
         }
       },
       "idiom" : "universal"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "contrast",
+          "value" : "high"
+        }
+      ],
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "display-p3",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.500",
-          "green" : "0.000",
-          "red" : "0.500"
+          "blue" : "0.639",
+          "green" : "0.204",
+          "red" : "0.212"
         }
       },
-      "idiom" : "tv"
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        },
+        {
+          "appearance" : "contrast",
+          "value" : "high"
+        }
+      ],
+      "color" : {
+        "color-space" : "display-p3",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.639",
+          "green" : "0.204",
+          "red" : "0.212"
+        }
+      },
+      "idiom" : "universal"
     },
     {
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
+        },
+        {
+          "appearance" : "contrast",
+          "value" : "high"
         }
       ],
       "color" : {
-        "color-space" : "srgb",
+        "color-space" : "display-p3",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.545",
-          "green" : "0.000",
-          "red" : "0.545"
+          "blue" : "1.000",
+          "green" : "0.478",
+          "red" : "0.490"
         }
       },
-      "idiom" : "tv"
+      "idiom" : "universal"
     }
   ],
   "info" : {
