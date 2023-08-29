@@ -76,7 +76,7 @@ struct AudioPlayerView: View {
                         Image(systemName: "play")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .animation(audioPlayer.isLoading ? Animation.easeInOut(duration: 1).repeatForever(autoreverses: true) : .default)
+                            .animation(.default)
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 490)
                         .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
@@ -129,7 +129,7 @@ struct AudioPlayerView: View {
                     } else {
                         Text("Sway!").foregroundColor(.gray).animation(.default).padding()
                     }
-                }
+                }.padding(.top)
                 
             }
             .aspectRatio(contentMode: .fit)
@@ -143,12 +143,10 @@ struct AudioPlayerView: View {
                     VStack {
                         Image(uiImage: audioPlayer.artworkImage)
                             .resizable().cornerRadius(10)
-                        Text("View album artwork")
                     }
-                    .shadow(color: .purple, radius: 1, x: 0, y: 1)
                 }.buttonStyle(.card)
                     .aspectRatio(contentMode: .fit)
-                    .padding()
+//                    .padding()
                     .frame(width: 880)
                 
                 
@@ -159,10 +157,11 @@ struct AudioPlayerView: View {
                     .fixedSize(horizontal: false, vertical: true) // This ensures the text view grows vertically
                     .multilineTextAlignment(.center)
                 
-            }
+            }.padding(.top)
             
             
         }
+        .padding(.top, 100)
         .frame(height: 740)
         .onAppear(perform: setupTimers)
         .onDisappear(perform: invalidateTimers)
