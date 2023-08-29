@@ -94,7 +94,7 @@ struct AudioPlayerView: View {
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 490)
                         .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
-                        .buttonStyle(PlainButtonStyle())
+                        .buttonStyle(.plain)
 
                 }
                 
@@ -114,6 +114,8 @@ struct AudioPlayerView: View {
                             Image(systemName: "hand.thumbsup.fill")
                         }
                         .disabled(audioPlayer.isLoading)
+                        .buttonStyle(PlainButtonStyle())
+                        .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
                         
                         Button(action: {
                             if !isCountdownActive {
@@ -126,8 +128,9 @@ struct AudioPlayerView: View {
                             Image(systemName: "figure.dance")
                         }
                         .disabled(audioPlayer.isLoading)
-                        .padding(.horizontal)
-                        
+                        .padding(.horizontal, 35)
+                        .buttonStyle(.plain)
+                        .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
                         
                         Button(action: {
                             if !isCountdownActive {
@@ -140,6 +143,8 @@ struct AudioPlayerView: View {
                             Image(systemName: "figure.socialdance")
                         }
                         .disabled(audioPlayer.isLoading)
+                        .buttonStyle(PlainButtonStyle())
+                        .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
                         
                     } else {
                         Text("Sway!").foregroundColor(.gray).animation(.default).padding()
