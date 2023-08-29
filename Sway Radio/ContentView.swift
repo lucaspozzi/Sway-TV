@@ -39,12 +39,12 @@ struct ContentView: View {
         }
     }
     
-    func activateSharePlay() {
-        if let url = self.audioUrl {
-            let sessionData = RadioActivity.SessionData(url: url)
-            let activity = RadioActivity(isPlaying: audioPlayer.isPlaying, sessionData: sessionData)
-        }
-    }
+//    func activateSharePlay() {
+//        if let url = self.audioUrl {
+//            let sessionData = RadioActivity.SessionData(url: url)
+//            let activity = RadioActivity(isPlaying: audioPlayer.isPlaying, sessionData: sessionData)
+//        }
+//    }
     
     var body: some View {
         TabView {
@@ -75,14 +75,14 @@ struct ContentView: View {
                                 AirPlayView()
                                     .padding(.horizontal)
                                 
-                                if(isSharePlayEnabled) {
-                                    Button(action: {
-                                        activateSharePlay()
-                                    }) {
-                                        Image(systemName: "shareplay")
-                                    }
-                                    .padding(.horizontal)
-                                }
+//                                if(isSharePlayEnabled) {
+//                                    Button(action: {
+//                                        activateSharePlay()
+//                                    }) {
+//                                        Image(systemName: "shareplay")
+//                                    }
+//                                    .padding(.horizontal)
+//                                }
                             }
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {

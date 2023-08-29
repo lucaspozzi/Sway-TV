@@ -52,13 +52,13 @@ struct ContentView: View {
                     Text("Top Tracks")
                 }
             
-            if(isEventsTabEnabled){
-                EventScheduleView()
-                    .tabItem {
-                        Image(systemName: "calendar")
-                        Text("Events")
-                    }
-            }
+//            if(isEventsTabEnabled){
+//                EventScheduleView()
+//                    .tabItem {
+//                        Image(systemName: "calendar")
+//                        Text("Events")
+//                    }
+//            }
             
         }
         .onPlayPauseCommand {
