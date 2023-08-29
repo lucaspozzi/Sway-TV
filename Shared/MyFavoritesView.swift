@@ -88,7 +88,9 @@ struct MyFavoritesView: View {
             await refreshData()
         }
         .onAppear {
-            loadData()
+            if(trackItems.isEmpty){
+                loadData()
+            }
         }
     }
     
