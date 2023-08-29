@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "यदि आपको कनेक्शन की समस्या हो रही है तो सामान्य ध्वनि गुणवत्ता चुनें.";
+
+/* No comment provided by engineer. */
 "Events" = "घटनाओं";
 
 /* No comment provided by engineer. */
@@ -11,6 +14,9 @@
 "Got It" = "अब समझ में आया";
 
 /* No comment provided by engineer. */
+"High" = "उच्च";
+
+/* No comment provided by engineer. */
 "Join me for a radio session!" = "एक रेडियो सत्र के लिए मुझसे जुड़ें!";
 
 /* No comment provided by engineer. */
@@ -20,10 +26,37 @@
 "My favorites" = "मेरे पसंदीदा";
 
 /* No comment provided by engineer. */
+"Normal" = "सामान्य";
+
+/* No comment provided by engineer. */
+"Radio" = "रेडियो";
+
+/* No comment provided by engineer. */
 "Recent" = "हाल में";
 
 /* No comment provided by engineer. */
 "Recently on air" = "हाल ही में ऑन एयर";
+
+/* No comment provided by engineer. */
+"Review" = "प्रतिपुष्टि";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "ऐप स्टोर में समीक्षा करें";
+
+/* No comment provided by engineer. */
+"Send Sway to a friend" = "किसी मित्र को Sway भेजें";
+
+/* No comment provided by engineer. */
+"Settings" = "सेटिंग्स";
+
+/* No comment provided by engineer. */
+"Share" = "हिस्सा";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "ध्वनि की गुणवत्ता";
+
+/* No comment provided by engineer. */
+"Streaming" = "कोशिकाद्रव्य-संचार";
 
 /* No comment provided by engineer. */
 "Sway Radio" = "स्वे रेडियो";
@@ -38,16 +71,19 @@
 "Top Tracks" = "शीर्ष ट्रैक्स";
 
 /* No comment provided by engineer. */
-"Tuning..." = "ट्यूनिंग।।।";
-
-/* No comment provided by engineer. */
-"View album artwork" = "एल्बम कलाकृति देखें";
+"We appreciate it!" = "हम इसकी सराहना करते हैं!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "Sway में आपका स्वागत है";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "जब आप किसी गाने पर थिरकते हैं, तो इनमें से किसी भी प्रतिक्रिया को टैप करके उन्हें अपने पसंदीदा में सहेजें:";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "आप Sway रेडियो से प्यार करेंगे। बहुत बहुत धन्यवाद!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "आपकी प्रतिक्रिया ऐप को बेहतर बनाती है और अन्य श्रोताओं को ऐप स्टोर में स्वे खोजने में मदद करती है।";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "आपके स्वेज टॉप ट्रैक्स की ओर गिने जाते हैं, लेकिन केवल आप अपने पसंदीदा गाने देख सकते हैं।";

@@ -5,6 +5,9 @@
 "Ambient Videos" = "Videos";
 
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "Elija la calidad de sonido normal si tiene problemas de conexión.";
+
+/* No comment provided by engineer. */
 "Description" = "Descripción";
 
 /* No comment provided by engineer. */
@@ -32,19 +35,22 @@
 "Hello, world!" = "Hola, mundo";
 
 /* No comment provided by engineer. */
+"High" = "Alta";
+
+/* No comment provided by engineer. */
 "Join me for a radio session!" = "Únete a mí para una sesión de radio";
 
 /* No comment provided by engineer. */
 "Listening to Sway Radio" = "Escuchando Sway Radio";
 
 /* No comment provided by engineer. */
-"Live" = "En vivo";
-
-/* No comment provided by engineer. */
 "My favorites" = "Mis favoritos";
 
 /* No comment provided by engineer. */
 "Name" = "Nombre";
+
+/* No comment provided by engineer. */
+"Normal" = "Normal";
 
 /* No comment provided by engineer. */
 "Ocean" = "Océano";
@@ -59,10 +65,28 @@
 "Recently on air" = "Recientemente en el aire";
 
 /* No comment provided by engineer. */
+"Review" = "¿Qué te parece Sway?";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "Reseña en la App Store";
+
+/* No comment provided by engineer. */
 "Rings" = "Anillos";
 
 /* No comment provided by engineer. */
 "Save" = "Guardar";
+
+/* No comment provided by engineer. */
+"Send Sway to a friend" = "Enviar Sway a un amigo";
+
+/* No comment provided by engineer. */
+"Settings" = "Configuración";
+
+/* No comment provided by engineer. */
+"Share" = "Compartir";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "Calidad de sonido";
 
 /* No comment provided by engineer. */
 "Start Time" = "Hora de inicio";
@@ -95,16 +119,19 @@
 "Triangles" = "Triángulos";
 
 /* No comment provided by engineer. */
-"Tuning..." = "Sintonizando...";
-
-/* No comment provided by engineer. */
-"View album artwork" = "Ver carátulas del álbum";
+"We appreciate it!" = "¡Se lo agradecemos!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "Bienvenido a Sway";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Cuando te inclines hacia una canción, guárdala en tus favoritos tocando cualquiera de estas reacciones:";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "Te encantará Sway Music Radio. ¡Viva los DJs!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "Sus comentarios mejoran la aplicación y ayudan a otros oyentes a encontrar Sway en la App Store.";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "Tus balanceos cuentan para las pistas principales, pero solo tú puedes ver tus canciones favoritas.";

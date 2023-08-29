@@ -1,5 +1,11 @@
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "Choisissez une qualité sonore normale si vous rencontrez des problèmes de connexion.";
+
+/* No comment provided by engineer. */
 "Events" = "Épreuves";
+
+/* No comment provided by engineer. */
+"Favorites" = "Favorites";
 
 /* No comment provided by engineer. */
 "Free Music Radio" = "Radio musicale gratuite";
@@ -26,6 +32,24 @@
 "Recently on air" = "Récemment à l’antenne";
 
 /* No comment provided by engineer. */
+"Review" = "Rétroaction";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "Avis dans l’App Store";
+
+/* No comment provided by engineer. */
+"Send Sway to a friend" = "Envoyer Sway à une amie";
+
+/* No comment provided by engineer. */
+"Settings" = "Paramètres";
+
+/* No comment provided by engineer. */
+"Share" = "Partager";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "Qualité sonore";
+
+/* No comment provided by engineer. */
 "To start listening, press play:" = "Pour commencer à écouter, appuyez sur lecture :";
 
 /* No comment provided by engineer. */
@@ -35,16 +59,19 @@
 "Top Tracks" = "Top Pistes";
 
 /* No comment provided by engineer. */
-"Tuning..." = "Réglage...";
-
-/* No comment provided by engineer. */
-"View album artwork" = "Voir la pochette de l’album";
+"We appreciate it!" = "Nous l’apprécions!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "Bienvenue chez Sway";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Lorsque vous vous balancez sur une chanson, enregistrez-la dans vos favoris en appuyant sur l’une de ces réactions :";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "Vous allez adorer Sway Music Radio. Vive les DJs!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "Vos commentaires améliorent l’app et aident les autres auditeurs à trouver Sway dans l’App Store.";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "Vos balancements comptent pour les Top Tracks, mais vous seul pouvez voir vos chansons préférées.";

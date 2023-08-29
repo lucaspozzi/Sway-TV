@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "Wählen Sie die normale Tonqualität, wenn Sie Verbindungsprobleme haben.";
+
+/* No comment provided by engineer. */
 "Favorites" = "Favoriten";
 
 /* No comment provided by engineer. */
@@ -6,9 +9,6 @@
 
 /* No comment provided by engineer. */
 "Got It" = "Ich hab es";
-
-/* No comment provided by engineer. */
-"Live" = "Leben";
 
 /* No comment provided by engineer. */
 "My favorites" = "Meine Favoriten";
@@ -20,6 +20,27 @@
 "Recently on air" = "Kürzlich auf Sendung";
 
 /* No comment provided by engineer. */
+"Review" = "Rezension";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "Rezension im App Store";
+
+/* No comment provided by engineer. */
+"Send Sway to a friend" = "Senden von Sway an einen Freund";
+
+/* No comment provided by engineer. */
+"Settings" = "Einstellungen";
+
+/* No comment provided by engineer. */
+"Share" = "Freigeben";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "Klangqualität";
+
+/* No comment provided by engineer. */
+"Streaming" = "Strömend";
+
+/* No comment provided by engineer. */
 "To start listening, press play:" = "Um mit dem Anhören zu beginnen, drücken Sie die Wiedergabetaste:";
 
 /* No comment provided by engineer. */
@@ -29,13 +50,19 @@
 "Top Tracks" = "Top-Strecken";
 
 /* No comment provided by engineer. */
-"View album artwork" = "Albumcover ansehen";
+"We appreciate it!" = "Wir wissen das zu schätzen!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "Willkommen bei Sway";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Wenn du zu einem Song schaukelst, speichere ihn in deinen Favoriten, indem du auf eine der folgenden Reaktionen tippst:";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "Sie werden Sway Music Radio lieben. Viva los DJs!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "Ihr Feedback verbessert die App und hilft anderen Zuhörern, Sway im App Store zu finden.";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "Ihre Sways zählen zu den Top-Tracks, aber nur Sie können Ihre Lieblingssongs sehen.";

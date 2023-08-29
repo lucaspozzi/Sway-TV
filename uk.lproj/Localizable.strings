@@ -5,6 +5,9 @@
 "Ambient Videos" = "Амбієнтні відео";
 
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "Виберіть нормальну якість звуку, якщо у вас виникли проблеми з підключенням.";
+
+/* No comment provided by engineer. */
 "Description" = "Опис";
 
 /* No comment provided by engineer. */
@@ -32,19 +35,22 @@
 "Hello, world!" = "Привіт, світ!";
 
 /* No comment provided by engineer. */
+"High" = "Високий";
+
+/* No comment provided by engineer. */
 "Join me for a radio session!" = "Приєднуйтесь до мене на радіо-сесію!";
 
 /* No comment provided by engineer. */
 "Listening to Sway Radio" = "Слухаю Sway Radio";
 
 /* No comment provided by engineer. */
-"Live" = "У прямому ефірі";
-
-/* No comment provided by engineer. */
 "My favorites" = "Мої вподобання";
 
 /* No comment provided by engineer. */
 "Name" = "Ім'я";
+
+/* No comment provided by engineer. */
+"Normal" = "Нормальний";
 
 /* No comment provided by engineer. */
 "Ocean" = "Океан";
@@ -59,16 +65,37 @@
 "Recently on air" = "Нещодавно в ефірі";
 
 /* No comment provided by engineer. */
+"Review" = "Відгуків";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "Огляд в App Store";
+
+/* No comment provided by engineer. */
 "Rings" = "Кільця";
 
 /* No comment provided by engineer. */
 "Save" = "Зберегти";
 
 /* No comment provided by engineer. */
+"Send Sway to a friend" = "Надсилання презентації Sway другу";
+
+/* No comment provided by engineer. */
+"Settings" = "Параметри";
+
+/* No comment provided by engineer. */
+"Share" = "Ділити";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "Якість звуку";
+
+/* No comment provided by engineer. */
 "Start Time" = "Час початку";
 
 /* No comment provided by engineer. */
 "Starts:" = "Починається:";
+
+/* No comment provided by engineer. */
+"Streaming" = "Потокове";
 
 /* No comment provided by engineer. */
 "To start listening, press play:" = "Щоб почати слухати, натисніть play:";
@@ -83,16 +110,19 @@
 "Triangles" = "Трикутники";
 
 /* No comment provided by engineer. */
-"Tuning..." = "Налаштування...";
-
-/* No comment provided by engineer. */
-"View album artwork" = "Переглянути обкладинку альбому";
+"We appreciate it!" = "Ми це цінуємо!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "Ласкаво просимо до Sway";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "Коли ви переходите до пісні, збережіть її в уподобання, торкнувшись будь-якої з наведених нижче реакцій.";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "Вам сподобається музичне радіо Sway. Viva los DJs!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "Ваш відгук покращує програму та допомагає іншим слухачам знаходити програму Sway в магазині App Store.";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "Ваші погойдування зараховуються до найпопулярніших композицій, але улюблені пісні можете бачити лише ви.";

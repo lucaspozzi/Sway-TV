@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "接続に問題がある場合は、通常の音質を選択してください。";
+
+/* No comment provided by engineer. */
 "Event Schedule" = "イベントスケジュール";
 
 /* No comment provided by engineer. */
@@ -14,7 +17,13 @@
 "Got It" = "わかりました";
 
 /* No comment provided by engineer. */
+"High" = "高い";
+
+/* No comment provided by engineer. */
 "My favorites" = "私のお気に入り";
+
+/* No comment provided by engineer. */
+"Normal" = "正常";
 
 /* No comment provided by engineer. */
 "Radio" = "ラジオ";
@@ -24,6 +33,27 @@
 
 /* No comment provided by engineer. */
 "Recently on air" = "最近放送中";
+
+/* No comment provided by engineer. */
+"Review" = "復習";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "アプリストアでのレビュー";
+
+/* No comment provided by engineer. */
+"Send Sway to a friend" = "Sway をフレンドに送信する";
+
+/* No comment provided by engineer. */
+"Settings" = "設定";
+
+/* No comment provided by engineer. */
+"Share" = "共有";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "音質";
+
+/* No comment provided by engineer. */
+"Streaming" = "ストリーミング";
 
 /* No comment provided by engineer. */
 "Sway Radio" = "スウェイラジオ";
@@ -38,16 +68,19 @@
 "Top Tracks" = "トップトラック";
 
 /* No comment provided by engineer. */
-"Tuning..." = "調律。。。";
-
-/* No comment provided by engineer. */
-"View album artwork" = "アルバムアートワークを見る";
+"We appreciate it!" = "感謝しています!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "スウェイへようこそ";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "曲に合わせて揺れたら、次のいずれかのリアクションをタップしてお気に入りに保存します。";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "あなたはSwayミュージックラジオを気に入るはずです。ビバロスDJ!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "あなたのフィードバックはアプリをより良くし、他のリスナーがApp StoreでSwayを見つけるのに役立ちます。";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "あなたの揺れはトップトラックにカウントされますが、お気に入りの曲を見ることができるのはあなただけです。";

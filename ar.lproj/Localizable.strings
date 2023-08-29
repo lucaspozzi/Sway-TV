@@ -5,6 +5,9 @@
 "Ambient Videos" = "الفيديوات";
 
 /* No comment provided by engineer. */
+"Choose normal sound quality if you are having connection issues." = "اختر جودة صوت عادية إذا كنت تواجه مشكلات في الاتصال.";
+
+/* No comment provided by engineer. */
 "Description" = "وصف";
 
 /* No comment provided by engineer. */
@@ -32,19 +35,22 @@
 "Hello, world!" = "مرحبا بالعالم!";
 
 /* No comment provided by engineer. */
+"High" = "عالٍ";
+
+/* No comment provided by engineer. */
 "Join me for a radio session!" = "انضم إلي في جلسة إذاعية!";
 
 /* No comment provided by engineer. */
 "Listening to Sway Radio" = "الاستماع إلى راديو سواي";
 
 /* No comment provided by engineer. */
-"Live" = "عاش";
-
-/* No comment provided by engineer. */
 "My favorites" = "المفضلة";
 
 /* No comment provided by engineer. */
 "Name" = "اسم";
+
+/* No comment provided by engineer. */
+"Normal" = "عادي";
 
 /* No comment provided by engineer. */
 "Ocean" = "محيط";
@@ -59,16 +65,37 @@
 "Recently on air" = "مؤخرا على الهواء";
 
 /* No comment provided by engineer. */
+"Review" = "استعراض";
+
+/* No comment provided by engineer. */
+"Review in the App Store" = "مراجعة في متجر التطبيقات";
+
+/* No comment provided by engineer. */
 "Rings" = "حلق";
 
 /* No comment provided by engineer. */
 "Save" = "أنقذ";
 
 /* No comment provided by engineer. */
+"Send Sway to a friend" = "أرسل التطبيق إلى صديق";
+
+/* No comment provided by engineer. */
+"Settings" = "الإعدادات";
+
+/* No comment provided by engineer. */
+"Share" = "مشاركة";
+
+/* No comment provided by engineer. */
+"Sound Quality" = "جودة الصوت";
+
+/* No comment provided by engineer. */
 "Start Time" = "وقت البدء";
 
 /* No comment provided by engineer. */
 "Starts:" = "يبدا:";
+
+/* No comment provided by engineer. */
+"Streaming" = "البث المباش";
 
 /* No comment provided by engineer. */
 "To start listening, press play:" = "لبدء الاستماع، اضغط على تشغيل:";
@@ -83,16 +110,19 @@
 "Triangles" = "المثلثات";
 
 /* No comment provided by engineer. */
-"Tuning..." = "التضبيط...";
-
-/* No comment provided by engineer. */
-"View album artwork" = "عرض العمل الفني للألبوم";
+"We appreciate it!" = "نقدر ذلك!";
 
 /* No comment provided by engineer. */
 "Welcome to Sway" = "مرحبا بكم في سواي";
 
 /* No comment provided by engineer. */
 "When you sway to a song, save them to your favorites by tapping any of these reactions:" = "عند التأثير على أغنية، احفظها في المفضلة من خلال النقر على أي من ردود الفعل التالية:";
+
+/* No comment provided by engineer. */
+"You will love Sway Music Radio. Viva los DJs!" = "سوف تحب سواي راديو الموسيقى. تحيا لوس دي جي!";
+
+/* No comment provided by engineer. */
+"Your feedback makes the app better and helps other listeners find Sway in the App Store." = "تجعل ملاحظاتك التطبيق أفضل وتساعد المستمعين الآخرين في العثور على Sway في App Store.";
 
 /* No comment provided by engineer. */
 "Your sways count towards the Top Tracks, but only you can see your favorite songs." = "يتم احتساب تأرجحاتك نحو أفضل المسارات ، ولكن يمكنك فقط رؤية أغانيك المفضلة.";
