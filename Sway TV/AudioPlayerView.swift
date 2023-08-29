@@ -66,7 +66,7 @@ struct AudioPlayerView: View {
                             }
                         }
                         .padding()
-                    }.frame(height: 490)
+                    }.frame(height: 490).buttonStyle(PlainButtonStyle())
                     
                 } else {
                     Button(action: {
@@ -80,6 +80,7 @@ struct AudioPlayerView: View {
                     }.disabled(audioPlayer.isLoading)
                         .frame(height: 490)
                         .foregroundColor(audioPlayer.isLoading ? .gray : Color.init("AccentColor"))
+                        .buttonStyle(PlainButtonStyle())
 
                 }
                 
