@@ -69,7 +69,7 @@ struct AudioPlayerView: View {
                                     .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
                                     .frame(height: geometry.size.height * pseudoSoundLevelLeft)
                                     .cornerRadius(15)
-                                    .animation(.default, value: pseudoSoundLevelLeft)
+                                    .animation(.linear, value: pseudoSoundLevelLeft)
                             }
                         }
                         .frame(width: 30)  // Width of each bar
@@ -85,7 +85,7 @@ struct AudioPlayerView: View {
                                     .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
                                     .frame(height: geometry.size.height * pseudoSoundLevelRight)
                                     .cornerRadius(15)
-                                    .animation(.default, value: pseudoSoundLevelRight)
+                                    .animation(.linear, value: pseudoSoundLevelRight)
                             }
                         }
                         .frame(width: 30)  // Width of each bar

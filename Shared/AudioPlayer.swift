@@ -119,7 +119,7 @@ import GroupActivities
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .noItemToPlay){
                         print("noItemToPlay")
-                        self?.setupAudioPlayer()
+//                        self?.setupAudioPlayer()
                     }
                     if(self?.audioPlayer.reasonForWaitingToPlay == .evaluatingBufferingRate){
                         print("evaluatingBufferingRate")
