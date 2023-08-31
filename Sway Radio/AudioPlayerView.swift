@@ -13,9 +13,6 @@ import Intents
 struct AudioPlayerView: View {
     @EnvironmentObject var audioPlayer: AudioPlayer
     
-    @State private var timerAnimation: Timer? = nil
-    @State var pseudoSoundLevelLeft: CGFloat = 0.1
-    @State var pseudoSoundLevelRight: CGFloat = 0.1
     
     // Pinch to Zoom
     private struct DragState {
@@ -54,59 +51,72 @@ struct AudioPlayerView: View {
             if audioPlayer.isPlaying {
                 
                 Button(action: {
-                    invalidateTimers()
                     self.audioPlayer.stopPlayback()
                 }) {
-                    HStack(spacing: 61) {
-                        GeometryReader { geometry in
-                            ZStack(alignment: .bottom) {
-                                Rectangle()  // Grey rectangle in the background
-                                    .fill(Color.gray.opacity(0.2))
-                                    .cornerRadius(15)
-                                
-                                // Colored rectangle in the foreground, its height changes with sound level
-                                Rectangle()
-                                    .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
-                                    .frame(height: geometry.size.height * pseudoSoundLevelLeft)
-                                    .cornerRadius(15)
-                                    .animation(.linear, value: pseudoSoundLevelLeft)
-                            }
-                        }
-                        .frame(width: 30)  // Width of each bar
-                        
-                        GeometryReader { geometry in
-                            ZStack(alignment: .bottom) {
-                                Rectangle()  // Grey rectangle in the background
-                                    .fill(Color.gray.opacity(0.2))
-                                    .cornerRadius(15)
-                                
-                                // Colored rectangle in the foreground, its height changes with sound level
-                                Rectangle()
-                                    .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
-                                    .frame(height: geometry.size.height * pseudoSoundLevelRight)
-                                    .cornerRadius(15)
-                                    .animation(.linear, value: pseudoSoundLevelRight)
-                            }
-                        }
-                        .frame(width: 30)  // Width of each bar
-                    }
-//                    .padding()
+                    VuMeterView()
                 }
                 
             } else {
                 Button(action: {
                     self.audioPlayer.startPlayback()
-                    setupTimers()
                 }) {
                     Image(systemName: "play")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .animation(.default, value: audioPlayer.isLoading)
+                        .animation(.linear, value: audioPlayer.isLoading)
                 }.disabled(audioPlayer.isLoading)
             }
             
             Spacer()
         }
+    }
+    
+    
+    
+}
+
+
+struct VuMeterView: View {
+    
+    @State private var timerAnimation: Timer? = nil
+    @State var pseudoSoundLevelLeft: CGFloat = 0.1
+    @State var pseudoSoundLevelRight: CGFloat = 0.1
+    
+    var body: some View {
+        HStack(spacing: 61) {
+            GeometryReader { geometry in
+                ZStack(alignment: .bottom) {
+                    Rectangle()  // Grey rectangle in the background
+                        .fill(Color.gray.opacity(0.2))
+                        .cornerRadius(15)
+                    
+                    // Colored rectangle in the foreground, its height changes with sound level
+                    Rectangle()
+                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
+                        .frame(height: geometry.size.height * pseudoSoundLevelLeft)
+                        .cornerRadius(15)
+                        .animation(.linear(duration: 0.19), value: pseudoSoundLevelLeft)
+                }
+            }
+            .frame(width: 30)  // Width of each bar
+            
+            GeometryReader { geometry in
+                ZStack(alignment: .bottom) {
+                    Rectangle()  // Grey rectangle in the background
+                        .fill(Color.gray.opacity(0.2))
+                        .cornerRadius(15)
+                    
+                    // Colored rectangle in the foreground, its height changes with sound level
+                    Rectangle()
+                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
+                        .frame(height: geometry.size.height * pseudoSoundLevelRight)
+                        .cornerRadius(15)
+                        .animation(.linear(duration: 0.15), value: pseudoSoundLevelRight)
+                }
+            }
+            .frame(width: 30)  // Width of each bar
+        }
+        
         .onAppear(perform: setupTimers)
         .onDisappear(perform: invalidateTimers)
     }
@@ -118,20 +128,10 @@ struct AudioPlayerView: View {
     }
     
     func setupTimers() {
-        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.20, repeats: true) { _ in
             // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
-            if(audioPlayer.isPlaying){
-                DispatchQueue.main.async {
-                    pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-                    pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
-                }
-                
-            } else {
-                DispatchQueue.main.async {
-                    pseudoSoundLevelLeft = 0.1
-                    pseudoSoundLevelRight = 0.1
-                }
-            }
+            pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
+            pseudoSoundLevelRight = CGFloat.random(in: 0.60...0.95)
         }
     }
 }
