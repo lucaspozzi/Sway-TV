@@ -54,6 +54,7 @@
 		81A425662A7C41A2002498C3 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A425642A7C41A2002498C3 /* TopTracksView.swift */; };
 		81A425682A7DBF65002498C3 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810632472A6706FE008E62AB /* AudioPlayer.swift */; };
 		81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814A6A3C2A6C8E8D00C923E6 /* RadioActivity.swift */; };
+		81CA00F52A9E68F700D79E43 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA00F42A9E68F700D79E43 /* AudioPlayerTests.swift */; };
 		81CA8F712A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81CA8F722A7B3A5F00835352 /* Sentiments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA8F702A7B3A5F00835352 /* Sentiments.swift */; };
 		81DCA1262A999C63007F15A3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DCA1242A999C63007F15A3 /* SettingsView.swift */; };
@@ -200,9 +201,12 @@
 		81546C782A6479BC00F2E98E /* AmbientVideoMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbientVideoMenuView.swift; sourceTree = "<group>"; };
 		81546C7D2A64849300F2E98E /* Sway TV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sway TV.entitlements"; sourceTree = "<group>"; };
 		816CB3962A68957A001FB8F5 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
+		81710BA12A9E938A0032B87C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		81710BA22A9E93970032B87C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesView.swift; sourceTree = "<group>"; };
 		81A425642A7C41A2002498C3 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
 		81B631AD2A64BECC00EDFE03 /* Sway-TV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sway-TV-Info.plist"; sourceTree = "<group>"; };
+		81CA00F42A9E68F700D79E43 /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
 		81CA8F702A7B3A5F00835352 /* Sentiments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiments.swift; sourceTree = "<group>"; };
 		81DCA1242A999C63007F15A3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		81EBF3142A82F1CD00817353 /* Sway Radio DJ Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sway Radio DJ Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				810CF6BD2A65E36F00600064 /* Sway_RadioTests.swift */,
+				81CA00F42A9E68F700D79E43 /* AudioPlayerTests.swift */,
 			);
 			path = "Sway RadioTests";
 			sourceTree = "<group>";
@@ -715,6 +720,8 @@
 				ja,
 				hi,
 				ar,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 81546C342A64779500F2E98E;
 			productRefGroup = 81546C3E2A64779500F2E98E /* Products */;
@@ -844,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				810CF6BE2A65E36F00600064 /* Sway_RadioTests.swift in Sources */,
+				81CA00F52A9E68F700D79E43 /* AudioPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +986,8 @@
 				813FCAEE2A913730003F1A7D /* fr */,
 				813FCAEF2A91395C003F1A7D /* hi */,
 				813FCAF22A913B3E003F1A7D /* ja */,
+				81710BA12A9E938A0032B87C /* zh-Hans */,
+				81710BA22A9E93970032B87C /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -1046,7 +1056,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1083,7 +1093,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1315,7 +1325,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1345,7 +1355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.waggie.Sway-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
