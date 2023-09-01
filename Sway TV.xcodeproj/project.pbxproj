@@ -151,6 +151,12 @@
 		810CF6E62A65EC5200600064 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = Library/Frameworks/DriverKit.framework; sourceTree = DEVELOPER_DIR; };
 		810CF6F62A66070100600064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		810CF6F82A660F7700600064 /* Sway-Radio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sway-Radio-Info.plist"; sourceTree = SOURCE_ROOT; };
+		811298CC2AA1783900CBB78B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Sway-Radio-DJ-Companion-InfoPlist.strings"; sourceTree = "<group>"; };
+		811298CD2AA1783900CBB78B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		811298CE2AA1783900CBB78B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
+		811298CF2AA1785A00CBB78B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Sway-Radio-DJ-Companion-InfoPlist.strings"; sourceTree = "<group>"; };
+		811298D02AA1785A00CBB78B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
+		811298D12AA1785A00CBB78B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Sway-TV-InfoPlist.strings"; sourceTree = "<group>"; };
 		811EF6982A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		811EF69D2A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Sway-Radio-DJ-Companion-InfoPlist.strings"; sourceTree = "<group>"; };
 		811EF6A02A869A23008BC665 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Sway-Radio-InfoPlist.strings"; sourceTree = "<group>"; };
@@ -998,6 +1004,8 @@
 			children = (
 				811EF69D2A869A23008BC665 /* pt-BR */,
 				811EF6A62A869DEC008BC665 /* es-419 */,
+				811298CC2AA1783900CBB78B /* zh-Hans */,
+				811298CF2AA1785A00CBB78B /* zh-Hant */,
 			);
 			name = "Sway-Radio-DJ-Companion-InfoPlist.strings";
 			path = ..;
@@ -1012,6 +1020,8 @@
 				813FCAEB2A90724E003F1A7D /* ar */,
 				813FCAF02A91395C003F1A7D /* hi */,
 				813FCAF32A913B3E003F1A7D /* ja */,
+				811298CD2AA1783900CBB78B /* zh-Hans */,
+				811298D02AA1785A00CBB78B /* zh-Hant */,
 			);
 			name = "Sway-Radio-InfoPlist.strings";
 			path = ..;
@@ -1025,6 +1035,8 @@
 				813FCAEC2A90724E003F1A7D /* ar */,
 				813FCAF12A91395C003F1A7D /* hi */,
 				813FCAF42A913B3E003F1A7D /* ja */,
+				811298CE2AA1783900CBB78B /* zh-Hans */,
+				811298D12AA1785A00CBB78B /* zh-Hant */,
 			);
 			name = "Sway-TV-InfoPlist.strings";
 			sourceTree = "<group>";
