@@ -58,7 +58,7 @@ struct AudioPlayerView: View {
                                         .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
                                         .frame(height: geometry.size.height * pseudoSoundLevelLeft)
                                         .cornerRadius(15)
-                                        .animation(.linear, value: pseudoSoundLevelLeft)
+                                        .animation(.spring(response: 0.5, dampingFraction: 0.51, blendDuration: 0.15), value: pseudoSoundLevelLeft)
                                 }
                             }
                             .frame(width: 70)  // Width of each bar
@@ -74,7 +74,7 @@ struct AudioPlayerView: View {
                                         .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
                                         .frame(height: geometry.size.height * pseudoSoundLevelRight)
                                         .cornerRadius(15)
-                                        .animation(.linear, value: pseudoSoundLevelRight)
+                                        .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.10), value: pseudoSoundLevelRight)
                                 }
                             }
                             .frame(width: 70)  // Width of each bar
@@ -204,7 +204,7 @@ struct AudioPlayerView: View {
             if(audioPlayer.isPlaying){
                 DispatchQueue.main.async {
                     self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-                    self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...1.00)
+                    self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...0.95)
                 }
             } else {
                 pseudoSoundLevelLeft = 0.1
