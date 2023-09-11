@@ -18,9 +18,6 @@ struct AudioPlayerView: View {
     @State private var countdownSeconds = 50
     @State private var isCountdownActive = false
     
-    @State private var timerAnimation: Timer? = nil
-    @State var pseudoSoundLevelLeft: CGFloat = 0.1
-    @State var pseudoSoundLevelRight: CGFloat = 0.1
     
     func startCountdown() {
         isCountdownActive = true
@@ -43,49 +40,15 @@ struct AudioPlayerView: View {
                 if audioPlayer.isPlaying {
                     
                     Button(action: {
-                        invalidateTimers()
                         audioPlayer.stopPlayback()
                     }) {
-                        HStack(spacing: 91) {
-                            GeometryReader { geometry in
-                                ZStack(alignment: .bottom) {
-                                    Rectangle()  // Grey rectangle in the background
-                                        .fill(Color.gray.opacity(0.2))
-                                        .cornerRadius(15)
-                                    
-                                    // Colored rectangle in the foreground, its height changes with sound level
-                                    Rectangle()
-                                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
-                                        .frame(height: geometry.size.height * pseudoSoundLevelLeft)
-                                        .cornerRadius(15)
-                                        .animation(.spring(response: 0.5, dampingFraction: 0.51, blendDuration: 0.15), value: pseudoSoundLevelLeft)
-                                }
-                            }
-                            .frame(width: 70)  // Width of each bar
-                            
-                            GeometryReader { geometry in
-                                ZStack(alignment: .bottom) {
-                                    Rectangle()  // Grey rectangle in the background
-                                        .fill(Color.gray.opacity(0.2))
-                                        .cornerRadius(15)
-                                    
-                                    // Colored rectangle in the foreground, its height changes with sound level
-                                    Rectangle()
-                                        .fill(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow, Color.green]), startPoint: .top, endPoint: .bottom))
-                                        .frame(height: geometry.size.height * pseudoSoundLevelRight)
-                                        .cornerRadius(15)
-                                        .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.10), value: pseudoSoundLevelRight)
-                                }
-                            }
-                            .frame(width: 70)  // Width of each bar
-                        }
+                        VuMeterView(hspacing: 91, width: 70)
                         .padding()
                     }.frame(height: 490).buttonStyle(PlainButtonStyle())
                     
                 } else {
                     Button(action: {
                         audioPlayer.startPlayback()
-                        setupTimers()
                     }) {
                         Image(systemName: "play")
                             .resizable()
@@ -183,8 +146,6 @@ struct AudioPlayerView: View {
         }
         .padding(.top, 100)
         .frame(height: 740)
-        .onAppear(perform: setupTimers)
-        .onDisappear(perform: invalidateTimers)
         .sheet(isPresented: $isShowingModal) {
             Image(uiImage: audioPlayer.artworkImage)
                 .resizable().cornerRadius(10)
@@ -192,26 +153,6 @@ struct AudioPlayerView: View {
         }
     }
     
-    func invalidateTimers() {
-        pseudoSoundLevelLeft = 0.1
-        pseudoSoundLevelRight = 0.1
-        timerAnimation?.invalidate()
-    }
-    
-    func setupTimers() {
-        timerAnimation = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            // Generate a pseudo-random sound level between 0.0 and 1.0 for each channel
-            if(audioPlayer.isPlaying){
-                DispatchQueue.main.async {
-                    self.pseudoSoundLevelLeft = CGFloat.random(in: 0.55...0.90)
-                    self.pseudoSoundLevelRight = CGFloat.random(in: 0.60...0.95)
-                }
-            } else {
-                pseudoSoundLevelLeft = 0.1
-                pseudoSoundLevelRight = 0.1
-            }
-        }
-    }
     
 }
 

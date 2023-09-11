@@ -26,6 +26,9 @@
 		811EF69E2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF69C2A869A23008BC665 /* Sway-Radio-DJ-Companion-InfoPlist.strings */; };
 		811EF6A12A869A23008BC665 /* Sway-Radio-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF69F2A869A23008BC665 /* Sway-Radio-InfoPlist.strings */; };
 		811EF6A42A869A23008BC665 /* Sway-TV-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811EF6A22A869A23008BC665 /* Sway-TV-InfoPlist.strings */; };
+		81326B322AAF768200A52B53 /* VuMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81326B312AAF768100A52B53 /* VuMeterView.swift */; };
+		81326B332AAF768200A52B53 /* VuMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81326B312AAF768100A52B53 /* VuMeterView.swift */; };
+		81326B342AAF768200A52B53 /* VuMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81326B312AAF768100A52B53 /* VuMeterView.swift */; };
 		8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
 		8136C9382A6C61F200C283E3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9362A6C61F200C283E3 /* FeatureFlags.swift */; };
 		8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136C9392A6C687600C283E3 /* CustomSlider.swift */; };
@@ -173,6 +176,7 @@
 		811EF6B02A86B25C008BC665 /* WhatToTest.pt-BR.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.pt-BR.txt"; sourceTree = "<group>"; };
 		811EF6B12A86B25C008BC665 /* WhatToTest.uk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = WhatToTest.uk.txt; sourceTree = "<group>"; };
 		811EF6B22A86B399008BC665 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
+		81326B312AAF768100A52B53 /* VuMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VuMeterView.swift; sourceTree = "<group>"; };
 		8136C9362A6C61F200C283E3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		8136C9392A6C687600C283E3 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		813FCAEA2A90724E003F1A7D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 				81A425642A7C41A2002498C3 /* TopTracksView.swift */,
 				81EBF34A2A82F97000817353 /* Event.swift */,
 				81757AA12A8729B5007AEFEF /* MyFavoritesView.swift */,
+				81326B312AAF768100A52B53 /* VuMeterView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -833,6 +838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				810CF6AD2A65E36D00600064 /* Sway_RadioApp.swift in Sources */,
+				81326B332AAF768200A52B53 /* VuMeterView.swift in Sources */,
 				8136C93A2A6C687600C283E3 /* CustomSlider.swift in Sources */,
 				810CF6D82A65E47F00600064 /* AudioPlayerView.swift in Sources */,
 				810CF6F72A66070100600064 /* ContentView.swift in Sources */,
@@ -885,6 +891,7 @@
 				81546C732A64784B00F2E98E /* AudioPlayerView.swift in Sources */,
 				8136C9372A6C61F200C283E3 /* FeatureFlags.swift in Sources */,
 				81A425652A7C41A2002498C3 /* TopTracksView.swift in Sources */,
+				81326B322AAF768200A52B53 /* VuMeterView.swift in Sources */,
 				81546C762A64784B00F2E98E /* RadioStationMetadata.swift in Sources */,
 				81A425692A7DC031002498C3 /* RadioActivity.swift in Sources */,
 				81546C7B2A6479BD00F2E98E /* AmbientVideoMenuView.swift in Sources */,
@@ -922,6 +929,7 @@
 				81EBF3492A82F92900817353 /* EventScheduleView.swift in Sources */,
 				81EBF3192A82F1CD00817353 /* ContentView.swift in Sources */,
 				81EBF33E2A82F1E300817353 /* RecentView.swift in Sources */,
+				81326B342AAF768200A52B53 /* VuMeterView.swift in Sources */,
 				81757AA42A8729B5007AEFEF /* MyFavoritesView.swift in Sources */,
 				81EBF3172A82F1CD00817353 /* Sway_Radio_DJ_CompanionApp.swift in Sources */,
 			);
