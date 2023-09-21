@@ -359,7 +359,7 @@ import GroupActivities
     }
     
     func setScheduledTimers() {
-        timerMetadata = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
+        timerMetadata = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { [weak self] _ in
             self?.fetchOnce()
         }
     }
