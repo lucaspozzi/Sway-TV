@@ -60,8 +60,8 @@ struct SettingsView: View {
             }
             
         }
-        .onChange(of: streamingQuality) { newValue in
-            UserDefaults.standard.set(newValue, forKey: "useLowQuality")
+        .onChange(of: streamingQuality) { //oldValue, newValue in
+            UserDefaults.standard.set(streamingQuality, forKey: "useLowQuality")
             audioPlayer.handleStreamingQualityChange()
         }
         .onAppear(perform: checkReviewedVersions)
